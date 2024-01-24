@@ -1,3 +1,5 @@
+<!--------------HEADER SECTION --------------->
+
 <header class="header container">
   <div class="header-wrapper">
     <div class="header-logo-wrap">
@@ -7,12 +9,7 @@
         </svg>
       </a>
     </div>
-    <nav class="header-nav">
-      <ul class="header-list-nav">
-        <li><a class="header-link-nav" href="./index.html">Home</a></li>
-        <li><a class="header-link-nav" href="#favorites">Favorites</a></li>
-      </ul>
-    </nav>
+
     <div class="header-background">
       <img class="header-img" srcset="
                 ./img/header/header-img-mobile.jpg 335w,
@@ -20,8 +17,11 @@
                 ./img/header/header-img-tablet.jpg 248w,
                 ./img/header/header-img-tablet@2x.jpg 496w,
                 ./img/header/header-img-desktop.jpg 704w,
-                ./img/header/header-img-desktop@2x.jpg 1408w" sizes="(min-width: 1280px) 704px, (min-width: 768px) 413px,
+                ./img/header/header-img-desktop@2x.jpg 1408w" sizes="(min-width: 1280px) 704px, (min-width: 768px) 248px,
                 (min-width: 375px) 335px" src="./img/header/header-img-mobile.jpg" alt="background image" />
+
+      <!---------- header tags container ------------->
+
       <ul class="header-tags-container">
         <li>
           <svg class="tag-icon" width="61" height="22" aria-label="sport-tag-icon">
@@ -44,21 +44,61 @@
           </svg>
         </li>
       </ul>
+
     </div>
+
+    <!---------- burger menu button ------------->
+
     <button class="open-mobile-menu-btn" type="button" data-modal-open>
       <svg class="open-mobile-menu-icon" width="32" height="16" aria-label="mobile-menu-icon">
         <use href="./img/icons.svg#burger-menu-icon"></use>
       </svg>
     </button>
   </div>
+
+  <!---------- hero heading container ------------->
+
   <div class="hero-heading-wrapper">
+
+    <nav class="header-nav">
+      <ul class="header-list-nav">
+        <li><a class="header-link-nav" href="./index.html">Home</a></li>
+        <li><a class="header-link-nav" href="#favorites">Favorites</a></li>
+      </ul>
+    </nav>
+
+    <ul class="header-social-list">
+      <li class="header-social-item">
+        <a href="https://www.facebook.com/" rel="noreferren noopener" class="header-social-link">
+          <svg class="header-nav-icon" width="28" height="28" aria-label="facebook icon">
+            <use href="./img/icons.svg#facebook-icon"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="header-social-item">
+        <a href="https://www.instagram.com/" rel="noreferren noopener" class="header-social-link"
+          aria-label="instagram icon">
+          <svg class="header-nav-icon" width="28" height="28">
+            <use href="./img/icons.svg#instagram-icon"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="header-social-item">
+        <a href="https://www.youtube.com/" rel="noreferren noopener" class="header-social-link"
+          aria-label="youtube icon">
+          <svg class="header-nav-icon" width="28" height="28">
+            <use href="./img/icons.svg#youtube-icon"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
     <h1 class="hero-heading">Get <span class="heading-span">Body</span> in shape, Stay healthy</h1>
     <p class="heading-paragraph">Transform your physique and embrace a healthier lifestyle with our comprehensive
       fitness and nutrition support.</p>
   </div>
 
 
-
-  <!-- mobile menu -->
+  <!------- mobile menu ------->
 
 </header>
