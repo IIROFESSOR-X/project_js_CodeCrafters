@@ -1,4 +1,24 @@
 /* Reset styles */
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fons/DMSans-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fons/DMSans-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fons/DMSans-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fons/DMSans-Italic.ttf);
+  font-style: italic;
+}
 h1,
 h2,
 h3,
@@ -32,4 +52,32 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #f6f6f6;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
 }
