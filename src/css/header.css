@@ -1,0 +1,43 @@
+.header-background-wrapper {
+  position: relative;
+}
+.header-logo-wrap {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+.header-img {
+  border-radius: 30px;
+  background: url(<path-to-image>),
+    lightgray -9.01px 54.435px / 81.557% 97.596% no-repeat, #e8e8e8;
+}
+.header-background {
+  margin: 0;
+}
+.header {
+  margin-top: 20px;
+}
+.open-mobile-menu-btn {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.header-tags-container {
+  width: 141px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
