@@ -1,0 +1,53 @@
+/* MOBILE */
+
+.static-block-info {
+    position: relative;
+    border-radius: 30px;
+    background-color: #1B1B1B;
+    padding: 40px 20px 40px 70px;
+}
+.static-block-text {
+    color: rgba(246, 246, 246, 0.60);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.29;
+}
+.static-block-label {
+    color: #F6F6F6;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.description {
+    margin-top: 14px;
+}
+.static-block-image-wrap {
+    width: 335px;
+    height: 269px;
+}
+.static-block-img {
+    border-radius: 30px;
+    object-fit: cover;
+    height: 269px;
+}
+.static-block-icon-wrapper {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(246, 246, 246, 0.10);
+    border-radius: 50%;
+}
+.static-block-icon {
+    fill: #F6F6F6;
+}
+
+/* TABLET */
+
+@media screen and (min-width: 768px) {
+
+}
