@@ -72,7 +72,7 @@
 }
 /* ========================== */
 
-@media (mint-width: 768px) {
+@media (min-width: 768px) {
   .hero {
     margin-bottom: 16px;
   }
@@ -101,7 +101,7 @@
     line-height: 0.96em;
     letter-spacing: -0.02em;
   }
-  .heading-paragraph {
+  .hero-paragraph {
     font-size: 18px;
     line-height: 24px;
     letter-spacing: -0.18px;
