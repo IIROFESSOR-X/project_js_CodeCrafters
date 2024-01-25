@@ -1,34 +1,23 @@
-.header-wrapper {
+/* .header-wrapper {
   position: relative;
   margin: 0 auto;
-}
-.header-logo-wrap {
+} */
+.header {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
-}
-.header-img {
-  border-radius: 30px;
-  background: lightgray -9.01px 54.435px / 81.557% 97.596% no-repeat, #e8e8e8;
-}
-.header-background {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+  padding-top: 40px;
   margin: 0 auto;
 }
-.header {
-  margin-top: 10px;
-}
-
-.header-tags-container {
-  width: 141px;
+.header-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  align-content: center;
-  gap: 4px;
-  flex-wrap: wrap;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+}
+div.header-container {
+  padding: 0 40px;
 }
 
 .header-nav {
@@ -40,46 +29,6 @@
   border: none;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-.hero-heading-wrapper {
-  height: 365px;
-  border-radius: 30px;
-  background: #ffffff;
-  padding-top: 60px;
-  padding-left: 20px;
-  margin-top: 20px;
-}
-.hero-heading {
-  margin-bottom: 20px;
-  color: #1b1b1b;
-  font-family: 'DM Sans';
-  font-size: 56px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 0.89em;
-  letter-spacing: 0.02em;
-}
-.heading-span {
-  color: var(--main-color);
-  font-family: 'DM Sans';
-  font-size: 56px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 0.89em;
-  letter-spacing: -0.02em;
-}
-.heading-paragraph {
-  color: #1b1b1b;
-  font-family: 'DM Sans';
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.28em;
-  letter-spacing: -0.01em;
 }
 .header-social-list {
   display: none;
@@ -88,22 +37,22 @@
 /* --------------------------- */
 
 @media screen and (min-width: 768px) {
-  .header-nav {
-    display: block;
+  div.header-container {
+    padding: 0 50px;
   }
   .open-mobile-menu-btn {
     display: none;
   }
-  .header {
+  /* .header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-  }
-  .header-background {
+  } */
+  /* .header-background {
     width: 248px;
     height: 900px;
-  }
+  } */
   .hero-heading-wrapper {
     width: 488px;
     height: 900px;
@@ -113,73 +62,32 @@
     background: #fff;
     margin-top: 0;
   }
+  .header-nav-icon {
+    width: 44px;
+    height: 44px;
+  }
   .header-img {
     border-radius: 50px 0px 50px 50px;
     background: url(<path-to-image>),
       lightgray -77.155px 246.761px / 209.216% 76.867% no-repeat, #e8e8e8;
   }
-  .header-tags-container {
-    width: 196px;
-    gap: 8px;
-    left: 20px;
-    bottom: 64px;
+  .header-social-link {
+    transition: border 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      stroke 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  [aria-label='sport-tag-icon'].tag-icon {
-    width: 86px;
-    height: 32px;
-  }
-  [aria-label='healthy-tag-icon'].tag-icon {
-    width: 102px;
-    height: 32px;
-  }
-  [aria-label='workout-tag-icon'].tag-icon {
-    width: 108px;
-    height: 32px;
-  }
-  [aria-label='diet-tag-icon'].tag-icon {
-    width: 76px;
-    height: 32px;
+  .header-social-link:hover,
+  .header-social-link:focus {
+    border: 1px solid rgba(95, 101, 96, 0.2);
+    stroke: var(--gray-color);
+    fill: var(--gray-color);
   }
 
-  .header-logo-wrap {
-    top: 44px;
-    left: 32px;
-  }
   .logo-icon {
     width: 150px;
     height: 28px;
   }
-  .hero-heading {
-    padding-top: 147px;
-    padding-left: 32px;
-    padding-right: 32px;
 
-    font-size: 98px;
-    line-height: 0.96em;
-    letter-spacing: -0.02em;
-  }
-  .heading-paragraph {
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 25px;
-    height: 72px;
-    font-size: 18px;
-    line-height: 1.33em;
-    letter-spacing: -0.01;
-  }
-  .heading-span {
-    font-size: 98px;
-    line-height: 0.96em;
-    letter-spacing: -0.02em;
-  }
-  .header-nav-wrapper {
-    padding-top: 32px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    gap: 74px;
-  }
   .header-social-list {
     display: flex;
     flex-direction: row;
