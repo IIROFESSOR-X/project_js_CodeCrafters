@@ -1,0 +1,166 @@
+/*  Exercise card  */
+
+.exercise-card {
+  width: 295px;
+  height: 165px;
+  padding: 16px;
+
+  border-radius: 15px;
+  background: #fff;
+}
+
+.exercise-card__box {
+  display: flex;
+  justify-content: space-between;
+}
+.exercise-card__wrapper {
+  display: flex;
+}
+.exercise-card__text {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 16px;
+  padding: 5px 8px;
+  height: 26px;
+  width: 76px;
+  border-radius: 15px;
+  background: #7e847f;
+
+  color: #f6f6f6;
+  font-size: 12px;
+  font-weight: 500;
+
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.exercise-card__rating {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  color: #1b1b1b;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.exercise-card__rating::after {
+  display: inline-block;
+  content: '';
+  width: 18px;
+  height: 18px;
+  /* background-color: #eea10c; */
+  background-image: url(../img/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.exercise-card__btn {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #1b1b1b;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  /* 128.571% */
+  border: none;
+  background-color: #fff;
+}
+
+.exercise-card__btn::after {
+  display: inline-block;
+
+  content: '';
+  /* background-color: #1b1b1b; */
+  background-image: url(../img/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 14px;
+  height: 14px;
+}
+
+.exercise-card__title::before {
+  display: inline-block;
+  content: '';
+  /* background: #7e847f; */
+  background-image: url(../img/workout-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+
+.exercise-card__title {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 25px;
+  margin-bottom: 16px;
+  color: #1b1b1b;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  /* 100% */
+}
+
+.exercise-card__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+
+.exercise-card__item {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  /* 150% */
+}
+
+.exercise-card__subtitle {
+  color: rgba(27, 27, 27, 0.4);
+}
+
+.exercise-card__value {
+  margin-left: 4px;
+  color: #1b1b1b;
+}
+
+@media screen and (min-width: 768px) {
+  .exercise-card {
+    width: 313px;
+  }
+  .exercise-card__btn {
+    font-size: 16px;
+    line-height: 24px;
+    /* 150% */
+  }
+  .exercise-card__btn::after {
+    width: 16px;
+    height: 16px;
+  }
+  .exercise-card__title {
+    font-size: 24px;
+    line-height: 32px;
+    /* 133.333% */
+  }
+
+  .exercise-card__title {
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .exercise-card {
+    width: 424px;
+    height: 141px;
+  }
+}
