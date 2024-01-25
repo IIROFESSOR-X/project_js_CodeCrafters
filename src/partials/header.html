@@ -1,7 +1,7 @@
 <!--------------HEADER SECTION --------------->
 
-<header class="header container">
-  <div class="header-wrapper">
+<header class="header">
+  <div class="header-container container">
     <div class="header-logo-wrap">
       <a class="header-logo" href="./index.html">
         <svg class="logo-icon" width="86" height="18">
@@ -9,43 +9,36 @@
         </svg>
       </a>
     </div>
+    <nav class="header-nav">
+      <button class="header-btn-home" onclick="window.location.href = './index.html'">Home</button>
+      <button class="header-btn-favorites" onclick="window.location.href = './favorites.html'">Favorites</button>
+    </nav>
 
-    <div class="header-background">
-      <img class="header-img" srcset="
-                ./img/header/header-img-mobile.jpg 335w,
-                ./img/header/header-img-mobile@2x.jpg 670w,
-                ./img/header/header-img-tablet.jpg 248w,
-                ./img/header/header-img-tablet@2x.jpg 496w,
-                ./img/header/header-img-desktop.jpg 704w,
-                ./img/header/header-img-desktop@2x.jpg 1408w" sizes="(min-width: 1280px) 704px, (min-width: 768px) 248px,
-                (min-width: 375px) 335px" src="./img/header/header-img-mobile.jpg" alt="background image" />
-
-      <!---------- header tags container ------------->
-
-      <ul class="header-tags-container">
-        <li>
-          <svg class="tag-icon " width="61" height="22" aria-label="sport-tag-icon">
-            <use href="./img/tag-icons.svg#icon-sport-tag"></use>
+    <ul class="header-social-list">
+      <li class="header-social-item">
+        <a href="https://www.facebook.com/" rel="noreferren noopener" class="header-social-link">
+          <svg class="header-nav-icon" width="28" height="28" aria-label="facebook icon" target="_blank">
+            <use href="./img/icons.svg#facebook-icon"></use>
           </svg>
-        </li>
-        <li>
-          <svg class="tag-icon" width="72" height="22" aria-label="healthy-tag-icon">
-            <use href="./img/tag-icons.svg#icon-healthy-tag"></use>
+        </a>
+      </li>
+      <li class="header-social-item">
+        <a href="https://www.instagram.com/" rel="noreferren noopener" class="header-social-link"
+          aria-label="instagram icon" target="_blank">
+          <svg class="header-nav-icon" width="28" height="28">
+            <use href="./img/icons.svg#instagram-icon"></use>
           </svg>
-        </li>
-        <li>
-          <svg class="tag-icon" width="77" height="22" aria-label="workout-tag-icon">
-            <use href="./img/tag-icons.svg#icon-workout-tag"></use>
+        </a>
+      </li>
+      <li class="header-social-item">
+        <a href="https://www.youtube.com/" rel="noreferren noopener" class="header-social-link"
+          aria-label="youtube icon" target="_blank">
+          <svg class="header-nav-icon" width="28" height="28">
+            <use href="./img/icons.svg#youtube-icon"></use>
           </svg>
-        </li>
-        <li>
-          <svg class="tag-icon" width="53" height="22" aria-label="diet-tag-icon">
-            <use href="./img/tag-icons.svg#icon-diet-tag"></use>
-          </svg>
-        </li>
-      </ul>
-
-    </div>
+        </a>
+      </li>
+    </ul>
 
     <!---------- burger menu button ------------->
 
@@ -54,47 +47,7 @@
         <use href="./img/icons.svg#burger-menu-icon"></use>
       </svg>
     </button>
-  </div>
 
-  <!---------- hero heading container ------------->
-
-  <div class="hero-heading-wrapper">
-    <div class="header-nav-wrapper">
-      <div class="header-nav">
-        <button class="header-btn-home" onclick="window.location.href = './index.html'">Home</button>
-        <button class="header-btn-favorites" onclick="window.location.href = '#favorites'">Favorites</button>
-      </div>
-
-      <ul class="header-social-list">
-        <li class="header-social-item">
-          <a href="https://www.facebook.com/" rel="noreferren noopener" class="header-social-link">
-            <svg class="header-nav-icon" width="28" height="28" aria-label="facebook icon">
-              <use href="./img/icons.svg#facebook-icon"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="header-social-item">
-          <a href="https://www.instagram.com/" rel="noreferren noopener" class="header-social-link"
-            aria-label="instagram icon">
-            <svg class="header-nav-icon" width="28" height="28">
-              <use href="./img/icons.svg#instagram-icon"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="header-social-item">
-          <a href="https://www.youtube.com/" rel="noreferren noopener" class="header-social-link"
-            aria-label="youtube icon">
-            <svg class="header-nav-icon" width="28" height="28">
-              <use href="./img/icons.svg#youtube-icon"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <h1 class="hero-heading">Get <span class="heading-span">Body</span> in shape, Stay healthy</h1>
-    <p class="heading-paragraph">Transform your physique and embrace a healthier lifestyle with our comprehensive
-      fitness and nutrition support.</p>
   </div>
 
 
