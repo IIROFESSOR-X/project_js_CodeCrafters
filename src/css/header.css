@@ -119,10 +119,18 @@
       lightgray -77.155px 246.761px / 209.216% 76.867% no-repeat, #e8e8e8;
   }
   .header-tags-container {
-    display: none;
+    width: 196px;
+    gap: 8px;
+    left: 20px;
+    bottom: 64px;
   }
   .header-logo-wrap {
-    display: none;
+    top: 32px;
+    left: 32px;
+  }
+  .logo-icon {
+    width: 150px;
+    height: 28px;
   }
   .hero-heading {
     padding-top: 147px;
