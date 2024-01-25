@@ -124,8 +124,25 @@
     left: 20px;
     bottom: 64px;
   }
+  [aria-label='sport-tag-icon'].tag-icon {
+    width: 86px;
+    height: 32px;
+  }
+  [aria-label='healthy-tag-icon'].tag-icon {
+    width: 102px;
+    height: 32px;
+  }
+  [aria-label='workout-tag-icon'].tag-icon {
+    width: 108px;
+    height: 32px;
+  }
+  [aria-label='diet-tag-icon'].tag-icon {
+    width: 76px;
+    height: 32px;
+  }
+
   .header-logo-wrap {
-    top: 32px;
+    top: 44px;
     left: 32px;
   }
   .logo-icon {
