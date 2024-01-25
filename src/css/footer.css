@@ -1,0 +1,33 @@
+.logo {
+color: #ffffff;
+}
+.footer-social-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 0;
+}
+.footer-nav-icon {
+ 
+}
+.footer-social-item {
+ 
+}
+.footer-form {
+
+}
+.footer-btn {
+  
+}
+.footer-btn:hover, .footer-btn:focus {
+  background-color: #5F6560;
+}
+.footer-title {
+  color: #F6F6F6;
+font-family: "DM Sans";
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px; /* 100% */
+letter-spacing: -0.64px;
+}
