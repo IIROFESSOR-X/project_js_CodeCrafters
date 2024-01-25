@@ -1,13 +1,56 @@
-<header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./page-2.html" class="nav-link">Page 2</a>
-      </li>
+<!--------------HEADER SECTION --------------->
 
-      <li class="nav-item">
-        <a href="./page-3.html" class="nav-link">Page 3</a>
+<header class="header">
+  <div class="header-container container">
+    <div class="header-logo-wrap">
+      <a class="header-logo" href="./index.html">
+        <svg class="logo-icon" width="86" height="18">
+          <use href="./img/icons.svg#logo-icon"></use>
+        </svg>
+      </a>
+    </div>
+    <nav class="header-nav">
+      <button class="header-btn-home" onclick="window.location.href = './index.html'">Home</button>
+      <button class="header-btn-favorites" onclick="window.location.href = './favorites.html'">Favorites</button>
+    </nav>
+
+    <ul class="header-social-list">
+      <li class="header-social-item">
+        <a href="https://www.facebook.com/" rel="noreferren noopener" class="header-social-link">
+          <svg class="header-nav-icon" width="28" height="28" aria-label="facebook icon" target="_blank">
+            <use href="./img/icons.svg#facebook-icon"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="header-social-item">
+        <a href="https://www.instagram.com/" rel="noreferren noopener" class="header-social-link"
+          aria-label="instagram icon" target="_blank">
+          <svg class="header-nav-icon" width="28" height="28">
+            <use href="./img/icons.svg#instagram-icon"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="header-social-item">
+        <a href="https://www.youtube.com/" rel="noreferren noopener" class="header-social-link"
+          aria-label="youtube icon" target="_blank">
+          <svg class="header-nav-icon" width="28" height="28">
+            <use href="./img/icons.svg#youtube-icon"></use>
+          </svg>
+        </a>
       </li>
     </ul>
-  </nav>
+
+    <!---------- burger menu button ------------->
+
+    <button class="open-mobile-menu-btn" type="button" data-modal-open>
+      <svg class="open-mobile-menu-icon" width="32" height="16" aria-label="mobile-menu-icon">
+        <use href="./img/icons.svg#burger-menu-icon"></use>
+      </svg>
+    </button>
+
+  </div>
+
+
+  <!------- mobile menu ------->
+
 </header>
