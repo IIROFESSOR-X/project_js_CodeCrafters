@@ -217,6 +217,7 @@ function showsExercisesPages(e) {
 // ==================================================================
 function makeTypeOfTrainingCards(e) {
   if (e.target.dataset.type) {
+    exercisesList.innerHTML = `<div class="loader"></div>`;
     let filter = document.querySelector(`.exercises-button-active`).dataset
       .name;
     if (filter === `Body parts`) filter = `Body part`;
@@ -265,3 +266,18 @@ function searchCardsByKeyWord(e) {
 }
 
 // =-======================exercises
+function addsNumberOfPages(totalPages) {
+  formCard.dataset.status = ``;
+  let numberOfPages = ``;
+  if (totalPages > 5) {
+  }
+  for (let i = 1; i < totalPages + 1; i++) {
+    numberOfPages += `<li>
+          <button class="exercises-pages-button" data-card="${filterTypeCads}" data-number="${i}" data-type="${typeOfFilter}">${i}</button>
+        </li>`;
+  }
+  exercisesListPages.innerHTML = numberOfPages;
+  document
+    .querySelector(`.exercises-pages-button`)
+    .classList.add(`select-pages-ative`);
+}
