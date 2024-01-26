@@ -74,7 +74,7 @@
 
 @media (min-width: 768px) {
   .hero {
-    margin-bottom: 16px;
+    margin-bottom: 0;
   }
   .hero-container {
     display: flex;
@@ -122,7 +122,7 @@
 
 @media (min-width: 1280px) {
   .hero {
-    padding: 16px 0;
+    padding: 8px 0;
   }
   .hero-background-wrapper {
     width: 704px;
