@@ -1,0 +1,251 @@
+/* modal */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-window {
+    /* display: none; */
+    position: relative;
+    display: flex;
+    background-color: #F6F6F6;
+    opacity: 1;
+    border-radius: 15px;
+    max-width: 732px;
+    max-height: 470px;
+    z-index: 999;
+    overflow: hidden;
+    
+}
+
+/* photo section */
+
+.modal-photo {
+    flex: 1;
+    margin: 40px 0 40px 40px;
+    max-width: 270px;
+    max-height: 259px;
+}
+
+.modal-photo img {
+    width: 100%;
+    height: auto;
+}
+
+/* info section */
+
+.modal-info {
+    flex: 1;
+    margin: 40px;
+}
+
+/* modal - phone-orientation */
+
+@media screen and (max-width: 767px) {
+    .modal-window {
+        flex-direction: column;
+        max-width: 335px;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .modal-photo {
+        margin: 40px 20px 20px 20px;
+        max-width: 295px;
+        max-height: 258px;
+    }
+}
+
+
+/* title info */
+
+.modal-title {
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+/* rating */
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.rating-text {
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+/* stars */
+
+.stars-outer {
+    position: relative;
+    display: inline-block;
+}
+
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: wrap;
+    overflow: hidden;
+    width: 0;
+}
+
+.stars-outer::before {
+    content: "\2605 \2605 \2605 \2605 \2605";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #ccc;
+}
+
+.stars-inner::before {
+    content: "\2605 \2605 \2605 \2605 \2605";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #f8ce0b;
+}
+
+/* line */
+
+.modal-line {
+    border-top: 1px solid #1B1B1B33;
+    margin-bottom: 8px;
+}
+
+/* section about exersise */
+
+.section-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.item-info {
+    text-align: left;
+    margin: 0px;
+    padding: 0 16px 0 0;
+    font-size: 8px;
+    line-height: 1.2;
+    flex: 1 0 calc(25%);
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+.item-info b {
+    display: block;
+    margin-top: 4px;
+}
+
+/* calories info */
+
+.modal-calories {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+/* text */
+
+.modal-text {
+    margin-bottom: 32px;
+    font-size: 14px;
+}
+
+/* _____buttons */
+/* button-favorites */
+
+.modal-button-favorites {
+    width: 194px;
+    height: 48px;
+    top: 20px;
+    left: 20px;
+    border-radius: 30px;
+    padding: 12px 24px;
+    gap: 8px;
+    background-color: #7E847F;
+    color: #ffffff;
+    border: none;
+}
+
+.modal-button-favorites:hover {
+    cursor: pointer;
+    background-color: #5F6560;
+}
+
+/* heart */
+
+.heart {
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+/* button-rating */
+
+.modal-button-rating {
+    width: 141px;
+    height: 48px;
+    top: 20px;
+    left: 20px;
+    border-radius: 30px;
+    border: 1px solid #1B1B1B;
+    padding: 12px auto;
+    gap: 8px;
+    background-color: #ffffff;
+    color: #1B1B1B;
+}
+
+.modal-button-rating:hover {
+    background-color: #ffffff;
+    color: #7E847F;
+    border: 1px solid #7E847F;
+    cursor: pointer;
+}
+
+/* close-btn */
+
+.modal-close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #1B1B1B;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+/* buttons - mobile version */
+
+@media screen and (max-width: 767px) {
+
+    .modal-button-favorites,
+    .modal-button-rating {
+        width: 100%;
+        padding: 0;
+    }
+
+    .modal-button-favorites {
+        margin-bottom: 8px;
+    }
+
+    .modal-close-button {
+        top: 14px;
+        right: 14px;
+    }
+}
