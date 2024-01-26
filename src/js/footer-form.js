@@ -6,6 +6,7 @@ document
   .addEventListener('submit', function (event) {
     event.preventDefault();
 
+
     const emailInput = this.elements.email;
     const emailValue = emailInput.value.trim();
 
@@ -39,32 +40,54 @@ document
         }
       })
       .catch(error => {
-        console.error('Error:', error);
+        console.error();
         alert('Failed to subscribe. Please try again later.');
       });
   });
 
-//             const state = this.elements['state'].value;
 
-//             const notificationPromise = new Promise((resolve, reject) => {
-//               setTimeout(() => {
-//                   if (state === emailInput) {
-//                     resolve(delay);
-//                   } else {
-//                     reject(delay);
-//                   }
-//                 }, delay);
-//               });
 
-//             notificationPromise
-//               .then(() => {
-//                 iziToast.success({ message: `Successfully!` });
 
-//               })
-//               .catch(() => {
-//                 iziToast.error({ message: `Not successful!` });
 
-//               });
-//               this.reset();
 
-//         });
+
+///////////////////////
+
+
+// document.getElementById('footer-form').addEventListener('submit', function(event) {
+//     event.preventDefault(); // Prevent form submission
+  
+//     const emailInput = document.getElementById('email');
+//     const errorMsg = document.createElement('span');
+//     errorMsg.className = 'error-msg';
+  
+//     if (!this.checkValidity()) {
+//       errorMsg.textContent = 'Please enter a valid email address.';
+//       emailInput.insertAdjacentElement('afterend', errorMsg);
+//       return;
+//     }
+  
+//     // Form data
+//     const formData = new FormData(this);
+  
+//     // Send request to backend
+//     fetch('https://energyflow.b.goit.study/api/subscription', {
+//       method: 'POST',
+//       body: formData
+//     })
+//     .then(response => {
+//       if (!response.ok) {
+//         throw new Error('Failed to subscribe. Please try again later.');
+//       }
+//       return response.json();
+//     })
+//     .then(data => {
+//       alert('Subscription successful!'); // Notify user of successful subscription
+//       emailInput.value = ''; // Clear email input
+//       errorMsg.remove(); // Remove error message
+//     })
+//     .catch(error => {
+//       console.error('Error:', error);
+//       alert('Failed to subscribe. Please try again later.'); // Notify user of error
+//     });
+//   });
