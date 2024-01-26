@@ -110,11 +110,6 @@ div.header-container {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5em;
-    transition: border 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .header-btn-favorites:hover,
-  .header-btn-favorites:active {
-    border: 1px solid rgba(95, 101, 96, 0.2);
   }
 }
 
