@@ -1,0 +1,45 @@
+.footer-form-btn {
+    background-color: #7E847F;
+}
+.footer-form-email,
+.footer-form-btn {
+    border-radius: 30px;
+    }
+
+@media screen and (max-width: 375px) {
+    .footer-form {
+    font-size: 14px;
+    
+    }
+    .footer-form-email,
+    .footer-form-btn {
+    width: 295px;
+    height: 42px;
+    }
+    .footer-form-email {
+        padding-left: 14px;
+        gap: 12px;
+    }
+}
+  
+@media screen and (min-width: 768px) and (max-width: 1407px) {
+    .footer-form {
+    font-size: 18px;
+}
+.footer-form-email,
+    .footer-form-btn {
+    width: 352px;
+    height: 48px;
+    }
+}
+
+@media screen and (min-width: 1408px) {
+    .footer-form {
+        font-size: 18px;
+    }
+    .footer-form-email,
+        .footer-form-btn {
+        width: 352px;
+        height: 48px;
+        }
+}
