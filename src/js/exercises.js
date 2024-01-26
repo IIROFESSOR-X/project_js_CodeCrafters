@@ -118,7 +118,7 @@ function renderExercises(arrow, totalPages) {
               <p class="exer-workout-text">WORKOUT</p>
               <p class="exer-card-rating">${rating}</p>
               <svg class="card-rating-svg" width="16" height="16">
-                <use href="../img/symbol-defs.svg#icon-star"></use>
+                <use href="./img/symbol-defs.svg#icon-star"></use>
               </svg>
               <button class="card-start-button" data-id="${_id}">
                 Start
@@ -129,7 +129,7 @@ function renderExercises(arrow, totalPages) {
             </div>
             <div class="card-runing-men-wrapper">
               <svg class="card-runing-men-svg" width="24" height="24">
-                <use href="../img/symbol-defs.svg#icon-running-men"></use>
+                <use href="./img/symbol-defs.svg#icon-running-men"></use>
               </svg>
               <span class="card-name-traning">${names}
             </span></div>
@@ -183,11 +183,34 @@ function renderExercises(arrow, totalPages) {
   function addNumberOfPages() {
     formCard.dataset.status = ``;
     let numberOfPages = ``;
+    // if (totalPages > 5) {
+    //   if (currentPage > 3) {
+    //     numberOfPages = `<svg class="page-choice-svg" width="18" height="18">
+    //                         <use href="./img/symbol-defs.svg#icon-left"></use>
+    //                     </svg>`;
+    //   }
+
+    //   console.log(`123456`);
+    //   for (let i = currentPage - 2; i < currentPage + 2; i++) {
+    //     numberOfPages += `<li>
+    //       <button class="exercises-pages-button" data-card="${filterTypeCads}" data-number="${i}" data-type="${typeOfFilter}">${i}</button>
+    //     </li>`;
+    //   }
+    //   if (totalPages > currentPage - 2) {
+    //     numberOfPages += `<svg class="page-choice-svg" width="18" height="18">
+    //                         <use href="./img/symbol-defs.svg#icon-right"></use>
+    //                       </svg>`;
+    //   }
+    //   function addNumeri() {}
+    // } else if (totalPages < 6) {
+    // }
     for (let i = 1; i < totalPages + 1; i++) {
       numberOfPages += `<li>
           <button class="exercises-pages-button" data-card="${filterTypeCads}" data-number="${i}" data-type="${typeOfFilter}">${i}</button>
         </li>`;
     }
+
+    // console.log(numberOfPages);
     exercisesListPages.innerHTML = numberOfPages;
     document
       .querySelector(`.exercises-pages-button`)
@@ -206,7 +229,7 @@ function showsExercisesPages(e) {
       getExercisesFromServer(e.target.dataset.type);
       return;
     }
-    console.log(userTextSearch);
+
     getCardsFromServer(
       e.target.dataset.type,
       e.target.dataset.card,
@@ -263,21 +286,4 @@ function searchCardsByKeyWord(e) {
     formCard.reset();
     getCardsFromServer(filter, filterTypeCads, userTextSearch);
   }
-}
-
-// =-======================exercises
-function addsNumberOfPages(totalPages) {
-  formCard.dataset.status = ``;
-  let numberOfPages = ``;
-  if (totalPages > 5) {
-  }
-  for (let i = 1; i < totalPages + 1; i++) {
-    numberOfPages += `<li>
-          <button class="exercises-pages-button" data-card="${filterTypeCads}" data-number="${i}" data-type="${typeOfFilter}">${i}</button>
-        </li>`;
-  }
-  exercisesListPages.innerHTML = numberOfPages;
-  document
-    .querySelector(`.exercises-pages-button`)
-    .classList.add(`select-pages-ative`);
 }
