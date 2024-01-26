@@ -76,6 +76,7 @@ function createMessagNoResult() {
 
 filterExercises();
 function filterExercises(e) {
+  exercisesList.innerHTML = `<div class="loader"></div>`;
   buttonList.classList.remove(`form-is-open`);
   formCard.classList.add(`form-is-hiden`);
   filterTypeCads = ``;
@@ -119,10 +120,10 @@ function renderExercises(arrow, totalPages) {
               <svg class="card-rating-svg" width="16" height="16">
                 <use href="../img/symbol-defs.svg#icon-star"></use>
               </svg>
-              <button class="card-start-button">
+              <button class="card-start-button" data-id="${_id}">
                 Start
-                <svg class="card-arrow-svg" width="14" height="14">
-                  <use href="./img/symbol-defs.svg#icon-arrow"></use>
+                <svg class="card-arrow-svg" width="14" height="14" data-id="${_id}">
+                  <use href="./img/symbol-defs.svg#icon-arrow" data-id="${_id}"></use>
                 </svg>
               </button>
             </div>
@@ -195,21 +196,23 @@ function renderExercises(arrow, totalPages) {
   //   ========================================================================
 }
 function showsExercisesPages(e) {
-  if (currentPage == e.target.dataset.number) return;
-  const pageNumber = document.querySelector(`.select-pages-ative`);
-  pageNumber.classList.remove(`select-pages-ative`);
-  e.target.classList.add(`select-pages-ative`);
-  currentPage = e.target.dataset.number;
-  if (filterTypeCads == ``) {
-    getExercisesFromServer(e.target.dataset.type);
-    return;
+  if (e.target.dataset.type) {
+    if (currentPage == e.target.dataset.number) return;
+    const pageNumber = document.querySelector(`.select-pages-ative`);
+    pageNumber.classList.remove(`select-pages-ative`);
+    e.target.classList.add(`select-pages-ative`);
+    currentPage = e.target.dataset.number;
+    if (filterTypeCads == ``) {
+      getExercisesFromServer(e.target.dataset.type);
+      return;
+    }
+    console.log(userTextSearch);
+    getCardsFromServer(
+      e.target.dataset.type,
+      e.target.dataset.card,
+      userTextSearch
+    );
   }
-  console.log(userTextSearch);
-  getCardsFromServer(
-    e.target.dataset.type,
-    e.target.dataset.card,
-    userTextSearch
-  );
 }
 // ==================================================================
 function makeTypeOfTrainingCards(e) {
@@ -229,6 +232,10 @@ function makeTypeOfTrainingCards(e) {
       .toUpperCase()}${filterTypeCads.slice(1)}`;
 
     getCardsFromServer(filter, filterTypeCads);
+  }
+
+  if (e.target.dataset.id) {
+    // =========================call modal window
   }
 }
 async function getCardsFromServer(filter, filterType, keytext = ``) {
