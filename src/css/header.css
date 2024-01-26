@@ -34,7 +34,7 @@ div.header-container {
 
 @media screen and (min-width: 768px) {
   div.header-container {
-    padding: 0 50px;
+    padding: 0 48px;
   }
   .open-mobile-menu-btn {
     display: none;
@@ -115,5 +115,13 @@ div.header-container {
   .header-btn-favorites:hover,
   .header-btn-favorites:active {
     border: 1px solid rgba(95, 101, 96, 0.2);
+  }
+}
+
+/* =========================== */
+
+@media screen and (min-width: 1280px) {
+  div.header-container {
+    padding: 0 64px;
   }
 }

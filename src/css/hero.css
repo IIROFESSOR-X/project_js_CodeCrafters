@@ -123,3 +123,25 @@
   }
 }
 /* =================================== */
+
+@media (min-width: 1280px) {
+  .hero-background-wrapper {
+    background-image: url('../img/header/header-img-desktop.jpg');
+    padding: 780px 460px 32px 48px;
+  }
+  @media (min-device-pixel-ratio: 2) and (min-width: 1158px),
+    (min-resolution: 192dpi) and (min-width: 1158px),
+    (min-resolution: 2dppx) and (min-width: 1158px) {
+    .hero-background-wrapper {
+      background-image: url('../img/header/header-img-desktop@2x.jpg');
+    }
+  }
+  .hero-heading-wrapper {
+    padding: 225px 33px 241px 32px;
+  }
+  .hero-heading {
+    font-size: 120px;
+    line-height: 0.95em;
+    letter-spacing: -0.02em;
+  }
+}
