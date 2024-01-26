@@ -10,11 +10,11 @@
 @import url('./hero.css');
 @import url('./quote-section.css');
 @import url('./header.css');
+@import url('./exercises.css');
 @import url('./home-static-block.css');
 @import url('./footer.css');
 @import url('./exercise-card.css');
 @import url('./modal-window.css');
-
 
 :root {
   font-family: DM Sans, Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -23,11 +23,10 @@
   font-weight: 400;
 
   color: #242424;
-  --main-color : #7E847F;
-  --hover-color: #5F6560;
-  --main-bg-color:#F6F6F6;
-  --section-bg-color: #E8E8E8;
-
+  --main-color: #7e847f;
+  --hover-color: #5f6560;
+  --main-bg-color: #f6f6f6;
+  --section-bg-color: #e8e8e8;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
