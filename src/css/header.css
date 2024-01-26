@@ -22,7 +22,7 @@ div.header-container {
 .open-mobile-menu-btn {
   display: flex;
   background-color: transparent;
-  border: none;
+  border: transparent;
   justify-content: center;
   align-items: center;
 }
@@ -30,7 +30,7 @@ div.header-container {
   display: none;
 }
 
-/* --------------------------- */
+/* ================================= */
 
 @media screen and (min-width: 768px) {
   div.header-container {
@@ -72,9 +72,9 @@ div.header-container {
   }
 
   .header-nav {
-    width: 211px;
     height: 52px;
     border-radius: 60px;
+    padding: 8px 16px;
     background: var(--main-color);
     display: flex;
     justify-content: center;
@@ -113,7 +113,7 @@ div.header-container {
   }
 }
 
-/* =========================== */
+/* ==================================== */
 
 @media screen and (min-width: 1280px) {
   div.header-container {
