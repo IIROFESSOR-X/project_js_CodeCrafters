@@ -46,7 +46,7 @@ async function searchImageOnServer(
   if (document.body.clientWidth >= 1440 && filterType) params.limit = 9;
   if (document.body.clientWidth >= 768 && !filterType) params.limit = 12;
   if (document.body.clientWidth >= 768 && filterType) params.limit = 8;
-  console.log(params);
+
   // ========================
   let parameters = new URLSearchParams(params).toString();
 
@@ -121,18 +121,18 @@ function renderExercises(arrow, totalPages) {
               <p class="exer-workout-text">WORKOUT</p>
               <p class="exer-card-rating">${rating}</p>
               <svg class="card-rating-svg" width="16" height="16">
-                <use xlink:href="/img/symbol-defs.svg#icon-star"></use>
+                <use href="/img/symbol-defs.svg#icon-star"></use>
               </svg>
               <button class="card-start-button" data-id="${_id}">
-                Start
+                Start                
                 <svg class="card-arrow-svg" width="14" height="14" data-id="${_id}">
-                  <use xlink:href="/img/symbol-defs.svg#icon-arrow" data-id="${_id}"></use>
+                  <use href="/img/symbol-defs.svg#icon-arrow" data-id="${_id}"></use>
                 </svg>
               </button>
             </div>
             <div class="card-runing-men-wrapper">
               <svg class="card-runing-men-svg" width="24" height="24">
-                <use xlink:href="/img/symbol-defs.svg#icon-running-men"></use>
+                <use href="/img/symbol-defs.svg#icon-running-men"></use>
               </svg>
               <span class="card-name-traning">${names}
             </span></div>
@@ -188,7 +188,7 @@ function renderExercises(arrow, totalPages) {
   function addNumberOfPages(filter) {
     formCard.dataset.status = ``;
     let numberOfPages = ``;
-    console.log(currentPage, totalPages);
+
     exercisesListPages.innerHTML = formatNumericOfPages(
       currentPage,
       totalPages,
@@ -212,17 +212,17 @@ function renderExercises(arrow, totalPages) {
 }
 function showsExercisesPages(e) {
   const data = e.target.dataset;
-  console.log(data.id);
+
   if (e.target.dataset.type || data.id) {
     if (currentPage == e.target.dataset.number) return;
     currentPage = e.target.dataset.number;
     if (data.id) {
       currentPage = totalPageAvailable;
       if (data.id == `left`) currentPage = 1;
-      console.log(totalPageAvailable);
-
-      console.log(currentPage);
     }
+    document
+      .querySelector(`.exercises-section`)
+      .scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (filterTypeCads == ``) {
       getExercisesFromServer(e.target.dataset.type);
       return;
