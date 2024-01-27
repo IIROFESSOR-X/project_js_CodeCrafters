@@ -15,7 +15,11 @@
   "author": "Roman Samoylenko <iirofessor@gmail.com>",
   "license": "ISC",
   "dependencies": {
+
+    "izitoast": "^1.4.0",
+
     "axios": "^1.6.7",
+
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
   }
