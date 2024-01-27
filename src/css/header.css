@@ -72,7 +72,7 @@ div.header-container {
   }
 
   .header-nav {
-    height: 52px;
+    width: 211px;
     border-radius: 60px;
     padding: 8px 16px;
     background: var(--main-color);
@@ -83,11 +83,9 @@ div.header-container {
   }
   .header-btn-home {
     padding: 6px 26px;
-    gap: 10px;
     border-radius: 30px;
     background: #ffffff;
     border: none;
-
     color: #1b1b1b;
     font-family: 'DM Sans';
     font-size: 16px;
@@ -103,6 +101,7 @@ div.header-container {
   .header-btn-favorites {
     background-color: var(--main-color);
     border: none;
+    padding: 6px 0;
     border-radius: 30px;
     color: var(--main-bg-color);
     font-family: 'DM Sans';
