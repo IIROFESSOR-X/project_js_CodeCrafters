@@ -134,6 +134,27 @@ color: #1B1B1B;
 .quote-inform {
   padding-top: 80px;
 }
+.fit-girl {
+  width: 368px;
+  height: 302px;
+}
+.time-sport {
+  width: 368px;
+  height: 302px;
+}
+.info-sport {
+  display: flex;
+}
 
 }
 
+
+@media screen and (min-width: 1270px) {
+  .quate-day {
+    width: 704px;
+    height: 302px;
+  }
+  .quote-inform {
+    display: flex;
+  }
+}
