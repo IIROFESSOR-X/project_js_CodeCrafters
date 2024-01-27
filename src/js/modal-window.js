@@ -1,11 +1,10 @@
 import axios from "axios";
 
-const modalBtn = document.querySelector('#modalExersises');
 const modalWindow = document.querySelector('.container-for-modal');
 
-const openOnClick = () => {
+export const openOnClick = (id) => {
     try {
-        const exerciseId = modalBtn.dataset.exersiseid;
+        const exerciseId = id;
 
         axios({
             method: 'get',
@@ -28,7 +27,6 @@ const openOnClick = () => {
         console.error(error);
     }
 }
-modalBtn.addEventListener('click', openOnClick);
 
 function renderModalMarkup(exercise = {}) {
     const markup = `
