@@ -40,7 +40,7 @@ document
         }
       })
       .catch(error => {
-        console.error();
+        console.error(error);
         alert('Failed to subscribe. Please try again later.');
       });
   });
