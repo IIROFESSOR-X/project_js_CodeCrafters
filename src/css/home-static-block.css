@@ -25,9 +25,6 @@
     line-height: 1.29;
     margin-top: 14px;
 }
-.static-block-image-wrap {
-    height: 269px;
-}
 .static-block-img {
     border-radius: 30px;
     object-fit: cover;
@@ -51,13 +48,9 @@
 /* TABLET */
 
 @media screen and (min-width: 768px) {
-    .static-block-image-wrap {
-        height: 302px;
-    }
     .static-block-img {
         border-radius: 50px;
-        object-fit: cover;
-        height: auto;
+        height: 302px;
     }
     .static-block-info {
         border-radius: 50px;
@@ -90,5 +83,9 @@
     .static-block-info {
         width: 50%;
         padding: 64px 64px 64px 114px;
+        height: 302px;
+    }
+    .static-block-img {
+        max-width: 704px;
     }
 }
