@@ -1,5 +1,6 @@
 // ===================exercises
 import axios from 'axios';
+import { openOnClick } from './modal-window';
 
 const exercisesTitle = document.querySelector(`.exercises-title-span`);
 const exercisesList = document.querySelector(`.exercises-list`);
@@ -13,8 +14,9 @@ let currentPage = 1,
   perPage = 8,
   typeOfFilter = `Muscles`,
   filterTypeCads = ``,
-  userTextSearch = ``;
-// document.body.clientWidth >= 768 ? (perPage = 12) : (perPage = 8);
+  userTextSearch = ``,
+  totalPageAvailable = 0;
+
 const filterButton = document.querySelectorAll(`.exercises-button`);
 [...filterButton].map((b, i) => {
   if (i === 0) b.classList.add(`exercises-button-active`);
@@ -44,7 +46,7 @@ async function searchImageOnServer(
   if (document.body.clientWidth >= 1440 && filterType) params.limit = 9;
   if (document.body.clientWidth >= 768 && !filterType) params.limit = 12;
   if (document.body.clientWidth >= 768 && filterType) params.limit = 8;
-
+  console.log(params);
   // ========================
   let parameters = new URLSearchParams(params).toString();
 
@@ -53,6 +55,7 @@ async function searchImageOnServer(
       `https://energyflow.b.goit.study/api/${getType}?${parameters}`
     );
 
+    totalPageAvailable = response.data.totalPages;
     if (keyWord && response.data.results.length == 0) {
       createMessagNoResult();
       return;
@@ -84,7 +87,7 @@ function filterExercises(e) {
   currentPage = 1;
   if (e) {
     const button = e.target;
-    if (button.classList.contains(`exercises-button-active`)) return;
+    // if (button.classList.contains(`exercises-button-active`)) return;
     typeOfFilter = button.dataset.name;
     document
       .querySelector(`.exercises-button-active`)
@@ -118,18 +121,18 @@ function renderExercises(arrow, totalPages) {
               <p class="exer-workout-text">WORKOUT</p>
               <p class="exer-card-rating">${rating}</p>
               <svg class="card-rating-svg" width="16" height="16">
-                <use href="/img/symbol-defs.svg#icon-star"></use>
+                <use xlink:href="/img/symbol-defs.svg#icon-star"></use>
               </svg>
               <button class="card-start-button" data-id="${_id}">
                 Start
                 <svg class="card-arrow-svg" width="14" height="14" data-id="${_id}">
-                  <use href="/img/symbol-defs.svg#icon-arrow" data-id="${_id}"></use>
+                  <use xlink:href="/img/symbol-defs.svg#icon-arrow" data-id="${_id}"></use>
                 </svg>
               </button>
             </div>
             <div class="card-runing-men-wrapper">
               <svg class="card-runing-men-svg" width="24" height="24">
-                <use href="/img/symbol-defs.svg#icon-running-men"></use>
+                <use xlink:href="/img/symbol-defs.svg#icon-running-men"></use>
               </svg>
               <span class="card-name-traning">${names}
             </span></div>
@@ -150,6 +153,7 @@ function renderExercises(arrow, totalPages) {
       ``
     );
     exercisesList.innerHTML = listCodeCards;
+    addNumberOfPages();
   }
   if (!arrow[0]._id) {
     let listCode = arrow.reduce(
@@ -167,44 +171,58 @@ function renderExercises(arrow, totalPages) {
       ``
     );
     exercisesList.innerHTML = listCode;
+    addNumberOfPages(arrow.filter);
   }
 
-  if (
-    !exercisesListPages.textContent ||
-    typeOfFilter !==
-      document.querySelector(`.exercises-pages-button`).dataset.type ||
-    formCard.dataset.status
-  ) {
-    formCard.dataset.status = ``;
-    addNumberOfPages();
-  }
+  // if (
+  //   !exercisesListPages.textContent ||
+  //   typeOfFilter !==
+  //     document.querySelector(`.exercises-pages-button`).dataset.type ||
+  //   formCard.dataset.status
+  // ) {
+  //   formCard.dataset.status = ``;
+  //   addNumberOfPages();
+  // }
 
   //   ======================================
-  function addNumberOfPages() {
+  function addNumberOfPages(filter) {
     formCard.dataset.status = ``;
     let numberOfPages = ``;
+    console.log(currentPage, totalPages);
+    exercisesListPages.innerHTML = formatNumericOfPages(
+      currentPage,
+      totalPages,
+      filter
+    );
+    // for (let i = 1; i < totalPages + 1; i++) {
+    //   numberOfPages += `<li>
+    //       <button class="exercises-pages-button" data-card="${filterTypeCads}"
+    //        data-number="${i}" data-type="${typeOfFilter}">${i}</button>
+    //     </li>`;
+    // }
 
-    for (let i = 1; i < totalPages + 1; i++) {
-      numberOfPages += `<li>
-          <button class="exercises-pages-button" data-card="${filterTypeCads}" data-number="${i}" data-type="${typeOfFilter}">${i}</button>
-        </li>`;
-    }
-
-    // console.log(numberOfPages);
-    exercisesListPages.innerHTML = numberOfPages;
-    document
-      .querySelector(`.exercises-pages-button`)
-      .classList.add(`select-pages-ative`);
+    // exercisesListPages.innerHTML = numberOfPages;
+    // if (totalPages > 5) formatNumericOfPages(currentPage, totalPages);
+    // if ((currentPage = 1))
+    //   document
+    //     .querySelector(`.exercises-pages-button`)
+    //     .classList.add(`select-pages-ative`);
   }
   //   ========================================================================
 }
 function showsExercisesPages(e) {
-  if (e.target.dataset.type) {
+  const data = e.target.dataset;
+  console.log(data.id);
+  if (e.target.dataset.type || data.id) {
     if (currentPage == e.target.dataset.number) return;
-    const pageNumber = document.querySelector(`.select-pages-ative`);
-    pageNumber.classList.remove(`select-pages-ative`);
-    e.target.classList.add(`select-pages-ative`);
     currentPage = e.target.dataset.number;
+    if (data.id) {
+      currentPage = totalPageAvailable;
+      if (data.id == `left`) currentPage = 1;
+      console.log(totalPageAvailable);
+
+      console.log(currentPage);
+    }
     if (filterTypeCads == ``) {
       getExercisesFromServer(e.target.dataset.type);
       return;
@@ -215,6 +233,64 @@ function showsExercisesPages(e) {
       e.target.dataset.card,
       userTextSearch
     );
+  }
+}
+
+function formatNumericOfPages(cPage, tPage, fillter) {
+  cPage = Number.parseInt(cPage);
+  let leftErrow = `<svg class="page-choice-svg" width="18" height="18" data-card="${filterTypeCads}" data-id="left" data-type="${typeOfFilter}">
+                      <use href="./img/symbol-defs.svg#icon-left" data-id="left"
+                      data-type="${typeOfFilter}" data-card="${filterTypeCads}"></use>
+                   </svg>`;
+  let rightErrow = `<svg class="page-choice-svg" width="18" height="18" data-id="right" data-card="${filterTypeCads}" data-type="${typeOfFilter}">
+                       <use href="./img/symbol-defs.svg#icon-right" data-id="right" data-card="${filterTypeCads}" data-type="${typeOfFilter}"></use>
+                   </svg>`;
+  let start = 0,
+    resultHtml = ``,
+    end = 0;
+
+  if (tPage < 6) {
+    start = 1;
+    end = tPage + 1;
+    return addNumeric(start, end);
+  }
+  if (tPage > 5 && cPage > 0 && cPage < 4) {
+    end = 5 + 1;
+    resultHtml = addNumeric(start + 1, end) + rightErrow;
+    return resultHtml;
+  }
+
+  if (cPage > 3 && cPage + 2 < tPage) {
+    start = cPage - 2;
+    end = cPage + 3;
+
+    return leftErrow + addNumeric(start, end) + rightErrow;
+  }
+  if (tPage <= cPage + 2) {
+    tPage == cPage + 2
+      ? (start = cPage - 2)
+      : tPage - cPage == 1
+      ? (start = cPage - 3)
+      : (start = cPage - 4);
+    return leftErrow + addNumeric(start, tPage + 1);
+  }
+  function addNumeric(s, e) {
+    let r = ``;
+    for (let i = s; i < e; i++) {
+      if (cPage == i) {
+        r += `<li>
+          <button class="exercises-pages-button select-pages-ative" data-card="${filterTypeCads}"
+           data-number="${i}" data-type="${typeOfFilter}">${i}</button>
+        </li>`;
+      }
+      if (cPage != i) {
+        r += `<li>
+          <button class="exercises-pages-button" data-card="${filterTypeCads}"
+           data-number="${i}" data-type="${typeOfFilter}">${i}</button>
+        </li>`;
+      }
+    }
+    return r;
   }
 }
 // ==================================================================
@@ -240,6 +316,7 @@ function makeTypeOfTrainingCards(e) {
 
   if (e.target.dataset.id) {
     // =========================call modal window
+    openOnClick(e.target.dataset.id);
   }
 }
 async function getCardsFromServer(filter, filterType, keytext = ``) {
