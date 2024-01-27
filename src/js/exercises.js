@@ -1,6 +1,6 @@
 // ===================exercises
 import axios from 'axios';
-// import { openOnClick } from './modal-window';
+import { openOnClick } from './modal-window';
 
 const exercisesTitle = document.querySelector(`.exercises-title-span`);
 const exercisesList = document.querySelector(`.exercises-list`);
