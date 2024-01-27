@@ -1,0 +1,275 @@
+.header-all {
+  margin-top: 40px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav {
+  display: none;
+}
+.open-mobile-menu-btn {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+.header-social-list {
+  display: none;
+}
+
+.quate-day {
+  height: 335px;
+  Height: 272px;
+  border-radius: 30px;
+  background-image: url('../img/favorites/quate-day-mob.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.fit-girl {
+  height: 335px;
+  Height: 272px;
+  border-radius: 30px;
+  background-image: url('../img/favorites/fit-girl-mob.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.time-sport {
+  background-color: white;
+  border-radius: 30px;
+  height: 335px;
+  Height: 272px;
+  padding-top: 96px;
+  padding-bottom: 121px;
+  padding-left: 102px;
+  padding-right: 165px;
+  padding-bottom: 40px;
+  padding-right: 20px;
+  position: relative;
+}
+.quote-title {
+  color: #1B1B1B;
+}
+.quote-text {
+color: #1B1B1B;
+}
+.exercises-container-fv {
+  background: #E8E8E8;
+  width: 335px;
+  height: 450px;
+  border-radius: 30px;
+}
+.exercises-title-fv {
+  padding-left: 20px;
+  padding-top: 40px;
+  font-size: 32px;
+  font-weight: 400;
+}
+.gym-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 44px;
+  padding-right: 44px;
+  padding-top: 80px;
+  padding-bottom: 128px;
+
+}
+.dumbbell {
+  width: 85px;
+  height: 52px;
+}
+.info-gym-text {
+  padding-top: 28px;
+  display: flex;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  line-height: 18px
+}
+
+@media screen and (min-width: 768px) {
+  .header-container {
+    padding: 0 50px;
+  }
+  .open-mobile-menu-btn {
+    display: none;
+  }
+
+  .header-nav-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .header-social-link {
+    transition: border 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .header-social-link:hover,
+  .header-social-link:focus {
+    border: 1px solid rgba(95, 101, 96, 0.2);
+    stroke: grey;
+    fill: grey;
+  }
+
+  .logo-icon {
+    width: 150px;
+    height: 28px;
+  }
+  .header-social-list {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+  .header-nav {
+    width: 211px;
+    height: 52px;
+    border-radius: 60px;
+    background: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-btn-home-fv {
+    gap: 10px;
+    border-radius: 30px;
+    background: #7e847f;
+    border: none;
+
+    color: #F6F6F6;
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5em;
+  }
+  .header-btn-favorites-fv {
+    width: 95px;
+    height: 36px;
+    background-color: white;
+    border-radius: 30px;
+    border: none;
+    color: #1b1b1b;
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5em;
+  }
+.quate-day {
+  background-image: url("../img/favorites/quote-tablet.png");
+}
+.quote-inform {
+  padding-top: 80px;
+}
+.fit-girl {
+  width: 368px;
+  height: 302px;
+}
+.time-sport {
+  width: 368px;
+  height: 302px;
+}
+.info-sport {
+  display: flex;
+}
+  .exercises-container-fv {
+    background: #E8E8E8;
+    width: 736px;
+    height: 928px;
+    border-radius: 30px;
+  }
+  .exercises-title-fv {
+    padding-left: 48px;
+    padding-top: 64px;
+    font-size: 44px;
+    font-weight: 400;
+  }
+  .gym-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 91px;
+    padding-right: 91px;
+    padding-top: 208px;
+    padding-bottom: 437px;
+
+  }
+  .dumbbell {
+    width: 115px;
+    height: 71px;
+  }
+  .info-gym-text {
+    padding-top: 28px;
+    display: flex;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    line-height: 24px
+  }
+
+}
+
+
+@media screen and (min-width: 1270px) {
+  .quote-inform {
+    width: 1408px;
+  }
+  .quate-day {
+    width: 704px;
+    height: 302px;
+  }
+  .fit-girl {
+    width: 352px;
+    height: 302px;
+  }
+  .time-sport {
+    width: 352px;
+    height: 302px;
+  }
+  .quote-inform {
+    display: flex;
+  }
+  .exercises-container-fv {
+    background: #E8E8E8;
+    width: 1408px;
+    height: 687px;
+    border-radius: 50px;
+  }
+  .exercises-title-fv {
+    padding-left: 48px;
+    padding-top: 64px;
+    font-size: 44px;
+    font-weight: 400;
+  }
+  .gym-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 91px;
+    padding-right: 91px;
+    padding-top: 208px;
+    padding-bottom: 437px;
+
+  }
+  .dumbbell {
+    width: 115px;
+    height: 71px;
+  }
+  .info-gym-text {
+    padding-top: 28px;
+    display: flex;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    line-height: 24px
+  }
+
+}
+

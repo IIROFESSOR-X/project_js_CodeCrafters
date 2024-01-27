@@ -22,7 +22,7 @@ div.header-container {
 .open-mobile-menu-btn {
   display: flex;
   background-color: transparent;
-  border: none;
+  border: transparent;
   justify-content: center;
   align-items: center;
 }
@@ -30,21 +30,32 @@ div.header-container {
   display: none;
 }
 
-/* --------------------------- */
+/* ================================= */
 
 @media screen and (min-width: 768px) {
   div.header-container {
-    padding: 0 50px;
+    padding: 0 48px;
   }
   .open-mobile-menu-btn {
     display: none;
   }
 
-  .header-nav-icon {
-    width: 44px;
-    height: 44px;
+  .header-social-list {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
   }
   .header-social-link {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(126, 132, 127, 0.2);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    stroke: var(--main-color);
+    fill: var(--main-color);
+
     transition: border 0.25s cubic-bezier(0.4, 0, 0.2, 1),
       stroke 0.25s cubic-bezier(0.4, 0, 0.2, 1),
       fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -52,23 +63,18 @@ div.header-container {
   .header-social-link:hover,
   .header-social-link:focus {
     border: 1px solid rgba(95, 101, 96, 0.2);
-    stroke: var(--gray-color);
-    fill: var(--gray-color);
+    fill: var(--hover-color);
+    stroke: var(--hover-color);
   }
-
   .logo-icon {
     width: 150px;
     height: 28px;
   }
-  .header-social-list {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-  }
+
   .header-nav {
-    width: 211px;
     height: 52px;
     border-radius: 60px;
+    padding: 8px 16px;
     background: var(--main-color);
     display: flex;
     justify-content: center;
@@ -88,15 +94,29 @@ div.header-container {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5em;
+    transition: border 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .header-btn-home:hover,
+  .header-btn-home:active {
+    border: 1px solid rgba(95, 101, 96, 0.2);
   }
   .header-btn-favorites {
     background-color: var(--main-color);
     border: none;
+    border-radius: 30px;
     color: var(--main-bg-color);
     font-family: 'DM Sans';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5em;
+  }
+}
+
+/* ==================================== */
+
+@media screen and (min-width: 1280px) {
+  div.header-container {
+    padding: 0 64px;
   }
 }

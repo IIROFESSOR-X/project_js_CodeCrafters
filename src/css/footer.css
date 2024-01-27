@@ -1,3 +1,4 @@
+
 .logo {
 color: #ffffff;
 display: block;
@@ -58,3 +59,58 @@ letter-spacing: -0.64px;
   margin-left: auto;
   border-radius: 30px;
 }  
+
+
+
+
+.footer-form-btn {
+    background-color: #7E847F;
+}
+.footer-form-email,
+.footer-form-btn {
+    border-radius: 30px;
+    }
+
+@media screen and (max-width: 375px) {
+   
+    .footer-form {
+    font-size: 14px;
+    width: 295px;
+    }
+    .footer-form-email,
+    .footer-form-btn {
+        width: 295px;
+    height: 42px;
+    }
+    .footer-form-email {
+        padding-left: 14px;
+        margin-bottom: 12px;
+    }
+}
+  
+@media screen and (min-width: 768px) and (max-width: 1407px) {
+    .footer-form {
+    width: 352px;
+    font-size: 18px;
+}
+.footer-form-email,
+    .footer-form-btn {
+        width: 352px;
+    height: 48px;
+    }
+}
+
+@media screen and (min-width: 1408px) {
+    .footer-form {
+        font-size: 18px;
+    }
+    .footer-form-email,
+        .footer-form-btn {
+        width: 352px;
+        height: 48px;
+        }
+        .footer-form-email {
+            padding-left: 14px;
+            
+        }
+}

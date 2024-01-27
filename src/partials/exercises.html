@@ -1,0 +1,50 @@
+<section class="exercises-section">
+  <div class="container">
+    <div class="exercises-container">
+      <h2 class="exercises-title">
+        Exercises <span class="exercises-title-span"></span>
+      </h2>
+      <div class="exer-form-button-wrapper">
+        <ul class="exercises-button-list">
+          <li class="exercises-button-item">
+            <button
+              class="exercises-button exercises-button-active"
+              data-name="Muscles"
+            >
+              Muscles
+            </button>
+          </li>
+          <li class="exercises-button-item">
+            <button class="exercises-button" data-name="Body parts">
+              Body parts
+            </button>
+          </li>
+          <li class="exercises-button-item">
+            <button class="exercises-button" data-name="Equipment">
+              Equipment
+            </button>
+          </li>
+        </ul>
+
+        <form class="exercises-form form-is-hiden">
+          <div class="form-wrapper">
+            <label class="exercises-label"
+              ><input
+                name="usertext"
+                placeholder="Search"
+                type="text"
+                class="exercises-search-input"
+            /></label>
+            <button class="exer-form-button" type="submit">
+              <svg class="exercises-form-svg" width="18" height="18">
+                <use href="./img/symbol-defs.svg#icon-search"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+      <ul class="exercises-list" data-click=""></ul>
+      <ul class="exercises-list-pages" data-click=""></ul>
+    </div>
+  </div>
+</section>
