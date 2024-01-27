@@ -58,6 +58,40 @@
 .quote-text {
 color: #1B1B1B;
 }
+.exercises-container-fv {
+  background: #E8E8E8;
+  width: 335px;
+  height: 450px;
+  border-radius: 30px;
+}
+.exercises-title-fv {
+  padding-left: 20px;
+  padding-top: 40px;
+  font-size: 32px;
+  font-weight: 400;
+}
+.gym-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 44px;
+  padding-right: 44px;
+  padding-top: 80px;
+  padding-bottom: 128px;
+
+}
+.dumbbell {
+  width: 85px;
+  height: 52px;
+}
+.info-gym-text {
+  padding-top: 28px;
+  display: flex;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  line-height: 18px
+}
 
 @media screen and (min-width: 768px) {
   .header-container {
@@ -145,16 +179,97 @@ color: #1B1B1B;
 .info-sport {
   display: flex;
 }
+  .exercises-container-fv {
+    background: #E8E8E8;
+    width: 736px;
+    height: 928px;
+    border-radius: 30px;
+  }
+  .exercises-title-fv {
+    padding-left: 48px;
+    padding-top: 64px;
+    font-size: 44px;
+    font-weight: 400;
+  }
+  .gym-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 91px;
+    padding-right: 91px;
+    padding-top: 208px;
+    padding-bottom: 437px;
+
+  }
+  .dumbbell {
+    width: 115px;
+    height: 71px;
+  }
+  .info-gym-text {
+    padding-top: 28px;
+    display: flex;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    line-height: 24px
+  }
 
 }
 
 
 @media screen and (min-width: 1270px) {
+  .quote-inform {
+    width: 1408px;
+  }
   .quate-day {
     width: 704px;
+    height: 302px;
+  }
+  .fit-girl {
+    width: 352px;
+    height: 302px;
+  }
+  .time-sport {
+    width: 352px;
     height: 302px;
   }
   .quote-inform {
     display: flex;
   }
+  .exercises-container-fv {
+    background: #E8E8E8;
+    width: 1408px;
+    height: 687px;
+    border-radius: 50px;
+  }
+  .exercises-title-fv {
+    padding-left: 48px;
+    padding-top: 64px;
+    font-size: 44px;
+    font-weight: 400;
+  }
+  .gym-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 91px;
+    padding-right: 91px;
+    padding-top: 208px;
+    padding-bottom: 437px;
+
+  }
+  .dumbbell {
+    width: 115px;
+    height: 71px;
+  }
+  .info-gym-text {
+    padding-top: 28px;
+    display: flex;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    line-height: 24px
+  }
+
 }
+
