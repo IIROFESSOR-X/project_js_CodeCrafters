@@ -22,6 +22,10 @@
   border: none;
   transition: color 250ms linear, background-color 250ms linear;
 }
+.exercises-button:hover,
+.exercises-button:focus {
+  background-color: #d3d0d0;
+}
 .exercises-button-list {
   display: flex;
   column-gap: 6px;
@@ -35,9 +39,7 @@
 .form-wrapper {
   position: relative;
 }
-/* .exercises-form {
-  margin-bottom: 40px;
-} */
+
 .exercises-label {
   display: block;
 }
@@ -87,6 +89,7 @@
   row-gap: 20px;
   margin-bottom: 20px;
 }
+
 .exercises-item {
   display: flex;
   flex-direction: column;
@@ -99,6 +102,13 @@
   background-size: cover;
   border-radius: 12px;
   border: 1px solid rgba(246, 246, 246, 0.3);
+  cursor: pointer;
+  transition: transform 250ms linear, box-shadow 250ms linear;
+}
+.exercises-item:hover,
+.exercises-item:focus {
+  transform: scale(1.03);
+  box-shadow: 0px 0px 3px 1px rgba(156, 156, 156, 1);
 }
 .exercises-item-text {
   color: #f6f6f6;
@@ -130,13 +140,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 250ms linear;
+}
+.exercises-pages-button:hover,
+.exercises-pages-button:focus {
+  color: rgba(3, 3, 3, 0.7);
 }
 /* ======================= */
 .exercises-button-active {
   color: #f6f6f6;
   background-color: #7e847f;
+  transition: background-color 250ms linear;
 }
-
+.exercises-button-active:hover,
+.exercises-button-active:focus {
+  background-color: #5f6560;
+}
 .select-pages-ative {
   color: #1b1b1b;
   border-radius: 50%;
@@ -184,7 +203,8 @@
   margin-bottom: 3px;
 }
 .card-start-button {
-  border: none;
+  border: transparent;
+  border-radius: 30px;
   background-color: transparent;
   color: #1b1b1b;
   font-family: 'DM Sans';
@@ -195,7 +215,12 @@
   justify-content: center;
   column-gap: 8px;
   margin-left: auto;
-  padding: 0;
+  padding: 4px 12px;
+  transition: background-color 250ms linear;
+}
+.card-start-button:hover,
+.card-start-button:focus {
+  background-color: #e8e8e8;
 }
 .card-arrow-svg {
   stroke: #1b1b1b;
@@ -286,6 +311,7 @@
   width: 34px;
   height: 22px;
   background-color: transparent;
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
   .exer-title-slash {
@@ -395,10 +421,10 @@
     width: 424px;
   }
   .card-burned-calories-text {
-    margin-right: 10px;
+    margin-right: 8px;
   }
   .card-body-part-text {
-    margin-right: 10px;
+    margin-right: 8px;
   }
   .exer-card-background {
     padding: 16px 14px;
@@ -412,6 +438,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 100px;
+  margin-bottom: 950px;
   width: 50px;
   aspect-ratio: 1;
   border-radius: 50%;

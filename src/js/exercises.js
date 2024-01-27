@@ -43,9 +43,10 @@ async function searchImageOnServer(
   params.page = currentPages;
   params.limit = perPages;
   if (keyWord) params.keyword = keyWord;
-  if (document.body.clientWidth >= 1440 && filterType) params.limit = 9;
+
   if (document.body.clientWidth >= 768 && !filterType) params.limit = 12;
   if (document.body.clientWidth >= 768 && filterType) params.limit = 8;
+  if (document.body.clientWidth >= 1440 && filterType) params.limit = 9;
 
   // ========================
   let parameters = new URLSearchParams(params).toString();
