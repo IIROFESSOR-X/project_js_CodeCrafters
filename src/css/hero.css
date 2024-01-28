@@ -13,8 +13,7 @@
   background-size: cover;
 }
 
-@media (min-device-pixel-ratio: 2) and (max-width: 767px),
-  (min-resolution: 192dpi) and (max-width: 767px),
+@media (min-resolution: 192dpi) and (max-width: 767px),
   (min-resolution: 2dppx) and (max-width: 767px) {
   .hero-background-wrapper {
     background-image: url('../img/header/header-img-mobile@2x.jpg');
@@ -84,8 +83,7 @@
     padding: 764px 32px 64px 20px;
     border-radius: 50px 0px 50px 50px;
   }
-  @media (min-device-pixel-ratio: 2) and (min-width: 768px),
-    (min-resolution: 192dpi) and (min-width: 768px),
+  @media (min-resolution: 192dpi) and (min-width: 768px),
     (min-resolution: 2dppx) and (min-width: 768px) {
     .hero-background-wrapper {
       background-image: url('../img/header/header-img-tablet@2x.jpg');
@@ -129,8 +127,7 @@
     height: 884px;
     background-image: url('../img/header/header-img-desktop.jpg');
   }
-  @media (min-device-pixel-ratio: 2) and (min-width: 1158px),
-    (min-resolution: 192dpi) and (min-width: 1158px),
+  @media (min-resolution: 192dpi) and (min-width: 1158px),
     (min-resolution: 2dppx) and (min-width: 1158px) {
     .hero-background-wrapper {
       background-image: url('../img/header/header-img-desktop@2x.jpg');
