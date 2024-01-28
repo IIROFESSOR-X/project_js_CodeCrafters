@@ -346,6 +346,9 @@
   .exercises-list {
     font-size: 24px;
   }
+  .card-row-gap-js {
+    gap: 20px 14px;
+  }
   .exercises-item {
     height: 250px;
     width: 313px;
@@ -409,6 +412,9 @@
 @media screen and (min-width: 1440px) {
   .exercises-list {
     gap: 40px 20px;
+  }
+  .card-row-gap-js {
+    row-gap: 28px;
   }
   .exercises-item-text {
     font-size: 24px;

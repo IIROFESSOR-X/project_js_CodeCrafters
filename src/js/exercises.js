@@ -182,8 +182,9 @@ function renderExercises(arrow, totalPages) {
       },
       ``
     );
-
+    exercisesList.classList.add(`card-row-gap-js`);
     exercisesList.innerHTML = listCodeCards;
+
     addNumberOfPages();
   }
   if (!arrow[0]._id) {
@@ -202,6 +203,7 @@ function renderExercises(arrow, totalPages) {
       ``
     );
     formCard.dataset.status = '';
+    exercisesList.classList.remove(`card-row-gap-js`);
     exercisesList.innerHTML = listCode;
     addNumberOfPages(arrow.filter);
   }
@@ -209,7 +211,6 @@ function renderExercises(arrow, totalPages) {
   //   ======================================
   function addNumberOfPages(filter) {
     formCard.dataset.status = ``;
-    let numberOfPages = ``;
 
     exercisesListPages.innerHTML = formatNumericOfPages(
       currentPage,
