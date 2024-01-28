@@ -1,32 +1,40 @@
 /* Reset styles */
 @font-face {
   font-family: "DM Sans";
-    src: local("DM Sans"),
-      url(../fonts/DMSans-Regular.woff2) format("woff2"),
-      url(../fonts/DMSans-Regular.woff) format("woff");
+  src: local("DM Sans"),
+    url(../fonts/DMSans-Regular.woff2) format("woff2"),
+    url(../fonts/DMSans-Regular.woff) format("woff");
   font-weight: 400;
 }
+
 @font-face {
   font-family: "DM Sans";
-    src: local("DM Sans"),
-      url(../fonts/DMSans-Medium.woff2) format("woff2"),
-      url(../fonts/DMSans-Medium.woff) format("woff");
+  src: local("DM Sans"),
+    url(../fonts/DMSans-Medium.woff2) format("woff2"),
+    url(../fonts/DMSans-Medium.woff) format("woff");
   font-weight: 500;
 }
+
 @font-face {
   font-family: "DM Sans";
-    src: local("DM Sans"),
-      url(../fonts/DMSans-Bold.woff2) format("woff2"),
-      url(../fonts/DMSans-Bold.woff) format("woff");
+  src: local("DM Sans"),
+    url(../fonts/DMSans-Bold.woff2) format("woff2"),
+    url(../fonts/DMSans-Bold.woff) format("woff");
   font-weight: 700;
 }
+
 @font-face {
   font-family: 'DM Sans';
-    src: local("DM Sans"),
-      url(../fonts/DMSans-Italic.woff2) format("woff2"),
-      url(../fonts/DMSans-Italic.woff) format("woff");
-    font-weight: 700;
+  src: local("DM Sans"),
+    url(../fonts/DMSans-Italic.woff2) format("woff2"),
+    url(../fonts/DMSans-Italic.woff) format("woff");
+  font-weight: 700;
   font-style: italic;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #f6f6f6;
 }
 
 h1,
@@ -63,10 +71,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-body {
-  font-family: 'DM Sans', sans-serif;
-  background-color: #f6f6f6;
-}
+
 .container {
   margin-right: auto;
   margin-left: auto;
