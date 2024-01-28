@@ -99,15 +99,12 @@
   .open-mobile-menu-btn {
     display: none;
   }
-
-  .header-nav-icon {
-    width: 44px;
-    height: 44px;
-  }
   .header-social-link {
     transition: border 0.25s cubic-bezier(0.4, 0, 0.2, 1),
       stroke 0.25s cubic-bezier(0.4, 0, 0.2, 1),
       fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 44px;
+    height: 44px;
   }
   .header-social-link:hover,
   .header-social-link:focus {
