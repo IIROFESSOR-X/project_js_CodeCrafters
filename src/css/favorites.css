@@ -23,7 +23,7 @@
 
 .quate-day {
   height: 335px;
-  Height: 272px;
+  height: 272px;
   border-radius: 30px;
   background-image: url('../img/favorites/quate-day-mob.png');
   background-repeat: no-repeat;
@@ -32,7 +32,7 @@
 }
 .fit-girl {
   height: 335px;
-  Height: 272px;
+  height: 272px;
   border-radius: 30px;
   background-image: url('../img/favorites/fit-girl-mob.png');
   background-repeat: no-repeat;
@@ -43,7 +43,7 @@
   background-color: white;
   border-radius: 30px;
   height: 335px;
-  Height: 272px;
+  height: 272px;
   padding-top: 96px;
   padding-bottom: 121px;
   padding-left: 102px;
@@ -53,13 +53,13 @@
   position: relative;
 }
 .quote-title {
-  color: #1B1B1B;
+  color: #1b1b1b;
 }
 .quote-text {
-color: #1B1B1B;
+  color: #1b1b1b;
 }
 .exercises-container-fv {
-  background: #E8E8E8;
+  background: #e8e8e8;
   width: 335px;
   height: 450px;
   border-radius: 30px;
@@ -78,7 +78,6 @@ color: #1B1B1B;
   padding-right: 44px;
   padding-top: 80px;
   padding-bottom: 128px;
-
 }
 .dumbbell {
   width: 85px;
@@ -90,7 +89,7 @@ color: #1B1B1B;
   font-weight: 400;
   font-size: 14px;
   text-align: center;
-  line-height: 18px
+  line-height: 18px;
 }
 
 @media screen and (min-width: 768px) {
@@ -100,15 +99,12 @@ color: #1B1B1B;
   .open-mobile-menu-btn {
     display: none;
   }
-
-  .header-nav-icon {
-    width: 44px;
-    height: 44px;
-  }
   .header-social-link {
     transition: border 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    stroke 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      stroke 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 44px;
+    height: 44px;
   }
   .header-social-link:hover,
   .header-social-link:focus {
@@ -142,7 +138,7 @@ color: #1B1B1B;
     background: #7e847f;
     border: none;
 
-    color: #F6F6F6;
+    color: #f6f6f6;
     font-family: 'DM Sans';
     font-size: 16px;
     font-style: normal;
@@ -161,26 +157,31 @@ color: #1B1B1B;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5em;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
-.quate-day {
-  background-image: url("../img/favorites/quote-tablet.png");
-}
-.quote-inform {
-  padding-top: 80px;
-}
-.fit-girl {
-  width: 368px;
-  height: 302px;
-}
-.time-sport {
-  width: 368px;
-  height: 302px;
-}
-.info-sport {
-  display: flex;
-}
+  .header-btn-favorites-fv:hover,
+  .header-btn-favorites-fv:active {
+    background-color: var(--main-bg-color);
+  }
+  .quate-day {
+    background-image: url('../img/favorites/quote-tablet.png');
+  }
+  .quote-inform {
+    padding-top: 80px;
+  }
+  .fit-girl {
+    width: 368px;
+    height: 302px;
+  }
+  .time-sport {
+    width: 368px;
+    height: 302px;
+  }
+  .info-sport {
+    display: flex;
+  }
   .exercises-container-fv {
-    background: #E8E8E8;
+    background: #e8e8e8;
     width: 736px;
     height: 928px;
     border-radius: 30px;
@@ -199,7 +200,6 @@ color: #1B1B1B;
     padding-right: 91px;
     padding-top: 208px;
     padding-bottom: 437px;
-
   }
   .dumbbell {
     width: 115px;
@@ -211,11 +211,9 @@ color: #1B1B1B;
     font-weight: 400;
     font-size: 18px;
     text-align: center;
-    line-height: 24px
+    line-height: 24px;
   }
-
 }
-
 
 @media screen and (min-width: 1270px) {
   .quote-inform {
@@ -237,7 +235,7 @@ color: #1B1B1B;
     display: flex;
   }
   .exercises-container-fv {
-    background: #E8E8E8;
+    background: #e8e8e8;
     width: 1408px;
     height: 687px;
     border-radius: 50px;
@@ -256,7 +254,6 @@ color: #1B1B1B;
     padding-right: 91px;
     padding-top: 208px;
     padding-bottom: 437px;
-
   }
   .dumbbell {
     width: 115px;
@@ -268,8 +265,6 @@ color: #1B1B1B;
     font-weight: 400;
     font-size: 18px;
     text-align: center;
-    line-height: 24px
+    line-height: 24px;
   }
-
 }
-
