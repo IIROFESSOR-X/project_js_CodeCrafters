@@ -1,24 +1,34 @@
 /* Reset styles */
 @font-face {
-  font-family: 'DM Sans';
-  src: url(../fonts/DMSans-Regular.ttf);
+  font-family: "DM Sans";
+    src: local("DM Sans"),
+      url(../fonts/DMSans-Regular.woff2) format("woff2"),
+      url(../fonts/DMSans-Regular.woff) format("woff");
   font-weight: 400;
 }
 @font-face {
-  font-family: 'DM Sans';
-  src: url(../fonts/DMSans-Medium.ttf);
+  font-family: "DM Sans";
+    src: local("DM Sans"),
+      url(../fonts/DMSans-Medium.woff2) format("woff2"),
+      url(../fonts/DMSans-Medium.woff) format("woff");
   font-weight: 500;
 }
 @font-face {
-  font-family: 'DM Sans';
-  src: url(../fonts/DMSans-Bold.ttf);
+  font-family: "DM Sans";
+    src: local("DM Sans"),
+      url(../fonts/DMSans-Bold.woff2) format("woff2"),
+      url(../fonts/DMSans-Bold.woff) format("woff");
   font-weight: 700;
 }
 @font-face {
   font-family: 'DM Sans';
-  src: url(../fonts/DMSans-Italic.ttf);
+    src: local("DM Sans"),
+      url(../fonts/DMSans-Italic.woff2) format("woff2"),
+      url(../fonts/DMSans-Italic.woff) format("woff");
+    font-weight: 700;
   font-style: italic;
 }
+
 h1,
 h2,
 h3,
@@ -82,11 +92,7 @@ body {
     padding-right: 16px;
   }
 }
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 1280px;
-  }
-}
+
 @media (min-width: 1440px) {
   .container {
     width: 1440px;
