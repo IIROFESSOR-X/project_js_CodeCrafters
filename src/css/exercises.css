@@ -80,7 +80,8 @@
 }
 
 .exercises-form-svg {
-  /* fill: none; */
+  fill: none;
+  stroke: #1b1b1b;
 }
 
 .form-is-hiden {
