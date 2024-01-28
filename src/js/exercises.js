@@ -46,7 +46,7 @@ async function searchImageOnServer(
   if (document.body.clientWidth >= 1440 && filterType) params.limit = 9;
   if (document.body.clientWidth >= 768 && !filterType) params.limit = 12;
   if (document.body.clientWidth >= 768 && filterType) params.limit = 8;
-  console.log(params);
+  // console.log(params);
   // ========================
   let parameters = new URLSearchParams(params).toString();
 
@@ -175,7 +175,7 @@ function renderExercises(arrow, totalPages) {
   }
 
   // if (
-  //   !exercisesListPages.textContent ||
+    // !exercisesListPages.textContent ||
   //   typeOfFilter !==
   //     document.querySelector(`.exercises-pages-button`).dataset.type ||
   //   formCard.dataset.status
@@ -188,7 +188,7 @@ function renderExercises(arrow, totalPages) {
   function addNumberOfPages(filter) {
     formCard.dataset.status = ``;
     let numberOfPages = ``;
-    console.log(currentPage, totalPages);
+    // console.log(currentPage, totalPages);
     exercisesListPages.innerHTML = formatNumericOfPages(
       currentPage,
       totalPages,
