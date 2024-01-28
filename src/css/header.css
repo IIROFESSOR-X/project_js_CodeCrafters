@@ -92,11 +92,11 @@ div.header-container {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5em;
-    transition: border 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .header-btn-home:hover,
   .header-btn-home:active {
-    border: 1px solid rgba(95, 101, 96, 0.2);
+    background-color: var(--main-bg-color);
   }
   .header-btn-favorites {
     background-color: var(--main-color);
