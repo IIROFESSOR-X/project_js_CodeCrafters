@@ -75,11 +75,14 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 14px;
+  right: 10px;
+  padding: 4px 8px 4px 0;
 }
+
 .exercises-form-svg {
-  fill: none;
+  /* fill: none; */
 }
+
 .form-is-hiden {
   display: none;
 }
@@ -312,6 +315,30 @@
   height: 22px;
   background-color: transparent;
   cursor: pointer;
+}
+.form-reset-text-button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 40px;
+  line-height: 0;
+  padding: 4px;
+}
+.reset-button-close {
+  display: none;
+}
+.form-reset-text-icon {
+  stroke: #1b1b1b;
+  transition: stroke 250ms linear;
+}
+.form-reset-text-button:hover .form-reset-text-icon {
+  stroke: #6b6969;
+}
+.reset-button-close .form-reset-text-icon {
+  stroke: transparent;
 }
 @media screen and (min-width: 768px) {
   .exer-title-slash {
