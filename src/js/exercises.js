@@ -9,7 +9,13 @@ exercisesListPages.addEventListener(`click`, showsExercisesPages);
 exercisesList.addEventListener(`click`, makeTypeOfTrainingCards);
 const formCard = document.querySelector(`.exercises-form`);
 formCard.addEventListener(`submit`, searchCardsByKeyWord);
+formCard.addEventListener(`input`, validatorForUserSearchText);
 const buttonList = document.querySelector(`.exercises-button-list`);
+const resetFormTextButton = document.querySelector(`.form-reset-text-button`);
+resetFormTextButton.addEventListener(`click`, e => {
+  formCard.reset();
+  resetFormTextButton.classList.add(`reset-button-close`);
+});
 let currentPage = 1,
   perPage = 8,
   typeOfFilter = `Muscles`,
@@ -367,4 +373,13 @@ function searchCardsByKeyWord(e) {
     formCard.reset();
     getCardsFromServer(filter, filterTypeCads, userTextSearch);
   }
+}
+function validatorForUserSearchText(e) {
+  const text = e.target.value;
+  if (text.length > 2) {
+    resetFormTextButton.classList.remove(`reset-button-close`);
+  } else {
+    resetFormTextButton.classList.add(`reset-button-close`);
+  }
+  console.log(e.target.value);
 }
