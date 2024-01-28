@@ -8,3 +8,4 @@ import './js/rating-modal-window';
 
 import './js/quote-section';
 
+import './js/footer-form';
