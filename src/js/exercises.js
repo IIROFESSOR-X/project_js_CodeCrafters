@@ -45,10 +45,10 @@ async function searchImageOnServer(
   if (keyWord) params.keyword = keyWord;
 
   if (document.body.clientWidth >= 768 && !filterType) params.limit = 12;
+  if (document.body.clientWidth >= 768 && filterType) params.limit = 8;
   if (document.body.clientWidth <= 768 && filterType) params.limit = 8;
   if (document.body.clientWidth >= 1440 && filterType) params.limit = 9;
 
-  // ========================
   let parameters = new URLSearchParams(params).toString();
 
   try {
@@ -208,17 +208,33 @@ function renderExercises(arrow, totalPages) {
     addNumberOfPages(arrow.filter);
   }
 
-  //   ======================================
-  function addNumberOfPages(filter) {
-    formCard.dataset.status = ``;
 
-    exercisesListPages.innerHTML = formatNumericOfPages(
-      currentPage,
-      totalPages,
-      filter
-    );
-  }
-  //   ========================================================================
+//     if (
+//     // !exercisesListPages.textContent ||
+//   //   typeOfFilter !==
+//   //     document.querySelector(`.exercises-pages-button`).dataset.type ||
+//   //   formCard.dataset.status
+//   // ) {
+//   //   formCard.dataset.status = ``;
+//   //   addNumberOfPages();
+//   // }
+
+//   function addNumberOfPages(filter) {
+//     formCard.dataset.status = ``;
+//     let numberOfPages = ``;
+//     // console.log(currentPage, totalPages);
+
+
+//   function addNumberOfPages(filter) {
+//     formCard.dataset.status = ``;
+
+//     exercisesListPages.innerHTML = formatNumericOfPages(
+//       currentPage,
+//       totalPages,
+//       filter
+//     );
+//   }
+
 }
 function showsExercisesPages(e) {
   const data = e.target.dataset;
