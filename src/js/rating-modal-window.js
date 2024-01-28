@@ -1,6 +1,5 @@
 
-
-const ratingButton = document.querySelector('.open-rating-modal');
+const ratingButton = document.querySelector('#modal2');
 let isFirstModalOpen = false;
 
 ratingButton.addEventListener('click', () => {
@@ -8,7 +7,7 @@ ratingButton.addEventListener('click', () => {
   openSecondModal();
 });
 
-function closeFirstModal() {
+export function closeFirstModal() {
   const firstModal = document.querySelector('.container-for-modal');
   if (firstModal) {
     firstModal.remove();
@@ -129,6 +128,14 @@ function initRating() {
     });
   }
 }
+function showToast(message, type = 'error') {
+  iziToast.show({
+    message: message,
+    position: 'topRight',
+    timeout: 3000, // Время, в течение которого сообщение будет отображаться (в миллисекундах)
+    color: type === 'error' ? 'red' : 'green', // Цвет сообщения
+  });
+}
 
 const sendButton = document.querySelector('.button-modal-rating-send');
 sendButton.addEventListener('click', () => {
@@ -151,6 +158,6 @@ sendButton.addEventListener('click', () => {
         console.error(error);
       });
   } else {
-    alert('Please fill in all the required fields.');
+    showToast('Please fill in all the required fields.');
   }
 });
