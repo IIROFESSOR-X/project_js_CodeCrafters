@@ -13,7 +13,7 @@ formCard.addEventListener(`input`, validatorForUserSearchText);
 const buttonList = document.querySelector(`.exercises-button-list`);
 const resetFormTextButton = document.querySelector(`.form-reset-text-button`);
 resetFormTextButton.addEventListener(`click`, e => {
-  resetFormTextButton.value = ``;
+  formCard.reset();
   resetFormTextButton.classList.add(`reset-button-close`);
 });
 let currentPage = 1,
