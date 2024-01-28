@@ -43,9 +43,10 @@ async function searchImageOnServer(
   params.page = currentPages;
   params.limit = perPages;
   if (keyWord) params.keyword = keyWord;
-  if (document.body.clientWidth >= 1440 && filterType) params.limit = 9;
+
   if (document.body.clientWidth >= 768 && !filterType) params.limit = 12;
-  if (document.body.clientWidth >= 768 && filterType) params.limit = 8;
+  if (document.body.clientWidth <= 768 && filterType) params.limit = 8;
+  if (document.body.clientWidth >= 1440 && filterType) params.limit = 9;
 
   // ========================
   let parameters = new URLSearchParams(params).toString();
@@ -181,8 +182,9 @@ function renderExercises(arrow, totalPages) {
       },
       ``
     );
-
+    exercisesList.classList.add(`card-row-gap-js`);
     exercisesList.innerHTML = listCodeCards;
+
     addNumberOfPages();
   }
   if (!arrow[0]._id) {
@@ -201,6 +203,7 @@ function renderExercises(arrow, totalPages) {
       ``
     );
     formCard.dataset.status = '';
+    exercisesList.classList.remove(`card-row-gap-js`);
     exercisesList.innerHTML = listCode;
     addNumberOfPages(arrow.filter);
   }
@@ -208,7 +211,6 @@ function renderExercises(arrow, totalPages) {
   //   ======================================
   function addNumberOfPages(filter) {
     formCard.dataset.status = ``;
-    let numberOfPages = ``;
 
     exercisesListPages.innerHTML = formatNumericOfPages(
       currentPage,
@@ -246,13 +248,11 @@ function showsExercisesPages(e) {
 
 function formatNumericOfPages(cPage, tPage) {
   cPage = Number.parseInt(cPage);
-  let leftErrow = `<svg class="page-choice-svg" width="18" height="18" data-card="${filterTypeCads}" data-id="left" data-type="${typeOfFilter}">
-                      <use href="./img/symbol-defs.svg#icon-left" data-id="left"
-                      data-type="${typeOfFilter}" data-card="${filterTypeCads}"></use>
-                   </svg>`;
-  let rightErrow = `<svg class="page-choice-svg" width="18" height="18" data-id="right" data-card="${filterTypeCads}" data-type="${typeOfFilter}">
-                       <use href="./img/symbol-defs.svg#icon-right" data-id="right" data-card="${filterTypeCads}" data-type="${typeOfFilter}"></use>
-                   </svg>`;
+  let leftErrow = `<svg class="page-choice-svg" width="18" height="18" data-card="${filterTypeCads}" data-id="left" data-type="${typeOfFilter}" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M17.17,24a1,1,0,0,1-.71-.29L8.29,15.54a5,5,0,0,1,0-7.08L16.46.29a1,1,0,1,1,1.42,1.42L9.71,9.88a3,3,0,0,0,0,4.24l8.17,8.17a1,1,0,0,1,0,1.42A1,1,0,0,1,17.17,24Z"/></svg>
+
+  `;
+  let rightErrow = `<svg class="page-choice-svg" data-id="right" data-type="${typeOfFilter}" data-card="${filterTypeCads}" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M7,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L6.29,1.71A1,1,0,0,1,7.71.29l8.17,8.17a5,5,0,0,1,0,7.08L7.71,23.71A1,1,0,0,1,7,24Z"/></svg>
+`;
   let start = 0,
     resultHtml = ``,
     end = 0;
