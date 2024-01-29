@@ -14,7 +14,6 @@ export function startRatingModal(id) {
     openSecondModal();
   });
 }
-
 function openSecondModal() {
   const secondModalMarkup = `
     <div class="rating-modal-backdrop">
