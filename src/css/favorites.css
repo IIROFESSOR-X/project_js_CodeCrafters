@@ -142,7 +142,11 @@
   fill: #fff;
   stroke: #1B1B1B;
 }
-
+.exercises-container {
+  width: 335px;
+  height: 1644px;
+  overflow: auto;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -283,6 +287,11 @@
     text-align: center;
     line-height: 24px;
   }
+  .exercises-container {
+    width: 736px;
+    height: 928px;
+    overflow: auto;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -343,4 +352,10 @@
     text-align: center;
     line-height: 24px;
   }
+  .exercises-container {
+    width: 1440px;
+    height: 687px;
+    overflow: auto;
+  }
 }
+
