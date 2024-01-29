@@ -9,16 +9,10 @@ const ref = {
 };
 
 window.addEventListener('load', windowLoad);
-ref.favoritesList.addEventListener('click', onDeleteBtnClick);
-ref.favoritesList.addEventListener('click', onStartBtnClick);
 
-export  const renderFavorites = parsedData => {
-
+export const renderFavorites = parsedData => {
   const favoritesCardString = parsedData.reduce(
-    (
-      html,
-      { _id, name: names, burnedCalories, time, bodyPart, target }
-    ) => {
+    (html, { _id, name: names, burnedCalories, time, bodyPart, target }) => {
       return (
         html +
         `<li class="exer-card-item">
@@ -87,7 +81,7 @@ export  const renderFavorites = parsedData => {
   );
 
   ref.favoritesList.innerHTML = favoritesCardString;
-}
+};
 
 function parsingCards() {
   savedCards = localStorage.getItem('favorites');
@@ -135,12 +129,11 @@ function windowLoad() {
   if (parsedCards.length) {
     ref.gymInfo.classList.add('is-hidden');
     renderFavorites(parsedCards);
-  } else {
+    ref.favoritesList.addEventListener('click', onDeleteBtnClick);
+    ref.favoritesList.addEventListener('click', onStartBtnClick);
+  } else if (ref.gymInfo) {
     ref.gymInfo.classList.remove('is-hidden');
+    ref.favoritesList.removeEventListener('click', onDeleteBtnClick);
+    ref.favoritesList.removeEventListener('click', onStartBtnClick);
   }
 }
-
-
-
-
-
