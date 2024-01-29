@@ -36,8 +36,8 @@
   cursor: pointer;
   transition: fill 250ms ease-in-out;
   position: absolute;
-  bottom: 26px;
-  right: 48px;
+  bottom: 20px;
+  right: 20px;
 }
 
 .scroll-up-btn-icon {
@@ -241,6 +241,11 @@
     }
   }
 
+  .scroll-up-btn {
+    bottom: 32px;
+    right: 41px;
+  }
+
   .footer-logo {
     padding-bottom: 30px;
     font-size: 28px;
@@ -348,6 +353,12 @@
   .footer-heading-form {
     display: flex;
   }
+
+  .scroll-up-btn {
+    bottom: 26px;
+    right: 48px;
+  }
+
   .footer-title {
     font-size: 64px;
     max-width: 488px;
@@ -390,5 +401,10 @@
   }
   .footer-form-email {
     padding-left: 14px;
+  }
+
+  .scroll-up-btn {
+    bottom: 26px;
+    right: 48px;
   }
 }
