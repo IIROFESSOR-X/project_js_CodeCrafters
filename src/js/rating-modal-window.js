@@ -65,6 +65,7 @@ function openSecondModal() {
     }
   });
 
+
   modalBackdrop.addEventListener('click', (e) => {
     if (e.target === modalBackdrop) {
       closeSecondModal();
