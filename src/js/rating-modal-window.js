@@ -8,11 +8,11 @@ export function startRatingModal(id) {
   idForOpenModal = id;
   document
     .querySelector('.modal-button-rating')
-.addEventListener(click, e => {
-    closeModal();
+    .addEventListener(`click`, e => {
+      closeModal();
 
-    openSecondModal();
-  });
+      openSecondModal();
+    });
 }
 
 function openSecondModal() {
@@ -82,9 +82,7 @@ function setRatingActiveWidth(index = ratingValue.innerHTML) {
 }
 
 function setRating(rating) {
-  const ratingItems = rating.querySelectorAll(
-    '.rating-item.rating-modal-item'
-  );
+  const ratingItems = rating.querySelectorAll('.rating-item.rating-modal-item');
 
   for (let index = 0; index < ratingItems.length; index++) {
     const ratingItem = ratingItems[index];
@@ -123,14 +121,21 @@ async function tryToSend() {
       document.querySelector('.rating-value').innerText
     );
 
-    if (emailInput.checkValidity() && commentInput.checkValidity() && ratingValue >= 0) {
+    if (
+      emailInput.checkValidity() &&
+      commentInput.checkValidity() &&
+      ratingValue >= 0
+    ) {
       let data = {
         rate: ratingValue,
         email: emailInput.value,
         review: commentInput.value,
       };
       try {
-        axios.patch(`https:energyflow.b.goit.study/api/exercises/${idForOpenModal}/rating/`, data);
+        axios.patch(
+          `https:energyflow.b.goit.study/api/exercises/${idForOpenModal}/rating/`,
+          data
+        );
         closeSecondModal();
       } catch (error) {
         console.error(error.response.data);
