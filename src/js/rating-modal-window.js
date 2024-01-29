@@ -1,18 +1,19 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
 import { openOnClick, closeModal } from './modal-window';
-// const ratingButton = document.querySelector('.open-rating-modal');
-// let isFirstModalOpen = false;
-let idForOpenModal = ``;
+
+let idForOpenModal = '';
+let ratingActive;  // Глобальные переменные
+let ratingValue;
+
 export function startRatingModal(id) {
   idForOpenModal = id;
   document
     .querySelector('.modal-button-rating')
-.addEventListener(click, e => {
-    closeModal();
-
-    openSecondModal();
-  });
+    .addEventListener('click', (e) => {
+      closeModal();
+      openSecondModal();
+    });
 }
 
 function openSecondModal() {
@@ -49,25 +50,22 @@ function openSecondModal() {
   `;
   const container = document.querySelector('.container-for-modal');
   container.innerHTML = secondModalMarkup;
-  // document.body.insertAdjacentHTML('beforeend', secondModalMarkup);
 
   const modalBackdrop = document.querySelector('.rating-modal-backdrop');
-  const closeButtons = document.querySelectorAll(
-    '.rating-modal-backdrop .rating-modal-close-button'
-  );
-  closeButtons.forEach(button => {
+  const closeButtons = document.querySelectorAll('.rating-modal-backdrop .rating-modal-close-button');
+  closeButtons.forEach((button) => {
     button.addEventListener('click', () => {
       closeSecondModal();
     });
   });
 
-  document.addEventListener('keydown', e => {
+  document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeSecondModal();
     }
   });
 
-  modalBackdrop.addEventListener('click', e => {
+  modalBackdrop.addEventListener('click', (e) => {
     if (e.target === modalBackdrop) {
       closeSecondModal();
     }
@@ -76,52 +74,71 @@ function openSecondModal() {
   initRating();
   tryToSend();
 }
-function setRatingActiveWidth(index = ratingValue.innerHTML) {
-  const ratingActiveWidth = index / 0.05;
-  ratingActive.style.width = `${ratingActiveWidth}%`;
+
+function closeSecondModal() {
+  const secondModal = document.querySelector('.rating-modal-backdrop');
+  if (secondModal) {
+    secondModal.remove();
+  }
 }
 
-function setRating(rating) {
-  const ratingItems = rating.querySelectorAll(
-    '.rating-item.rating-modal-item'
-  );
-
-  for (let index = 0; index < ratingItems.length; index++) {
-    const ratingItem = ratingItems[index];
-
-    ratingItem.addEventListener('mouseenter', function (e) {
-      initRatingVars(rating);
-      setRatingActiveWidth(ratingItem.value);
-    });
-
-    ratingItem.addEventListener('mouseleave', function (e) {
-      setRatingActiveWidth();
-    });
-
-    ratingItem.addEventListener('click', function (e) {
-      initRatingVars(rating);
-      const fractionalPart =
-        (e.clientX - ratingItem.getBoundingClientRect().left) /
-        ratingItem.clientWidth;
-      const newValue = index + fractionalPart;
-      ratingValue.innerHTML = newValue.toFixed(1);
-      setRatingActiveWidth(newValue);
-    });
+function initRating() {
+  const rating = document.querySelector('.rating-container.rating-set.rating-modal-container');
+  if (rating) {
+    initRatingVars(rating);
+    setRatingActiveWidth();
+    setRating(rating);
   }
 
-  rating.addEventListener('mouseleave', function (e) {
-    rating.classList.remove('interacting');
-  });
+  function initRatingVars(rating) {
+    ratingActive = rating.querySelector('.rating-active.rating-modal-active');
+    ratingValue = rating.querySelector('.rating-value.rating-modal-value');
+  }
+
+  function setRatingActiveWidth(index = ratingValue.innerHTML) {
+    const ratingActiveWidth = index / 0.05;
+    ratingActive.style.width = `${ratingActiveWidth}%`;
+  }
+
+  function setRating(rating) {
+    const ratingItems = rating.querySelectorAll('.rating-item.rating-modal-item');
+
+    for (let index = 0; index < ratingItems.length; index++) {
+      const ratingItem = ratingItems[index];
+
+      ratingItem.addEventListener('mouseenter', function (e) {
+        initRatingVars(rating);
+        setRatingActiveWidth(ratingItem.value);
+      });
+
+      ratingItem.addEventListener('mouseleave', function (e) {
+        setRatingActiveWidth();
+      });
+
+      ratingItem.addEventListener('click', function (e) {
+        initRatingVars(rating);
+        const fractionalPart =
+          (e.clientX - ratingItem.getBoundingClientRect().left) /
+          ratingItem.clientWidth;
+        const newValue = index + fractionalPart;
+        ratingValue.innerHTML = newValue.toFixed(1);
+        setRatingActiveWidth(newValue);
+      });
+    }
+
+    rating.addEventListener('mouseleave', function (e) {
+      rating.classList.remove('interacting');
+    });
+  }
 }
-async function tryToSend() {
+
+function tryToSend() {
   const sendButton = document.querySelector('.button-modal-rating-send');
-  sendButton.addEventListener('click', e => {
+  sendButton.addEventListener('click', async (e) => {
     e.preventDefault();
     const emailInput = document.getElementById('email-modal');
     const commentInput = document.getElementById('user-comment');
-    const ratingValue = parseFloat(
-      document.querySelector('.rating-value').innerText
-    );
+    const ratingValue = parseFloat(document.querySelector('.rating-value').innerText);
 
     if (emailInput.checkValidity() && commentInput.checkValidity() && ratingValue >= 0) {
       let data = {
@@ -130,7 +147,7 @@ async function tryToSend() {
         review: commentInput.value,
       };
       try {
-        axios.patch(`https:energyflow.b.goit.study/api/exercises/${idForOpenModal}/rating/`, data);
+        await axios.patch(`https://energyflow.b.goit.study/api/exercises/${idForOpenModal}/rating/`, data);
         closeSecondModal();
       } catch (error) {
         console.error(error.response.data);
