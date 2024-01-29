@@ -192,6 +192,10 @@
 }
   
 @media screen and (min-width: 768px) and (max-width: 1439px) {
+  .footer-main {
+    display: flex;
+    gap: 146px;
+  }
   .footer-wrap {
     width: 736px;
     height: 576px;
@@ -210,7 +214,7 @@
         rgba(27, 27, 27, 0.7) 0%,
         rgba(27, 27, 27, 0.7) 100%
       ),
-      url() center/cover no-repeat;
+      url(../img/footer/footer-img-mobile.jpg) center/cover no-repeat;
     border-radius: 50px;
   }
   @media screen and (min-resolution: 192dpi) {
@@ -317,6 +321,7 @@
   .footer-wrap {
     width: 1408px;
     height: 454px;
+    padding-left: 48px;
     padding-right: 48px;
     padding-bottom: 26px;
     column-gap: 156px;
@@ -326,7 +331,7 @@
         rgba(27, 27, 27, 0.7) 0%,
         rgba(27, 27, 27, 0.7) 100%
       ),
-      url() center/cover no-repeat;
+      url(../img/footer/footer-img-mobile.jpg) center/cover no-repeat;
   }
   .footer-heading-form {
     display: flex;
@@ -341,6 +346,23 @@
   .footer-form {
     font-size: 18px;
     margin-left: 160px;
+    font-size: 18px;
+    width: 352px;
+    justify-content: center;
+  }
+  .footer-main {
+    display: flex;
+    gap: 120px;
+    padding-top: 40px;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: center;
+    padding-top: 140px;
+  }
+  .footer-bottom-text {
+    display: flex;
+    padding-top: 10px;
   }
 
   .foter-privacy-policy {
@@ -357,14 +379,16 @@
           rgba(27, 27, 27, 0.7) 0%,
           rgba(27, 27, 27, 0.7) 100%
         ),
-        url() center/cover no-repeat;
+        url(../img/footer/footer-img-mobile.jpg) center/cover no-repeat;
     }
   }
 }
 
-@media screen and (min-width: 1440px) {
-    .footer-form {
-        font-size: 18px;
+/* @media screen and (min-width: 1440px) {
+    
+    .footer-form-btn {
+      justify-content: center;
+      padding: 0;
     }
     .footer-form-email,
         .footer-form-btn {
@@ -372,4 +396,13 @@
         height: 48px;
         padding-left: 14px;     
     }
-} 
+    .footer-imput {
+      width: 352px;
+        height: 48px;
+        padding: 0;
+    }
+    .footer-main {
+      display: flex;
+      gap: 120px;
+    }
+}  */
