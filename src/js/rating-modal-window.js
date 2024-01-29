@@ -8,7 +8,7 @@ export function startRatingModal(id) {
   idForOpenModal = id;
   document
     .querySelector('.modal-button-rating')
-.addEventListener(click, e => {
+.addEventListener('click', e => {
     closeModal();
 
     openSecondModal();
