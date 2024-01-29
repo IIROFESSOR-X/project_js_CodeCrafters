@@ -9,19 +9,14 @@ const ref = {
 };
 
 window.addEventListener('load', windowLoad);
-ref.favoritesList.addEventListener('click', onDeleteBtnClick);
-ref.favoritesList.addEventListener('click', onStartBtnClick);
 
 export  const renderFavorites = parsedData => {
-
-  const favoritesCardString = parsedData.reduce(
-    (
-      html,
-      { _id, name: names, burnedCalories, time, bodyPart, target }
-    ) => {
-      return (
-        html +
-        `<li class="exer-card-item">
+  if (ref.favoritesList) {
+    const favoritesCardString = parsedData.reduce(
+      (html, { _id, name: names, burnedCalories, time, bodyPart, target }) => {
+        return (
+          html +
+          `<li class="exer-card-item">
   <div class="exer-card-background">
     <div class="card-workout-wrapper">
       <p class="exer-workout-text">WORKOUT</p>
@@ -32,7 +27,7 @@ export  const renderFavorites = parsedData => {
       <button class="card-start-button" data-action="start" data-id="${_id}">
          Start
         <svg class="card-arrow-svg" data-action="start" data-id="${_id}"  width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <path d="M7.5 14L14 7.5M14 7.5L7.5 1M14 7.5H1" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round"
+    <path data-action="start" d="M7.5 14L14 7.5M14 7.5L7.5 1M14 7.5H1" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round"
     stroke-linejoin="round"/>
     </svg>               
       </button>
@@ -81,13 +76,15 @@ export  const renderFavorites = parsedData => {
     </p>
   </div>
 </li>`
-      );
-    },
-    ''
-  );
+        );
+      },
+      ''
+    );
 
-  ref.favoritesList.innerHTML = favoritesCardString;
-}
+    ref.favoritesList.innerHTML = favoritesCardString;
+    // console.log('renderFavorites');
+  };
+};
 
 function parsingCards() {
   savedCards = localStorage.getItem('favorites');
@@ -132,15 +129,14 @@ function onStartBtnClick(event) {
 
 function windowLoad() {
   parsingCards();
-  if (parsedCards.length) {
+  if (parsedCards.length && ref.gymInfo ) {
     ref.gymInfo.classList.add('is-hidden');
     renderFavorites(parsedCards);
-  } else {
+    ref.favoritesList.addEventListener('click', onDeleteBtnClick);
+    ref.favoritesList.addEventListener('click', onStartBtnClick);
+  } else if (ref.gymInfo) {
     ref.gymInfo.classList.remove('is-hidden');
+    ref.favoritesList.removeEventListener('click', onDeleteBtnClick);
+    ref.favoritesList.removeEventListener('click', onStartBtnClick);
   }
 }
-
-
-
-
-

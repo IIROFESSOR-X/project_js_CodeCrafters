@@ -1,5 +1,6 @@
 import axios from "axios";
 import { renderFavorites } from './favorites';
+import { startRatingModal } from './rating-modal-window';
 
 const modalWindow = document.querySelector('.container-for-modal');
 
@@ -68,6 +69,7 @@ function renderModalMarkup(exercise = {}) {
         </div>`;
     
     modalWindow.innerHTML = markup;
+    startRatingModal(exercise._id);
 }
 
 function getRatingColoring(exerciseRating) {
@@ -93,7 +95,7 @@ function closeModalOnEsc(e) {
     }
 }
 
-function closeModal() {
+export function closeModal() {
     modalWindow.innerHTML = '';
     document.removeEventListener('keydown', closeModalOnEsc);
     document.removeEventListener('click', closeModalOnClick);
@@ -126,7 +128,9 @@ function checkObjectInLocalStorage(data) {
 
         localStorage.setItem('favorites', JSON.stringify(filteredObjects));
         favoritesBtnName.textContent = "Add to favorites";
-        renderFavorites(objects);
+
+        let savedCards = JSON.parse(localStorage.getItem('favorites'));
+        renderFavorites(savedCards);
 
         favoritesBtn.removeEventListener('click', deleteObj);
         favoritesBtn.addEventListener('click', addObj);
@@ -137,13 +141,15 @@ function checkObjectInLocalStorage(data) {
 
         if (!isObjectAdded) {
             const foundObject = objects.find((obj) => obj._id === newObject._id);
+            let savedCards = JSON.parse(localStorage.getItem('favorites'));
 
             if (!foundObject) {
                 objects.push(newObject);
 
                 localStorage.setItem('favorites', JSON.stringify(objects));
                 favoritesBtnName.textContent = 'Remove from';
-                renderFavorites(objects);
+                
+                renderFavorites(savedCards);
 
                 isObjectAdded = true;
 
@@ -152,8 +158,9 @@ function checkObjectInLocalStorage(data) {
             } else {
                 localStorage.setItem('favorites', JSON.stringify(objects));
                 favoritesBtnName.textContent = 'Remove from';
-                renderFavorites(objects);
-
+                
+                renderFavorites(savedCards);
+                
                 favoritesBtn.removeEventListener('click', addObj);
                 favoritesBtn.addEventListener('click', deleteObj);
             }
