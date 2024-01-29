@@ -10,7 +10,7 @@ const ref = {
 
 window.addEventListener('load', windowLoad);
 
-export const   = parsedData => {
+export  const renderFavorites = parsedData => {
   if (ref.favoritesList) {
     const favoritesCardString = parsedData.reduce(
       (html, { _id, name: names, burnedCalories, time, bodyPart, target }) => {
