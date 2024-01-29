@@ -8,5 +8,6 @@ import './js/rating-modal-window';
 
 import './js/quote-section';
 
-import './js/footer-form';
+import './js/scroll-up-btn';
 
+import './js/footer-form';

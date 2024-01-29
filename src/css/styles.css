@@ -18,7 +18,7 @@
 @import url('./mobile-menu.css');
 @import url('./modal-window.css');
 @import url('./rating-modal-window.css');
-
+@import url('./scrollUp-btn.css');
 
 :root {
   font-family: DM Sans, Inter, Avenir, Helvetica, Arial, sans-serif;
