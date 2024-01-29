@@ -114,7 +114,7 @@ div.header-container {
 
 /* ==================================== */
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   div.header-container {
     padding: 0 64px;
   }
