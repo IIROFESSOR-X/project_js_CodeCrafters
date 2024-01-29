@@ -129,7 +129,6 @@ async function tryToSend() {
         email: emailInput.value,
         review: commentInput.value,
       };
-
       try {
         axios.patch(`https:energyflow.b.goit.study/api/exercises/${idForOpenModal}/rating/`, data);
         closeSecondModal();
