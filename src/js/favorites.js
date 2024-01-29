@@ -12,22 +12,25 @@ window.addEventListener('load', windowLoad);
 ref.favoritesList.addEventListener('click', onDeleteBtnClick);
 ref.favoritesList.addEventListener('click', onStartBtnClick);
 
-export const renderFavorites = parsedData => {
+export  const renderFavorites = parsedData => {
+
   const favoritesCardString = parsedData.reduce(
-    (html, { _id, name: names, burnedCalories, time, bodyPart, target }) => {
+    (
+      html,
+      { _id, name: names, burnedCalories, time, bodyPart, target }
+    ) => {
       return (
         html +
         `<li class="exer-card-item">
   <div class="exer-card-background">
     <div class="card-workout-wrapper">
       <p class="exer-workout-text">WORKOUT</p>
-      <button class="card-btn-delete" data-action="delete" data-id="${_id}">
-        <svg class="card-btn-delete-svg" width="16" height="16" viewBox="0 0 32 32" data-action="delete" data-id="${_id}"" aria-label="remove an exercise from your favorites">
-          <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6" d="M21.333 8v-1.067c0-1.493 0-2.24-0.291-2.811-0.256-0.502-0.664-0.91-1.165-1.165-0.57-0.291-1.317-0.291-2.811-0.291h-2.133c-1.493 0-2.24 0-2.811 0.291-0.502 0.256-0.91 0.664-1.165 1.165-0.291 0.57-0.291 1.317-0.291 2.811v1.067M13.333 15.333v6.667M18.667 15.333v6.667M4 8h24M25.333 8v14.933c0 2.24 0 3.36-0.436 4.216-0.384 0.753-0.995 1.365-1.748 1.748-0.856 0.436-1.976 0.436-4.216 0.436h-5.867c-2.24 0-3.36 0-4.216-0.436-0.753-0.384-1.365-0.995-1.748-1.748-0.436-0.856-0.436-1.976-0.436-4.216v-14.933"></path>
-        </svg>
+      <button class="card-btn-delete" data-action="delete" data-id="${_id}" aria-label="remove an exercise from your favorites">
+        <svg class="card-btn-delete-svg" width="16" height="16" viewBox="0 0 32 32" data-action="delete" data-id="${_id}">
+<path data-action="delete" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6" d="M21.333 8v-1.067c0-1.493 0-2.24-0.291-2.811-0.256-0.502-0.664-0.91-1.165-1.165-0.57-0.291-1.317-0.291-2.811-0.291h-2.133c-1.493 0-2.24 0-2.811 0.291-0.502 0.256-0.91 0.664-1.165 1.165-0.291 0.57-0.291 1.317-0.291 2.811v1.067M13.333 15.333v6.667M18.667 15.333v6.667M4 8h24M25.333 8v14.933c0 2.24 0 3.36-0.436 4.216-0.384 0.753-0.995 1.365-1.748 1.748-0.856 0.436-1.976 0.436-4.216 0.436h-5.867c-2.24 0-3.36 0-4.216-0.436-0.753-0.384-1.365-0.995-1.748-1.748-0.436-0.856-0.436-1.976-0.436-4.216v-14.933"></path>        </svg>
       </button>
       <button class="card-start-button" data-action="start" data-id="${_id}">
-        Start
+         Start
         <svg class="card-arrow-svg" data-action="start" data-id="${_id}"  width="16" height="16" viewBox="0 0 16 16" fill="none">
     <path d="M7.5 14L14 7.5M14 7.5L7.5 1M14 7.5H1" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round"
     stroke-linejoin="round"/>
@@ -84,7 +87,7 @@ export const renderFavorites = parsedData => {
   );
 
   ref.favoritesList.innerHTML = favoritesCardString;
-};
+}
 
 function parsingCards() {
   savedCards = localStorage.getItem('favorites');
@@ -136,3 +139,8 @@ function windowLoad() {
     ref.gymInfo.classList.remove('is-hidden');
   }
 }
+
+
+
+
+
