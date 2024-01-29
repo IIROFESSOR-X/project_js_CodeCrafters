@@ -80,6 +80,7 @@ function closeSecondModal() {
   const secondModal = document.querySelector('.rating-modal-backdrop');
   if (secondModal) {
     secondModal.remove();
+    openOnClick(idForOpenModal)
   }
 }
 
