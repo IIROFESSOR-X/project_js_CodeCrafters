@@ -10,12 +10,12 @@ export function startRatingModal(id) {
   idForOpenModal = id;
   document
     .querySelector('.modal-button-rating')
-    .addEventListener('click', (e) => {
-      closeModal();
-      openSecondModal();
-    });
+  
+.addEventListener('click', e => {
+    closeModal();
+    openSecondModal();
+  });
 }
-
 function openSecondModal() {
   const secondModalMarkup = `
     <div class="rating-modal-backdrop">
@@ -71,7 +71,6 @@ function openSecondModal() {
       closeSecondModal();
     }
   });
-
   initRating();
   tryToSend();
 }
