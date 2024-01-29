@@ -23,6 +23,16 @@
 .quote-all {
   padding-top: 38px;
 }
+.quote-wrapper-fv {
+  background-color: var(--main-color);
+  border-radius: 30px;
+  min-height: 272px;
+  padding-top: 42px;
+  padding-left: 66px;
+  padding-bottom: 40px;
+  padding-right: 20px;
+  position: relative;
+}
 
 .quate-day {
   height: 335px;
@@ -209,6 +219,14 @@
   .quote-all {
     padding-top: 80px;
   }
+  .quote-wrapper-fv {
+    border-radius: 50px;
+    padding-top: 64px;
+    padding-left: 130px;
+    padding-bottom: 64px;
+    padding-right: 80px;
+    min-height: 302px;
+  }
 .quote-inform {
   padding-bottom: 16px;
 }
@@ -271,10 +289,10 @@
   .quote-inform-fv {
     width: 1440px;
   }
-  .quote-wrapper {
-    width: unset !important; /* Сброс значения width */
-  }
+
   .quote-wrapper-fv {
+    padding-left: 114px;
+    padding-right: 64px;
     width: 704px;
   }
   .quate-day {
