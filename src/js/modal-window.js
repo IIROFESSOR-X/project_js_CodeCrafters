@@ -1,4 +1,5 @@
 import axios from "axios";
+import { renderFavorites } from './favorites';
 
 const modalWindow = document.querySelector('.container-for-modal');
 
@@ -125,22 +126,37 @@ function checkObjectInLocalStorage(data) {
 
         localStorage.setItem('favorites', JSON.stringify(filteredObjects));
         favoritesBtnName.textContent = "Add to favorites";
+        renderFavorites(objects);
 
         favoritesBtn.removeEventListener('click', deleteObj);
         favoritesBtn.addEventListener('click', addObj);
     };
 
     const addObj = () => {
-        const foundObject = objects.find((obj) => obj._id === newObject._id);
+        let isObjectAdded = false;
 
-        if (!foundObject) {
-            objects.push(newObject);
+        if (!isObjectAdded) {
+            const foundObject = objects.find((obj) => obj._id === newObject._id);
 
-            localStorage.setItem('favorites', JSON.stringify(objects));
-            favoritesBtnName.textContent = 'Remove from';
-            
-            favoritesBtn.removeEventListener('click', addObj);
-            favoritesBtn.addEventListener('click', deleteObj);
+            if (!foundObject) {
+                objects.push(newObject);
+
+                localStorage.setItem('favorites', JSON.stringify(objects));
+                favoritesBtnName.textContent = 'Remove from';
+                renderFavorites(objects);
+
+                isObjectAdded = true;
+
+                favoritesBtn.removeEventListener('click', addObj);
+                favoritesBtn.addEventListener('click', deleteObj);
+            } else {
+                localStorage.setItem('favorites', JSON.stringify(objects));
+                favoritesBtnName.textContent = 'Remove from';
+                renderFavorites(objects);
+
+                favoritesBtn.removeEventListener('click', addObj);
+                favoritesBtn.addEventListener('click', deleteObj);
+            }
         }
     };
 

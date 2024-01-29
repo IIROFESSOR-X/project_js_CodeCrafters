@@ -1,97 +1,123 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EnergyFlow</title>
+  <link rel="icon" type="image/png" href="/public/favicon.png">
+  <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
   <link rel="stylesheet" href="./css/favorites.css" />
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
+
 <body>
-<header class="header-all">
-  <div class="header-container container">
-    <div class="header-logo-wrap">
-      <a class="header-logo" href="./index.html">
-        <svg class="logo-icon" width="86" height="18">
-          <use href="./img/icons.svg#logo-icon"></use>
+  <header class="header-all">
+    <div class="header-container container">
+      <div class="header-logo-wrap">
+        <a class="header-logo" href="./index.html" title="Home page">
+          <svg class="logo-icon" width="86" height="18">
+            <use href="./img/icons.svg#logo-icon"></use>
+          </svg>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <button class="header-btn-home-fv" onclick="window.location.href = './index.html'">Home</button>
+        <button class="header-btn-favorites-fv" onclick="window.location.href = './favorites.html'">Favorites</button>
+      </nav>
+
+      <ul class="header-social-list">
+        <li class="header-social-item">
+          <a href="https://www.facebook.com/" rel="noreferren noopener" class="header-social-link" title="Facebook">
+            <svg class="header-nav-icon" width="28" height="28" aria-label="facebook icon" target="_blank">
+              <use href="./img/icons.svg#facebook-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header-social-item">
+          <a href="https://www.instagram.com/" rel="noreferren noopener" class="header-social-link"
+            aria-label="instagram icon" target="_blank" title="Instagram">
+            <svg class="header-nav-icon" width="28" height="28">
+              <use href="./img/icons.svg#instagram-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header-social-item">
+          <a href="https://www.youtube.com/" rel="noreferren noopener" class="header-social-link"
+            aria-label="youtube icon" target="_blank" title="Youtube">
+            <svg class="header-nav-icon" width="28" height="28">
+              <use href="./img/icons.svg#youtube-icon"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <!---------- burger menu button ------------->
+
+      <button class="open-mobile-menu-btn" type="button" data-modal-open>
+        <svg class="open-mobile-menu-icon" width="32" height="16" aria-label="mobile-menu-icon">
+          <use href="./img/icons.svg#burger-menu-icon"></use>
         </svg>
-      </a>
+      </button>
+
     </div>
-    <nav class="header-nav">
-      <button class="header-btn-home-fv" onclick="window.location.href = './index.html'">Home</button>
-      <button class="header-btn-favorites-fv" onclick="window.location.href = './favorites.html'">Favorites</button>
-    </nav>
-
-    <ul class="header-social-list">
-      <li class="header-social-item">
-        <a href="https://www.facebook.com/" rel="noreferren noopener" class="header-social-link">
-          <svg class="header-nav-icon" width="28" height="28" aria-label="facebook icon" target="_blank">
-            <use href="./img/icons.svg#facebook-icon"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="header-social-item">
-        <a href="https://www.instagram.com/" rel="noreferren noopener" class="header-social-link"
-           aria-label="instagram icon" target="_blank">
-          <svg class="header-nav-icon" width="28" height="28">
-            <use href="./img/icons.svg#instagram-icon"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="header-social-item">
-        <a href="https://www.youtube.com/" rel="noreferren noopener" class="header-social-link"
-           aria-label="youtube icon" target="_blank">
-          <svg class="header-nav-icon" width="28" height="28">
-            <use href="./img/icons.svg#youtube-icon"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-
-    <!---------- burger menu button ------------->
-
-    <button class="open-mobile-menu-btn" type="button" data-modal-open>
-      <svg class="open-mobile-menu-icon" width="32" height="16" aria-label="mobile-menu-icon">
-        <use href="./img/icons.svg#burger-menu-icon"></use>
-      </svg>
-    </button>
-
-  </div>
-</header>
-<section class="quote-sections">
+  </header>
+<section class="quote-sections-fv">
   <div class="container">
-    <div class="quote-inform">
-      <div class="quate-day"></div>
+    <div class="quote-all">
+      <div class="quote-inform">
+        <div class="quote-wrapper-fv">
+          <svg class="run-person-icon" width="34" height="32">
+            <use
+              href="/img/quote/svg-quote-section.svg#icon-run-person-icon"
+            ></use>
+          </svg>
+
+          <h3 class="quote-title">Quote of the day</h3>
+          <svg class="commas-icon" width="28" height="28">
+            <use href="/img/quote/svg-quote-section.svg#icon-commas"></use>
+          </svg>
+          <p class="quote-text"></p>
+          <p class="quote-author"></p>
+        </div>
+      </div>
       <div class="info-sport">
         <div class="fit-girl"></div>
         <div class="time-sport">
           <svg class="fluent" width="24" height="22">
             <use href="../img/icons.svg#fluent-icon"></use>
           </svg>
-
           <h3 class="quote-titles">110 min</h3>
           <p class="quote-texts">Daily norm of sports</p>
           <p class="quote-author"></p>
         </div>
+        </div>
       </div>
     </div>
-  </div>
 </section>
 <section class="exercises-section-fv">
   <div class="container">
-    <div class="exercises-container-fv">
-      <h2 class="exercises-title-fv">
-        Favorites<span class="exercises-title-span-fv"></span>
+    <div class="exercises-container">
+      <h2 class="exercises-title">
+        Favorites <span class="exercises-title-span-fv"></span>
       </h2>
+      <ul class="favorites-list list"></ul>
       <div class="gym-info">
         <img src="./img/favorites/dumbbell-mob.png" class='dumbbell'>
         <span class="info-gym-text">It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</span>
       </div>
       </div>
     </div>
+
   </div>
 </section>
-<script src="./main.js"></script>
+    <load src="./partials/mobile-menu.html" />
+    <load src="./partials/for_modal_window.html" />
+    <script type="module" src="./js/mobile-menu.js"></script>
+    <script type="module" src="./js/modal-window.js"></script>
+    <script type="module" src="./js/favorites.js"></script>
+    <script type="module" src='./js/quote-section.js'></script>
 </body>
+
 </html>
