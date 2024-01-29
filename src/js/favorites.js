@@ -82,7 +82,7 @@ export const   = parsedData => {
     );
 
     ref.favoritesList.innerHTML = favoritesCardString;
-    console.log('renderFavorites');
+    // console.log('renderFavorites');
   };
 };
 
