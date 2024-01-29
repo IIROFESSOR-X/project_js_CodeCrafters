@@ -1,11 +1,12 @@
 
-const ratingButton = document.querySelector('#modal2');
-let isFirstModalOpen = false;
+export function handleRatingButtonClick() {
+  const ratingButton = document.querySelector('.modal-button-rating');
 
-ratingButton.addEventListener('click', () => {
-  closeFirstModal();
-  openSecondModal();
-});
+  ratingButton.addEventListener('click', () => {
+    closeFirstModal();
+    openSecondModal();
+  });
+}
 
 export function closeFirstModal() {
   const firstModal = document.querySelector('.container-for-modal');
@@ -25,9 +26,9 @@ function openSecondModal() {
         </button>
         <p class="paragraph-rating rating-modal-paragraph-rating">Rating</p>
         <div class="rating-container rating-set rating-modal-container">
-          <div class="rating-active rating-modal-active"></div>
           <p class="rating-value rating-modal-value">0.0</p>
           <div class="rating_body rating-modal-body">
+                    <div class="rating-active rating-modal-active"></div>
             <div class="rating_active rating-modal-active"></div>
             <div class="rating-items rating-modal-items">
               <input type="radio" class="rating-item rating-modal-item" name="rating" value="1" />
@@ -105,27 +106,26 @@ function initRating() {
     for (let index = 0; index < ratingItems.length; index++) {
       const ratingItem = ratingItems[index];
 
-      ratingItem.addEventListener("mouseenter", function (e) {
+      ratingItem.addEventListener("mouseenter", function(e) {
         initRatingVars(rating);
-        setRatingActiveWidth(ratingItem.value);
+        // Ограничиваем максимальную оценку - 5
+        setRatingActiveWidth(Math.min(parseFloat(ratingItem.value), 5));
       });
 
-      ratingItem.addEventListener("mouseleave", function (e) {
+      ratingItem.addEventListener("mouseleave", function(e) {
         setRatingActiveWidth();
       });
 
-      ratingItem.addEventListener("click", function (e) {
+      ratingItem.addEventListener("click", function(e) {
         initRatingVars(rating);
         const fractionalPart = (e.clientX - ratingItem.getBoundingClientRect().left) / ratingItem.clientWidth;
         const newValue = index + fractionalPart;
-        ratingValue.innerHTML = newValue.toFixed(1);
-        setRatingActiveWidth(newValue);
+        // Ограничиваем максимальную оценку - 5
+        const cappedValue = Math.min(newValue, 5);
+        ratingValue.innerHTML = cappedValue.toFixed(1);
+        setRatingActiveWidth(cappedValue);
       });
     }
-
-    rating.addEventListener("mouseleave", function (e) {
-      // rating.classList.remove('interacting');
-    });
   }
 }
 function showToast(message, type = 'error') {
