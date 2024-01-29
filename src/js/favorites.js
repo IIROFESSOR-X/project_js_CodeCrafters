@@ -6,58 +6,58 @@ const ref = {
   gymInfo: document.querySelector('.gym-info'),
 };
 
-
 window.addEventListener('load', windowLoad);
 ref.favoritesList.addEventListener('click', onDeleteBtnClick);
 
-
 function parsingCards() {
-      try {
- parsedCards = JSON.parse(savedCards);
-    } catch (error) {
-        console.log(error);
-        parsedCards = [];
+  try {
+    parsedCards = JSON.parse(savedCards);
+  } catch (error) {
+    console.log(error);
+    parsedCards = [];
   }
   return parsedCards;
 }
 
-
 function onDeleteBtnClick(event) {
-
-  if (event.target.nodeName !== "BUTTON" || event.target.dataset.action !== "delete") {
+  if (
+    event.target.nodeName !== 'BUTTON' ||
+    event.target.dataset.action !== 'delete'
+  ) {
     return;
   }
 
-  const idCardforDelete = event.target.dataset.id; 
+  const idCardforDelete = event.target.dataset.id;
   // console.log(idCardforDelete);
   const findCard = parsedCards.find(({ _id }) => _id === idCardforDelete);
   // console.log(findCard);
   // console.log(indexOfCard);
   const indexOfCard = parsedCards.indexOf(findCard);
-  parsedCards.splice(indexOfCard, 1); 
+  parsedCards.splice(indexOfCard, 1);
   localStorage.setItem('favorites', JSON.stringify(parsedCards));
   renderFavorites();
   // console.log('renderFavorites');
 }
 
-
 function windowLoad() {
-   parsingCards() 
+  parsingCards();
   if (parsedCards.length) {
     ref.gymInfo.classList.add('is-hidden');
-    renderFavorites()
+    renderFavorites();
   } else {
     ref.gymInfo.classList.remove('is-hidden');
-    }
+  }
 }
-
 
 function renderFavorites() {
   const favoritesCardString = parsedCards.reduce(
-  (html, { _id, rating, name: names, burnedCalories, time, bodyPart, target }) => {
-    return (
-      html +
-`<li class="exer-card-item">
+    (
+      html,
+      { _id, rating, name: names, burnedCalories, time, bodyPart, target }
+    ) => {
+      return (
+        html +
+        `<li class="exer-card-item">
   <div class="exer-card-background">
     <div class="card-workout-wrapper">
       <p class="exer-workout-text">WORKOUT</p>
@@ -98,17 +98,13 @@ function renderFavorites() {
       <span class="card-burned-calories-span">${target}</span>
     </p>
   </div>
-</li>`    );
-  },
-  ''
-);
+</li>`
+      );
+    },
+    ''
+  );
 
-ref.favoritesList.innerHTML = favoritesCardString;
+  ref.favoritesList.innerHTML = favoritesCardString;
 }
 
-
-
-
-
-
-
+scrollingTop();

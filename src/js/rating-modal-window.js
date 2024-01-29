@@ -1,5 +1,3 @@
-
-
 const ratingButton = document.querySelector('.open-rating-modal');
 let isFirstModalOpen = false;
 
@@ -51,20 +49,22 @@ function openSecondModal() {
   document.body.insertAdjacentHTML('beforeend', secondModalMarkup);
 
   const modalBackdrop = document.querySelector('.rating-modal-backdrop');
-  const closeButtons = document.querySelectorAll('.rating-modal-backdrop .rating-modal-close-button');
+  const closeButtons = document.querySelectorAll(
+    '.rating-modal-backdrop .rating-modal-close-button'
+  );
   closeButtons.forEach(button => {
     button.addEventListener('click', () => {
       closeSecondModal();
     });
   });
 
-  document.addEventListener('keydown', (e) => {
+  document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       closeSecondModal();
     }
   });
 
-  modalBackdrop.addEventListener('click', (e) => {
+  modalBackdrop.addEventListener('click', e => {
     if (e.target === modalBackdrop) {
       closeSecondModal();
     }
@@ -83,7 +83,9 @@ function closeSecondModal() {
 function initRating() {
   let ratingActive, ratingValue;
 
-  const rating = document.querySelector('.rating-container.rating-set.rating-modal-container');
+  const rating = document.querySelector(
+    '.rating-container.rating-set.rating-modal-container'
+  );
   if (rating) {
     initRatingVars(rating);
     setRatingActiveWidth();
@@ -101,30 +103,34 @@ function initRating() {
   }
 
   function setRating(rating) {
-    const ratingItems = rating.querySelectorAll('.rating-item.rating-modal-item');
+    const ratingItems = rating.querySelectorAll(
+      '.rating-item.rating-modal-item'
+    );
 
     for (let index = 0; index < ratingItems.length; index++) {
       const ratingItem = ratingItems[index];
 
-      ratingItem.addEventListener("mouseenter", function (e) {
+      ratingItem.addEventListener('mouseenter', function (e) {
         initRatingVars(rating);
         setRatingActiveWidth(ratingItem.value);
       });
 
-      ratingItem.addEventListener("mouseleave", function (e) {
+      ratingItem.addEventListener('mouseleave', function (e) {
         setRatingActiveWidth();
       });
 
-      ratingItem.addEventListener("click", function (e) {
+      ratingItem.addEventListener('click', function (e) {
         initRatingVars(rating);
-        const fractionalPart = (e.clientX - ratingItem.getBoundingClientRect().left) / ratingItem.clientWidth;
+        const fractionalPart =
+          (e.clientX - ratingItem.getBoundingClientRect().left) /
+          ratingItem.clientWidth;
         const newValue = index + fractionalPart;
         ratingValue.innerHTML = newValue.toFixed(1);
         setRatingActiveWidth(newValue);
       });
     }
 
-    rating.addEventListener("mouseleave", function (e) {
+    rating.addEventListener('mouseleave', function (e) {
       // rating.classList.remove('interacting');
     });
   }
@@ -134,20 +140,30 @@ const sendButton = document.querySelector('.button-modal-rating-send');
 sendButton.addEventListener('click', () => {
   const emailInput = document.getElementById('email-modal');
   const commentInput = document.getElementById('user-comment');
-  const ratingValue = parseFloat(document.querySelector('.rating-value').innerText);
+  const ratingValue = parseFloat(
+    document.querySelector('.rating-value').innerText
+  );
 
-  if (emailInput.checkValidity() && commentInput.checkValidity() && ratingValue > 0) {
+  if (
+    emailInput.checkValidity() &&
+    commentInput.checkValidity() &&
+    ratingValue > 0
+  ) {
     const requestData = {
       rate: ratingValue,
       email: emailInput.value,
       review: commentInput.value,
     };
 
-    axios.post(`https://energyflow.b.goit.study/api/exercises/${exerciseId}/rate`, requestData)
-      .then((response) => {
+    axios
+      .post(
+        `https://energyflow.b.goit.study/api/exercises/${exerciseId}/rate`,
+        requestData
+      )
+      .then(response => {
         closeSecondModal();
       })
-      .catch((error) => {
+      .catch(error => {
         console.error(error);
       });
   } else {
