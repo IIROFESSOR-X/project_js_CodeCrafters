@@ -1,18 +1,18 @@
+import axios from 'axios';
+import iziToast from 'izitoast';
+import { openOnClick, closeModal } from './modal-window';
+// const ratingButton = document.querySelector('.open-rating-modal');
+// let isFirstModalOpen = false;
+let idForOpenModal = ``;
+export function startRatingModal(id) {
+  idForOpenModal = id;
+  document
+    .querySelector('.modal-button-rating')
+.addEventListener(click, e => {
+    closeModal();
 
-
-const ratingButton = document.querySelector('.open-rating-modal');
-let isFirstModalOpen = false;
-
-ratingButton.addEventListener('click', () => {
-  closeFirstModal();
-  openSecondModal();
-});
-
-function closeFirstModal() {
-  const firstModal = document.querySelector('.container-for-modal');
-  if (firstModal) {
-    firstModal.remove();
-  }
+    openSecondModal();
+  });
 }
 
 function openSecondModal() {
@@ -26,9 +26,9 @@ function openSecondModal() {
         </button>
         <p class="paragraph-rating rating-modal-paragraph-rating">Rating</p>
         <div class="rating-container rating-set rating-modal-container">
-          <div class="rating-active rating-modal-active"></div>
           <p class="rating-value rating-modal-value">0.0</p>
           <div class="rating_body rating-modal-body">
+            <div class="rating-active rating-modal-active"></div>
             <div class="rating_active rating-modal-active"></div>
             <div class="rating-items rating-modal-items">
               <input type="radio" class="rating-item rating-modal-item" name="rating" value="1" />
@@ -47,110 +47,103 @@ function openSecondModal() {
       </div>
     </div>
   `;
-
-  document.body.insertAdjacentHTML('beforeend', secondModalMarkup);
+  const container = document.querySelector('.container-for-modal');
+  container.innerHTML = secondModalMarkup;
+  // document.body.insertAdjacentHTML('beforeend', secondModalMarkup);
 
   const modalBackdrop = document.querySelector('.rating-modal-backdrop');
-  const closeButtons = document.querySelectorAll('.rating-modal-backdrop .rating-modal-close-button');
+  const closeButtons = document.querySelectorAll(
+    '.rating-modal-backdrop .rating-modal-close-button'
+  );
   closeButtons.forEach(button => {
     button.addEventListener('click', () => {
       closeSecondModal();
     });
   });
 
-  document.addEventListener('keydown', (e) => {
+  document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       closeSecondModal();
     }
   });
 
-  modalBackdrop.addEventListener('click', (e) => {
+  modalBackdrop.addEventListener('click', e => {
     if (e.target === modalBackdrop) {
       closeSecondModal();
     }
   });
 
   initRating();
+  tryToSend();
+}
+function setRatingActiveWidth(index = ratingValue.innerHTML) {
+  const ratingActiveWidth = index / 0.05;
+  ratingActive.style.width = `${ratingActiveWidth}%`;
 }
 
-function closeSecondModal() {
-  const secondModal = document.querySelector('.rating-modal-backdrop');
-  if (secondModal) {
-    secondModal.remove();
-  }
-}
+function setRating(rating) {
+  const ratingItems = rating.querySelectorAll(
+    '.rating-item.rating-modal-item'
+  );
 
-function initRating() {
-  let ratingActive, ratingValue;
+  for (let index = 0; index < ratingItems.length; index++) {
+    const ratingItem = ratingItems[index];
 
-  const rating = document.querySelector('.rating-container.rating-set.rating-modal-container');
-  if (rating) {
-    initRatingVars(rating);
-    setRatingActiveWidth();
-    setRating(rating);
-  }
+    ratingItem.addEventListener('mouseenter', function (e) {
+      initRatingVars(rating);
+      setRatingActiveWidth(ratingItem.value);
+    });
 
-  function initRatingVars(rating) {
-    ratingActive = rating.querySelector('.rating-active.rating-modal-active');
-    ratingValue = rating.querySelector('.rating-value.rating-modal-value');
-  }
+    ratingItem.addEventListener('mouseleave', function (e) {
+      setRatingActiveWidth();
+    });
 
-  function setRatingActiveWidth(index = ratingValue.innerHTML) {
-    const ratingActiveWidth = index / 0.05;
-    ratingActive.style.width = `${ratingActiveWidth}%`;
-  }
-
-  function setRating(rating) {
-    const ratingItems = rating.querySelectorAll('.rating-item.rating-modal-item');
-
-    for (let index = 0; index < ratingItems.length; index++) {
-      const ratingItem = ratingItems[index];
-
-      ratingItem.addEventListener("mouseenter", function (e) {
-        initRatingVars(rating);
-        setRatingActiveWidth(ratingItem.value);
-      });
-
-      ratingItem.addEventListener("mouseleave", function (e) {
-        setRatingActiveWidth();
-      });
-
-      ratingItem.addEventListener("click", function (e) {
-        initRatingVars(rating);
-        const fractionalPart = (e.clientX - ratingItem.getBoundingClientRect().left) / ratingItem.clientWidth;
-        const newValue = index + fractionalPart;
-        ratingValue.innerHTML = newValue.toFixed(1);
-        setRatingActiveWidth(newValue);
-      });
-    }
-
-    rating.addEventListener("mouseleave", function (e) {
-      // rating.classList.remove('interacting');
+    ratingItem.addEventListener('click', function (e) {
+      initRatingVars(rating);
+      const fractionalPart =
+        (e.clientX - ratingItem.getBoundingClientRect().left) /
+        ratingItem.clientWidth;
+      const newValue = index + fractionalPart;
+      ratingValue.innerHTML = newValue.toFixed(1);
+      setRatingActiveWidth(newValue);
     });
   }
+
+  rating.addEventListener('mouseleave', function (e) {
+    rating.classList.remove('interacting');
+  });
 }
+async function tryToSend() {
+  const sendButton = document.querySelector('.button-modal-rating-send');
+  sendButton.addEventListener('click', e => {
+    e.preventDefault();
+    const emailInput = document.getElementById('email-modal');
+    const commentInput = document.getElementById('user-comment');
+    const ratingValue = parseFloat(
+      document.querySelector('.rating-value').innerText
+    );
 
-const sendButton = document.querySelector('.button-modal-rating-send');
-sendButton.addEventListener('click', () => {
-  const emailInput = document.getElementById('email-modal');
-  const commentInput = document.getElementById('user-comment');
-  const ratingValue = parseFloat(document.querySelector('.rating-value').innerText);
-
-  if (emailInput.checkValidity() && commentInput.checkValidity() && ratingValue > 0) {
-    const requestData = {
-      rate: ratingValue,
-      email: emailInput.value,
-      review: commentInput.value,
-    };
-
-    axios.post(`https://energyflow.b.goit.study/api/exercises/${exerciseId}/rate`, requestData)
-      .then((response) => {
+    if (emailInput.checkValidity() && commentInput.checkValidity() && ratingValue >= 0) {
+      let data = {
+        rate: ratingValue,
+        email: emailInput.value,
+        review: commentInput.value,
+      };
+      try {
+        axios.patch(`https:energyflow.b.goit.study/api/exercises/${idForOpenModal}/rating/`, data);
         closeSecondModal();
-      })
-      .catch((error) => {
-        console.error(error);
+      } catch (error) {
+        console.error(error.response.data);
+        iziToast.error({
+          title: 'Error',
+          message: 'Failed to submit the rating. Please try again later.',
+        });
+      }
+    } else {
+      iziToast.warning({
+        title: 'Warning',
+        message: 'Please fill in all the required fields.',
       });
-  } else {
-    alert('Please fill in all the required fields.');
-  }
-});
+    }
+  });
+}
