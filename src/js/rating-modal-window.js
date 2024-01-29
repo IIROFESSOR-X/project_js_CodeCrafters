@@ -1,7 +1,7 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
 import { openOnClick, closeModal } from './modal-window';
-
+import "izitoast/dist/css/iziToast.min.css";
 let idForOpenModal = '';
 let ratingActive;  // Глобальные переменные
 let ratingValue;
