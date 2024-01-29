@@ -1,5 +1,6 @@
 import axios from "axios";
 import { renderFavorites } from './favorites';
+import { startRatingModal } from './rating-modal-window';
 
 const modalWindow = document.querySelector('.container-for-modal');
 
@@ -68,6 +69,7 @@ function renderModalMarkup(exercise = {}) {
         </div>`;
     
     modalWindow.innerHTML = markup;
+    startRatingModal(exercise._id);
 }
 
 function getRatingColoring(exerciseRating) {
@@ -93,7 +95,7 @@ function closeModalOnEsc(e) {
     }
 }
 
-function closeModal() {
+export function closeModal() {
     modalWindow.innerHTML = '';
     document.removeEventListener('keydown', closeModalOnEsc);
     document.removeEventListener('click', closeModalOnClick);
