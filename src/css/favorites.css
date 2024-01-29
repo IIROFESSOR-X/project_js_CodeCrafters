@@ -20,6 +20,9 @@
 .header-social-list {
   display: none;
 }
+.quote-all {
+  padding-top: 38px;
+}
 
 .quate-day {
   height: 335px;
@@ -203,10 +206,17 @@
   .header-btn-favorites-fv:active {
     background-color: var(--main-bg-color);
   }
+  .quote-all {
+    padding-top: 80px;
+  }
+.quote-inform {
+  padding-bottom: 16px;
+}
   .quate-day {
     background-image: url('../img/favorites/quote-tablet.png');
   }
-  .quote-inform {
+
+  .quote-inform-fv {
     padding-top: 80px;
   }
   .fit-girl {
@@ -257,9 +267,15 @@
   }
 }
 
-@media screen and (min-width: 1270px) {
-  .quote-inform {
-    width: 1408px;
+@media screen and (min-width: 1440px) {
+  .quote-inform-fv {
+    width: 1440px;
+  }
+  .quote-wrapper {
+    width: unset !important; /* Сброс значения width */
+  }
+  .quote-wrapper-fv {
+    width: 704px;
   }
   .quate-day {
     width: 704px;
@@ -273,7 +289,7 @@
     width: 352px;
     height: 302px;
   }
-  .quote-inform {
+  .quote-all {
     display: flex;
   }
   .exercises-container-fv {

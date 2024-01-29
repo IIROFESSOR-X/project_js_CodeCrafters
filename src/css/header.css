@@ -95,7 +95,7 @@ div.header-container {
     transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .header-btn-home:hover,
-  .header-btn-home:active {
+  .header-btn-home:focus {
     background-color: var(--main-bg-color);
   }
   .header-btn-favorites {
@@ -114,7 +114,7 @@ div.header-container {
 
 /* ==================================== */
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   div.header-container {
     padding: 0 64px;
   }

@@ -143,6 +143,24 @@
   letter-spacing: -0.02em;
 }
 
+.footer-form-btn {
+    background-color: #7E847F;
+    border: none;
+}
+.footer-form-email,
+.footer-form-btn {
+    border-radius: 30px;
+    }
+    .footer-form,
+     .footer-form-email,
+    .footer-form-btn {
+        color: #F6F6F6;
+    }
+.footer-form-email {
+    border: #F6F6F6;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 18px;
+}
 @media (min-width: 375px) {
   .footer-wrap {
     width: 335px;
@@ -172,8 +190,8 @@
     padding: 12px 130px;
   }
 }
-
-@media (min-width: 768px) {
+  
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .footer-wrap {
     width: 736px;
     height: 576px;
@@ -344,7 +362,7 @@
   }
 }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 1440px) {
     .footer-form {
         font-size: 18px;
     }
@@ -355,4 +373,3 @@
         padding-left: 14px;     
     }
 } 
-
