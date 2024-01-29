@@ -126,7 +126,9 @@ function checkObjectInLocalStorage(data) {
 
         localStorage.setItem('favorites', JSON.stringify(filteredObjects));
         favoritesBtnName.textContent = "Add to favorites";
-        renderFavorites(objects);
+
+        let savedCards = JSON.parse(localStorage.getItem('favorites'));
+        renderFavorites(savedCards);
 
         favoritesBtn.removeEventListener('click', deleteObj);
         favoritesBtn.addEventListener('click', addObj);
@@ -137,13 +139,15 @@ function checkObjectInLocalStorage(data) {
 
         if (!isObjectAdded) {
             const foundObject = objects.find((obj) => obj._id === newObject._id);
+            let savedCards = JSON.parse(localStorage.getItem('favorites'));
 
             if (!foundObject) {
                 objects.push(newObject);
 
                 localStorage.setItem('favorites', JSON.stringify(objects));
                 favoritesBtnName.textContent = 'Remove from';
-                renderFavorites(objects);
+                
+                renderFavorites(savedCards);
 
                 isObjectAdded = true;
 
@@ -152,8 +156,9 @@ function checkObjectInLocalStorage(data) {
             } else {
                 localStorage.setItem('favorites', JSON.stringify(objects));
                 favoritesBtnName.textContent = 'Remove from';
-                renderFavorites(objects);
-
+                
+                renderFavorites(savedCards);
+                
                 favoritesBtn.removeEventListener('click', addObj);
                 favoritesBtn.addEventListener('click', deleteObj);
             }
