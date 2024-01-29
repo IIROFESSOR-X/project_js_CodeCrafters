@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EnergyFlow</title>
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMHSURBVHgBpVY7TFNRGP7ObQ2dtAzCog2JQkyQWAwkGo20ookuYjAOmPhodIAJV0Kg54JERzddjEw+YjRqxEhCoDU1MGA0IovViIUFXGgnmth7/P9Tbm3p45b4Jb333PP4/v/8zwpUgJTSa+2w+oUSASXQAEW/LNYF8NmCeOVy4aUckEvlOERJ4tuyQWXUQwUEUAWEwLgwhFlKkGvrhDlm9luWekLDA6gefqVw7cTJYPr9dGSurIDhMTOslHWHhh5sHx4yx5mOzg5Ep6PRIgGs+SZ5VWjc34irPVfQesiP+Pc40un05ooI0E2S9k0MfrDNM8qS2AbaW9tQU1ODXTt3oYmE5UNAhZmTx25+KEuF6eWtRHj86DH49vgQ/xHHr5UEEvTz7fXpNf7eAi8HCb2DgiVZGfUTDui70YvEcgJ1u+tQX1ePZCqJ+Y/zWtDq77WSZ4w/otZABuedyFuaD9I1gYnJt0ilUnqOTcN+YHI2ld6zBZbLuummc11OApr2NeEbmcYmtcEmqqcbdXd1awUWFr8WnBNCdJAPlN9JwJvJCf0+FejMzSWTSW2m0OWQNt3z1y+KznH28w28TgI4BFn7luaW3Fxs7oN+J1aWEZuNlT5IpcWNKsFRlK89a803cIJBQbvktIntnK89E1dDTlg3qFIuOe3STiQ8evZYa8/O7czzRzlwxTWoSEVLLdqhd+lij7b/wuKCNgsLWV1bRfvhNlw4111RAJdzt5HBXcuNcP4Ck3IysRB2MBPHZrNO3UhvwOPJ1sJyCWaDe4XuB+FbckZBBeyFvuu92sZcFr6Q5v8KGXRYsk9YYNnogc6BcXNQhnQUCRdClNGf7JC99+B+yUNsdybnhKpIzh3PgMnjbDWlTiQgTDiAydlcU5GpivvI9rnuVtAyh0elhFBh/A+UMkeGRqT9WdDRojORSJCaBQ2PYJtdjc2iIAZGh8yCplXUkyPUiYKng0+VErX06VinsuQiIlzi7MigfFe8VgG6K1E5z1Zc5c/VLcp+TlDOIQ5z+nuzXo7jLyIPRWxyL3BrAAAAAElFTkSuQmCC">
-  <link rel="icon" type="image/x-icon" href="/project_js_CodeCrafters/assets/favicon-ee64f28b.ico">
-  
-  <script type="module" crossorigin src="/project_js_CodeCrafters/commonHelpers3.js"></script>
-  <link rel="modulepreload" crossorigin href="/project_js_CodeCrafters/assets/vendor-8cce9181.js">
-  <link rel="modulepreload" crossorigin href="/project_js_CodeCrafters/assets/quote-section-97db8e91.js">
-  <link rel="stylesheet" href="/project_js_CodeCrafters/assets/quote-section-eef249cb.css">
-  <link rel="stylesheet" href="/project_js_CodeCrafters/assets/vendor-e5212ee8.css">
-</head>
-<body>
-  <header class="header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EnergyFlow</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMHSURBVHgBpVY7TFNRGP7ObQ2dtAzCog2JQkyQWAwkGo20ookuYjAOmPhodIAJV0Kg54JERzddjEw+YjRqxEhCoDU1MGA0IovViIUFXGgnmth7/P9Tbm3p45b4Jb333PP4/v/8zwpUgJTSa+2w+oUSASXQAEW/LNYF8NmCeOVy4aUckEvlOERJ4tuyQWXUQwUEUAWEwLgwhFlKkGvrhDlm9luWekLDA6gefqVw7cTJYPr9dGSurIDhMTOslHWHhh5sHx4yx5mOzg5Ep6PRIgGs+SZ5VWjc34irPVfQesiP+Pc40un05ooI0E2S9k0MfrDNM8qS2AbaW9tQU1ODXTt3oYmE5UNAhZmTx25+KEuF6eWtRHj86DH49vgQ/xHHr5UEEvTz7fXpNf7eAi8HCb2DgiVZGfUTDui70YvEcgJ1u+tQX1ePZCqJ+Y/zWtDq77WSZ4w/otZABuedyFuaD9I1gYnJt0ilUnqOTcN+YHI2ld6zBZbLuummc11OApr2NeEbmcYmtcEmqqcbdXd1awUWFr8WnBNCdJAPlN9JwJvJCf0+FejMzSWTSW2m0OWQNt3z1y+KznH28w28TgI4BFn7luaW3Fxs7oN+J1aWEZuNlT5IpcWNKsFRlK89a803cIJBQbvktIntnK89E1dDTlg3qFIuOe3STiQ8evZYa8/O7czzRzlwxTWoSEVLLdqhd+lij7b/wuKCNgsLWV1bRfvhNlw4111RAJdzt5HBXcuNcP4Ck3IysRB2MBPHZrNO3UhvwOPJ1sJyCWaDe4XuB+FbckZBBeyFvuu92sZcFr6Q5v8KGXRYsk9YYNnogc6BcXNQhnQUCRdClNGf7JC99+B+yUNsdybnhKpIzh3PgMnjbDWlTiQgTDiAydlcU5GpivvI9rnuVtAyh0elhFBh/A+UMkeGRqT9WdDRojORSJCaBQ2PYJtdjc2iIAZGh8yCplXUkyPUiYKng0+VErX06VinsuQiIlzi7MigfFe8VgG6K1E5z1Zc5c/VLcp+TlDOIQ5z+nuzXo7jLyIPRWxyL3BrAAAAAElFTkSuQmCC" />
+    <link rel="icon" type="image/x-icon" href="/project_js_CodeCrafters/assets/favicon-ee64f28b.ico" />
+    
+    <script type="module" crossorigin src="/project_js_CodeCrafters/commonHelpers3.js"></script>
+    <link rel="modulepreload" crossorigin href="/project_js_CodeCrafters/assets/vendor-8cce9181.js">
+    <link rel="modulepreload" crossorigin href="/project_js_CodeCrafters/assets/quote-section-ed381dd5.js">
+    <link rel="stylesheet" href="/project_js_CodeCrafters/assets/quote-section-e40e9cde.css">
+    <link rel="stylesheet" href="/project_js_CodeCrafters/assets/vendor-e5212ee8.css">
+  </head>
+  <body>
+    <header class="header">
   <div class="header-container container">
     <div class="header-logo-wrap">
       <a class="header-logo" href="./index.html" title="Home page">
@@ -71,7 +71,7 @@
   </div>
 
 </header>
-  <section class="hero">
+    <section class="hero">
     <div class="hero-container container">
         <div class="hero-background-wrapper">
 
@@ -90,7 +90,7 @@
         </div>
     </div>
 </section>
-  <section class="quote-section">
+    <section class="quote-section">
   <div class="container">
     <div class="quote-section-information">
         <div class="quote-wrapper quote-wrapper-fv">
@@ -112,7 +112,7 @@
   </div>
 </section>
 
-  <section class="exercises-section">
+    <section class="exercises-section">
   <div class="container">
     <div class="exercises-container">
       <h2 class="exercises-title">
@@ -151,7 +151,7 @@
             /></label>
             <button class="exer-form-button" type="submit">
               <svg class="exercises-form-svg" width="18" height="18">
-                <use href="/project_js_CodeCrafters/assets/symbol-defs-cd1909bf.svg#icon-search"></use>
+                <use href="/project_js_CodeCrafters/assets/symbol-defs-dfb5c4f7.svg#icon-search"></use>
               </svg>
             </button>
             <button
@@ -159,7 +159,7 @@
               class="form-reset-text-button reset-button-close"
             >
               <svg class="form-reset-text-icon" width="18" height="18">
-                <use href="/project_js_CodeCrafters/assets/symbol-defs-cd1909bf.svg#icon-x-close"></use>
+                <use href="/project_js_CodeCrafters/assets/symbol-defs-dfb5c4f7.svg#icon-x-close"></use>
               </svg>
             </button>
           </div>
@@ -180,7 +180,7 @@
                 <use href="/img/symbol-defs.svg#icon-running-men"></use>
  </svg> -->
 
-  <!-- HOME-static-section -->
+    <!-- HOME-static-section -->
 <section class="home-static-block">
   <div class="home-static-block-wrap container">
     <img
@@ -208,7 +208,7 @@
   </div>
 </section>
 
-  <footer class="footer">
+    <footer class="footer">
   <div class="container">
     <div class="footer-wrap">
       <div class="footer-nav">
@@ -264,11 +264,18 @@
           </li>
         </ul>
       </div>
+      <div>
+          <button class="scroll-up-btn">
+            <svg class="scroll-up-btn-icon" width="28" height="28">
+              <use href="/project_js_CodeCrafters/assets/symbol-defs-dfb5c4f7.svg#scrollUp-icon"></use>
+            </svg>
+          </button>
+        </div>
     </div>
   </div>
 </footer>
 
-  <div class="mobile-menu is-hidden" data-mobile-menu>
+    <div class="mobile-menu is-hidden" data-mobile-menu>
   <div class="mobile-menu__box">
     <a class="mobile-menu__logo" href="./index.html" title="Home page">
       <svg class="mobile-menu__logo-icon" width="86" height="18">
@@ -349,9 +356,8 @@
   </ul>
 </div>
 
-  <!-- <button type="button" data-exersiseid="64f389465ae26083f39b17a6" id="modalExersises">open modal</button> -->
+    <!-- <button type="button" data-exersiseid="64f389465ae26083f39b17a6" id="modalExersises">open modal</button> -->
 <div class="container-for-modal"></div>
-  
+    
   </body>
 </html>
-
