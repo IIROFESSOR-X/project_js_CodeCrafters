@@ -159,7 +159,7 @@
 .footer-form-email {
     border: #F6F6F6;
     background-color: rgba(0, 0, 0, 0);
-    font-size: 18px;
+    font-size: 16px;
 }
 @media (min-width: 375px) {
   .footer-wrap {
@@ -374,5 +374,4 @@
         .footer-form-email {
             padding-left: 14px;  
         }
-
     }
