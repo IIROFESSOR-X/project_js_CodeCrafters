@@ -71,7 +71,6 @@ function openSecondModal() {
       closeSecondModal();
     }
   });
-
   initRating();
   tryToSend();
 }
