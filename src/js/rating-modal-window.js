@@ -3,7 +3,7 @@ import iziToast from 'izitoast';
 import { openOnClick, closeModal } from './modal-window';
 import "izitoast/dist/css/iziToast.min.css";
 let idForOpenModal = '';
-let ratingActive;  // Глобальные переменные
+let ratingActive;
 let ratingValue;
 
 export function startRatingModal(id) {
@@ -122,7 +122,7 @@ function initRating() {
         const fractionalPart =
           (e.clientX - ratingItem.getBoundingClientRect().left) /
           ratingItem.clientWidth;
-        const newValue = index + fractionalPart;
+        const newValue = Math.min(5, index + fractionalPart);;
         ratingValue.innerHTML = newValue.toFixed(1);
         setRatingActiveWidth(newValue);
       });
