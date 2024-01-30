@@ -74,6 +74,7 @@ function parsingCards() {
   savedCards = localStorage.getItem('favorites');
   try {
     parsedCards = JSON.parse(savedCards);
+    if (!parsedCards) parsedCards = []; 
   } catch (error) {
     console.log(error);
     parsedCards = [];
