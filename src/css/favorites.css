@@ -66,7 +66,6 @@
   position: relative;
 }
 
-
 .exercises-container-fv {
   background: #e8e8e8;
   width: 335px;
@@ -90,7 +89,7 @@
 }
 
 .exercises-container .is-hidden {
- display: none;
+  display: none;
 }
 
 .dumbbell {
@@ -106,8 +105,6 @@
   line-height: 18px;
 }
 
-
-
 .favorites-list {
   display: flex;
   flex-direction: column;
@@ -116,34 +113,39 @@
 }
 
 @media screen and (min-width: 768px) {
-
   .favorites-list {
     flex-direction: row;
     gap: 14px;
     flex-wrap: wrap;
     margin-bottom: 32px;
-  }}
+  }
+}
 
-
-.card-btn-delete{
-    margin-left: 8px;
+.card-btn-delete {
+  margin-left: 8px;
   padding: 0;
   height: 16px;
   width: 16px;
-    border: none;
-    background-color: transparent;
+  border: none;
+  background-color: transparent;
+  transition: background-color 250ms linear;
 }
 
 .card-btn-delete-svg {
   fill: #fff;
-  stroke: #1B1B1B;
+  stroke: #1b1b1b;
 }
+
+.card-btn-delete:hover .card-btn-delete-svg,
+.card-btn-delete:focus .card-btn-delete-svg {
+  stroke: #7e847f;
+}
+
 .exercises-container {
   width: 335px;
   height: 1644px;
   overflow: auto;
 }
-
 
 @media screen and (min-width: 768px) {
   .header-container {
@@ -227,9 +229,9 @@
     padding-right: 80px;
     min-height: 302px;
   }
-.quote-inform {
-  padding-bottom: 16px;
-}
+  .quote-inform {
+    padding-bottom: 16px;
+  }
   .quate-day {
     background-image: url('../img/favorites/quote-tablet.png');
   }
@@ -269,7 +271,6 @@
     padding-top: 208px;
     padding-bottom: 437px;
   }
-
 
   .dumbbell {
     width: 115px;
@@ -354,4 +355,3 @@
     overflow: auto;
   }
 }
-
