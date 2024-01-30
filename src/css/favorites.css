@@ -23,6 +23,16 @@
 .quote-all {
   padding-top: 38px;
 }
+.quote-wrapper-fv {
+  background-color: var(--main-color);
+  border-radius: 30px;
+  min-height: 272px;
+  padding-top: 42px;
+  padding-left: 66px;
+  padding-bottom: 40px;
+  padding-right: 20px;
+  position: relative;
+}
 
 .quate-day {
   height: 335px;
@@ -55,12 +65,8 @@
   padding-right: 20px;
   position: relative;
 }
-.quote-title {
-  color: #1b1b1b;
-}
-.quote-text {
-  color: #1b1b1b;
-}
+
+
 .exercises-container-fv {
   background: #e8e8e8;
   width: 335px;
@@ -132,7 +138,11 @@
   fill: #fff;
   stroke: #1B1B1B;
 }
-
+.exercises-container {
+  width: 335px;
+  height: 1644px;
+  overflow: auto;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -209,6 +219,14 @@
   .quote-all {
     padding-top: 80px;
   }
+  .quote-wrapper-fv {
+    border-radius: 50px;
+    padding-top: 64px;
+    padding-left: 130px;
+    padding-bottom: 64px;
+    padding-right: 80px;
+    min-height: 302px;
+  }
 .quote-inform {
   padding-bottom: 16px;
 }
@@ -265,16 +283,21 @@
     text-align: center;
     line-height: 24px;
   }
+  .exercises-container {
+    width: 736px;
+    height: 928px;
+    overflow: auto;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .quote-inform-fv {
     width: 1440px;
   }
-  .quote-wrapper {
-    width: unset !important; /* Сброс значения width */
-  }
+
   .quote-wrapper-fv {
+    padding-left: 114px;
+    padding-right: 64px;
     width: 704px;
   }
   .quate-day {
@@ -325,4 +348,10 @@
     text-align: center;
     line-height: 24px;
   }
+  .exercises-container {
+    width: 1440px;
+    height: 687px;
+    overflow: auto;
+  }
 }
+

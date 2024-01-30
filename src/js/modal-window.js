@@ -1,4 +1,6 @@
 import axios from "axios";
+import { renderFavorites } from './favorites';
+import { startRatingModal } from './rating-modal-window';
 
 const modalWindow = document.querySelector('.container-for-modal');
 
@@ -67,6 +69,7 @@ function renderModalMarkup(exercise = {}) {
         </div>`;
     
     modalWindow.innerHTML = markup;
+    startRatingModal(exercise._id);
 }
 
 function getRatingColoring(exerciseRating) {
@@ -92,11 +95,19 @@ function closeModalOnEsc(e) {
     }
 }
 
-function closeModal() {
+export function closeModal() {
     modalWindow.innerHTML = '';
     document.removeEventListener('keydown', closeModalOnEsc);
     document.removeEventListener('click', closeModalOnClick);
 }
+
+// modal+favorites
+
+const forRenderFavoriteItems = () => {
+    let savedCards = JSON.parse(localStorage.getItem('favorites'));
+    renderFavorites(savedCards);
+}
+    
 
 // favorites
 
@@ -126,21 +137,39 @@ function checkObjectInLocalStorage(data) {
         localStorage.setItem('favorites', JSON.stringify(filteredObjects));
         favoritesBtnName.textContent = "Add to favorites";
 
+        forRenderFavoriteItems();
+
         favoritesBtn.removeEventListener('click', deleteObj);
         favoritesBtn.addEventListener('click', addObj);
     };
 
     const addObj = () => {
-        const foundObject = objects.find((obj) => obj._id === newObject._id);
+        let isObjectAdded = false;
 
-        if (!foundObject) {
-            objects.push(newObject);
+        if (!isObjectAdded) {
+            const foundObject = objects.find((obj) => obj._id === newObject._id);
 
-            localStorage.setItem('favorites', JSON.stringify(objects));
-            favoritesBtnName.textContent = 'Remove from';
-            
-            favoritesBtn.removeEventListener('click', addObj);
-            favoritesBtn.addEventListener('click', deleteObj);
+            if (!foundObject) {
+                objects.push(newObject);
+
+                localStorage.setItem('favorites', JSON.stringify(objects));
+                favoritesBtnName.textContent = 'Remove from';
+                
+                forRenderFavoriteItems();
+
+                isObjectAdded = true;
+
+                favoritesBtn.removeEventListener('click', addObj);
+                favoritesBtn.addEventListener('click', deleteObj);
+            } else {
+                localStorage.setItem('favorites', JSON.stringify(objects));
+                favoritesBtnName.textContent = 'Remove from';
+                
+                forRenderFavoriteItems();
+                
+                favoritesBtn.removeEventListener('click', addObj);
+                favoritesBtn.addEventListener('click', deleteObj);
+            }
         }
     };
 
