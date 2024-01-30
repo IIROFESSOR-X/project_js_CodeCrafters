@@ -9,8 +9,8 @@ document
     const emailInput = this.elements.email;
     const emailValue = emailInput.value.trim();
 
-    if (!emailValue) {
-      alert('Field must be filled in');
+    if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(emailValue)) {
+      iziToast.success('Field must be filled in');
       return;
     }
 
@@ -34,6 +34,7 @@ document
      
       .catch(error => {
         console.error(error);
-        alert('Failed to subscribe. Please try again later.');
+        iziToast.error('Sorry! Failed to subscribe.');
+        this.reset();
       });
   });

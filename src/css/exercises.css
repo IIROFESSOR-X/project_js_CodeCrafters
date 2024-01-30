@@ -342,6 +342,9 @@
   stroke: transparent;
 }
 @media screen and (min-width: 768px) {
+  .card-target-text {
+    display: block;
+  }
   .exer-title-slash {
     font-size: 44px;
     font-style: normal;

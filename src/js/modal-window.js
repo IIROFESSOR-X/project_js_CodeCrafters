@@ -101,6 +101,14 @@ export function closeModal() {
     document.removeEventListener('click', closeModalOnClick);
 }
 
+// modal+favorites
+
+const forRenderFavoriteItems = () => {
+    let savedCards = JSON.parse(localStorage.getItem('favorites'));
+    renderFavorites(savedCards);
+}
+    
+
 // favorites
 
 function checkObjectInLocalStorage(data) {
@@ -129,8 +137,7 @@ function checkObjectInLocalStorage(data) {
         localStorage.setItem('favorites', JSON.stringify(filteredObjects));
         favoritesBtnName.textContent = "Add to favorites";
 
-        let savedCards = JSON.parse(localStorage.getItem('favorites'));
-        renderFavorites(savedCards);
+        forRenderFavoriteItems();
 
         favoritesBtn.removeEventListener('click', deleteObj);
         favoritesBtn.addEventListener('click', addObj);
@@ -141,7 +148,6 @@ function checkObjectInLocalStorage(data) {
 
         if (!isObjectAdded) {
             const foundObject = objects.find((obj) => obj._id === newObject._id);
-            let savedCards = JSON.parse(localStorage.getItem('favorites'));
 
             if (!foundObject) {
                 objects.push(newObject);
@@ -149,7 +155,7 @@ function checkObjectInLocalStorage(data) {
                 localStorage.setItem('favorites', JSON.stringify(objects));
                 favoritesBtnName.textContent = 'Remove from';
                 
-                renderFavorites(savedCards);
+                forRenderFavoriteItems();
 
                 isObjectAdded = true;
 
@@ -159,7 +165,7 @@ function checkObjectInLocalStorage(data) {
                 localStorage.setItem('favorites', JSON.stringify(objects));
                 favoritesBtnName.textContent = 'Remove from';
                 
-                renderFavorites(savedCards);
+                forRenderFavoriteItems();
                 
                 favoritesBtn.removeEventListener('click', addObj);
                 favoritesBtn.addEventListener('click', deleteObj);

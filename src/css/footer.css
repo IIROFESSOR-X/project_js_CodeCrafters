@@ -159,7 +159,7 @@
 .footer-form-email {
     border: #F6F6F6;
     background-color: rgba(0, 0, 0, 0);
-    font-size: 18px;
+    font-size: 16px;
 }
 @media (min-width: 375px) {
   .footer-wrap {
@@ -383,26 +383,3 @@
     }
   }
 }
-
-/* @media screen and (min-width: 1440px) {
-    
-    .footer-form-btn {
-      justify-content: center;
-      padding: 0;
-    }
-    .footer-form-email,
-        .footer-form-btn {
-        width: 352px;
-        height: 48px;
-        padding-left: 14px;     
-    }
-    .footer-imput {
-      width: 352px;
-        height: 48px;
-        padding: 0;
-    }
-    .footer-main {
-      display: flex;
-      gap: 120px;
-    }
-}  */
