@@ -2,11 +2,8 @@
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <symbol id="burger-menu-icon" viewBox="0 0 64 32">
-            <path fill="#bfbaba" style="fill: var(--color1, #bfbaba)" d="M0 0h64v32h-64z"></path>
-            <path fill="#f6f6f6" style="fill: var(--color2, #f6f6f6)" d="M-606-80h750v9394h-750z"></path>
-            <path fill="#e8e8e8" style="fill: var(--color3, #e8e8e8)"
-                d="M-506-40h550c33.137 0 60 26.863 60 60v654c0 33.137-26.863 60-60 60h-550c-33.137 0-60-26.863-60-60v-654c0-33.137 26.863-60 60-60z">
-            </path>
+<path fill="none" stroke="#7e847f" style="stroke: var(--color1, #7e847f)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M56 20.666h-48M56 10h-48"></path>
+</symbol>
             <path fill="none" stroke="#7e847f" style="stroke: var(--color5, #7e847f)" stroke-linejoin="round"
                 stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M56 20.666h-48M56 10h-48"></path>
         </symbol>
