@@ -4,7 +4,7 @@ function scrollingTop() {
     document.body.insertAdjacentHTML("beforeend",
     `<button class="scroll-top-btn">
       <svg class="scroll-top-icon" width="15" height="15">
-        <use href="../img/icons.svg#icon-arrow-top"></use>
+        <use href="./img/icons.svg#icon-arrow-top"></use>
       </svg>
     </button>
     `)
