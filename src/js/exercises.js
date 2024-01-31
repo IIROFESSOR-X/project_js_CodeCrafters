@@ -217,7 +217,7 @@ function showsExercisesPages(e) {
       getExercisesFromServer(e.target.dataset.type);
       return;
     }
-
+    exercisesList.innerHTML = `<div class="loder-container-card" ><div class="loader"></div></div>`;
     getCardsFromServer(
       e.target.dataset.type,
       e.target.dataset.card,
@@ -285,7 +285,7 @@ function formatNumericOfPages(cPage, tPage) {
 // ==================================================================
 function makeTypeOfTrainingCards(e) {
   if (e.target.dataset.type) {
-    exercisesList.innerHTML = `<div class="loader"></div>`;
+    exercisesList.innerHTML = `<div class="loder-container-card" ><div class="loader"></div></div>`;
     let filter = document.querySelector(`.exercises-button-active`).dataset
       .name;
     if (filter === `Body parts`) filter = `Body part`;
