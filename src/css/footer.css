@@ -1,6 +1,5 @@
 .footer-wrap {
   width: 280px;
-  margin-bottom: 20px;
   padding-top: 40px;
   padding-left: 20px;
   padding-right: 20px;
@@ -164,7 +163,6 @@
 @media (min-width: 375px) {
   .footer-wrap {
     width: 335px;
-    height: 471px;
   }
 
   .footer-heading-form {
@@ -320,12 +318,9 @@
 @media (min-width: 1440px) {
   .footer-wrap {
     width: 1408px;
-    height: 454px;
     padding-left: 48px;
     padding-right: 48px;
     padding-bottom: 26px;
-    column-gap: 156px;
-    row-gap: 150px;
     background: linear-gradient(
         0deg,
         rgba(27, 27, 27, 0.7) 0%,
