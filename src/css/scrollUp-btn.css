@@ -1,22 +1,26 @@
-.scroll-up-btn {
-  background-color: transparent;
-  border-radius: 10px;
-  border: 1px solid rgba(246, 246, 246, 0.2);
-  padding: 10px 10px;
-  cursor: pointer;
-  transition: fill 250ms ease-in-out;
+.scroll-top-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-style: none;
+  background-color: var(--main-color);
+  position: fixed;
+  bottom: 50px;
+  right: 40px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 500ms;
 }
 
-.scroll-up-btn-icon {
-  fill: #f6f6f6;
-  transition: fill 250ms ease-in-out;
+.scroll-top-btn:hover {
+  background-color: var(--hover-color);
 }
 
-.scroll-up-btn:hover .scroll-up-btn-icon,
-.scroll-up-btn:active .scroll-up-btn-icon {
-  fill: var(--hover-color);
-}
-.scroll-up-btn-icon:hover,
-.scroll-up-btn-icon:active {
-  fill: var(--hover-color);
-}
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transition: 500ms;}

@@ -1,8 +1,9 @@
 // ===================exercises
 import axios from 'axios';
 import { openOnClick } from './modal-window';
+import { scrollingTop } from './scroll-up-btn';
 // ===
-import exerIcons from './img/symbol-defs.svg';
+import exerIcons from '../img/symbol-defs.svg';
 const exercisesTitle = document.querySelector(`.exercises-title-span`);
 const exercisesList = document.querySelector(`.exercises-list`);
 const exercisesListPages = document.querySelector(`.exercises-list-pages`);
@@ -214,10 +215,11 @@ function showsExercisesPages(e) {
       .querySelector(`.exercises-section`)
       .scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (filterTypeCads == ``) {
+      exercisesList.innerHTML = `<div class="loder-container" ><div class="loader"></div></div>`;
       getExercisesFromServer(e.target.dataset.type);
       return;
     }
-
+    exercisesList.innerHTML = `<div class="loder-container-card" ><div class="loader"></div></div>`;
     getCardsFromServer(
       e.target.dataset.type,
       e.target.dataset.card,
@@ -285,7 +287,7 @@ function formatNumericOfPages(cPage, tPage) {
 // ==================================================================
 function makeTypeOfTrainingCards(e) {
   if (e.target.dataset.type) {
-    exercisesList.innerHTML = `<div class="loader"></div>`;
+    exercisesList.innerHTML = `<div class="loder-container-card" ><div class="loader"></div></div>`;
     let filter = document.querySelector(`.exercises-button-active`).dataset
       .name;
     if (filter === `Body parts`) filter = `Body part`;
@@ -340,5 +342,5 @@ function validatorForUserSearchText(e) {
   } else {
     resetFormTextButton.classList.add(`reset-button-close`);
   }
-  console.log(e.target.value);
 }
+scrollingTop();
