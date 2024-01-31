@@ -1,86 +1,60 @@
-import{o as k}from"./assets/quote-section-0f67f321.js";import{a as F,i as b}from"./assets/vendor-8cce9181.js";const y=document.querySelector(".exercises-title-span"),m=document.querySelector(".exercises-list"),v=document.querySelector(".exercises-list-pages");v.addEventListener("click",q);m.addEventListener("click",N);const p=document.querySelector(".exercises-form");p.addEventListener("submit",Z);p.addEventListener("input",D);const w=document.querySelector(".exercises-button-list"),L=document.querySelector(".form-reset-text-button");L.addEventListener("click",t=>{p.reset(),L.classList.add("reset-button-close")});let u=1,$=8,f="Muscles",c="",h="",S=0;const H=document.querySelectorAll(".exercises-button");[...H].map((t,e)=>{e===0&&t.classList.add("exercises-button-active"),t.addEventListener("click",B)});async function T(t,e,r,i,s,o){let a={};s&&e=="Body parts"&&(e="Body part"),s?a[e.toLowerCase().replace(" ","")]=s:a.filter=e,a.page=r,a.limit=i,o&&(a.keyword=o),document.body.clientWidth>=768&&!s&&(a.limit=12),document.body.clientWidth<=768&&s&&(a.limit=8),document.body.clientWidth>=1440&&s&&(a.limit=9);let n=new URLSearchParams(a).toString();try{const d=await F.get(`https://energyflow.b.goit.study/api/${t}?${n}`);if(S=d.data.totalPages,o&&d.data.results.length==0){O();return}return d.data}catch(d){console.log(d)}}function O(){m.innerHTML=`<div class="no-results-wrapper">
+import{e as x,o as q}from"./assets/quote-section-b70cc511.js";import{a as M,i as w}from"./assets/vendor-8cce9181.js";const $=document.querySelector(".exercises-title-span"),m=document.querySelector(".exercises-list"),b=document.querySelector(".exercises-list-pages");b.addEventListener("click",A);m.addEventListener("click",N);const p=document.querySelector(".exercises-form");p.addEventListener("submit",D);p.addEventListener("input",U);const S=document.querySelector(".exercises-button-list"),v=document.querySelector(".form-reset-text-button");v.addEventListener("click",t=>{p.reset(),v.classList.add("reset-button-close")});let u=1,T=8,f="Muscles",c="",h="",E=0;const H=document.querySelectorAll(".exercises-button");[...H].map((t,e)=>{e===0&&t.classList.add("exercises-button-active"),t.addEventListener("click",k)});async function O(t,e,r,i,s,n){let a={};s&&e=="Body parts"&&(e="Body part"),s?a[e.toLowerCase().replace(" ","")]=s:a.filter=e,a.page=r,a.limit=i,n&&(a.keyword=n),document.body.clientWidth>=768&&!s&&(a.limit=12),document.body.clientWidth<=768&&s&&(a.limit=8),document.body.clientWidth>=1440&&s&&(a.limit=9);let o=new URLSearchParams(a).toString();try{const l=await M.get(`https://energyflow.b.goit.study/api/${t}?${o}`);if(E=l.data.totalPages,n&&l.data.results.length==0){F();return}return l.data}catch(l){console.log(l)}}function F(){m.innerHTML=`<div class="no-results-wrapper">
   <p class="no-results-message">
     Unfortunately, <span class="no-results-messag-span">no results</span> no
     results were found. You may want to consider other search options to find
     the exercise you are looking for. Our range is wide and you have the
     opportunity to find more options that suit your needs.
   </p>
-</div>`,v.innerHTML=""}B();function B(t){if(w.classList.remove("form-is-open"),p.classList.add("form-is-hiden"),c="",y.innerHTML="",u=1,t){const e=t.target;m.innerHTML='<div class="loader"></div>',f=e.dataset.name,document.querySelector(".exercises-button-active").classList.remove("exercises-button-active"),e.classList.add("exercises-button-active")}E(f)}async function E(t){const e=await T("filters",t,u,$).then(r=>r).catch(r=>console.log(r));M(e.results,e.totalPages)}function M(t,e){if(t[0]._id){let i=t.reduce((s,{_id:o,rating:a,name:n,burnedCalories:d,time:C,bodyPart:g,target:l})=>s+=`<li class="exer-card-item">
+</div>`,b.innerHTML=""}k();function k(t){if(S.classList.remove("form-is-open"),p.classList.add("form-is-hiden"),c="",$.innerHTML="",u=1,t){const e=t.target;m.innerHTML='<div class="loder-container" ><div class="loader"></div></div>',f=e.dataset.name,document.querySelector(".exercises-button-active").classList.remove("exercises-button-active"),e.classList.add("exercises-button-active")}B(f)}async function B(t){const e=await O("filters",t,u,T).then(r=>r).catch(r=>console.log(r));C(e.results,e.totalPages)}function C(t,e){if(t[0]._id){let i=t.reduce((s,{_id:n,rating:a,name:o,burnedCalories:l,time:y,bodyPart:g,target:d})=>s+=`<li class="exer-card-item">
           <div class="exer-card-background">
             <div class="card-workout-wrapper">
               <p class="exer-workout-text">WORKOUT</p>
               <p class="exer-card-rating">${a}</p>
-              <svg class="card-rating-svg"  width="16" height="16" viewBox="0 0 14 13" fill="none">
-<path d="M6.04894 0.927052C6.3483 0.0057416 7.6517 0.00574088 7.95106 0.927052L8.79611 3.52786C8.92999 3.93989 9.31394
- 4.21885 9.74717 4.21885H12.4818C13.4505 4.21885 13.8533 5.45846 13.0696 6.02786L10.8572 7.63525C10.5067 7.8899 10.3601
-  8.34127 10.494 8.75329L11.339 11.3541C11.6384 12.2754 10.5839 13.0415 9.80017 12.4721L7.58779 10.8647C7.2373 10.6101 6.7627
-   10.6101 6.41222 10.8647L4.19983 12.4721C3.41612 13.0415 2.36164 12.2754 2.66099 11.3541L3.50604 8.75329C3.63992 8.34127 3.49326
-    7.8899 3.14277 7.63525L0.930391 6.02787C0.146677 5.45846 0.549452 4.21885 1.51818 4.21885H4.25283C4.68606 4.21885 5.07001 3.93989
-     5.20389 3.52786L6.04894 0.927052Z" fill="#EEA10C"/>
-</svg>            
-              <button class="card-start-button" data-id="${o}">
+              <svg class="card-rating-svg" width="16" height="16">
+                       <use href="${x}#icon-star"></use>
+                </svg>            
+              <button class="card-start-button" data-id="${n}">
                 Start
-                <svg class="card-arrow-svg" data-id="${o}"  width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M7.5 14L14 7.5M14 7.5L7.5 1M14 7.5H1" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round"
-                 stroke-linejoin="round"/>
-                    </svg>               
+                <svg class="card-arrow-svg" width="16" height="16" data-id="${n}">
+                     <use href="${x}#icon-arrow" data-id="${n}"></use>
+                </svg>               
                
               </button>
             </div>
             <div class="card-runing-men-wrapper">
-            <svg class="card-runing-men-svg"  width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="12" fill="#7E847F"/>
-               <path d="M18.8234 8.72544C18.6138 8.47504 18.2403 8.44212 17.9899 8.65092L16.349 10.0294L15.5943
-                8.15967C15.5675 8.08949 15.5267 8.03057 15.4799 7.97859C15.3257 7.63549 15.058 7.34091 14.6889
-                 7.17023C14.5286 7.09745 14.3631 7.05846 14.1977 7.0394C14.1613 7.02034 14.1283 6.99521 14.0868
-                  6.98222L11.199 6.17732C11.037 6.13314 10.8741 6.16173 10.7407 6.2397C10.5821 6.29342 10.4461
-                   6.40865 10.3811 6.57587L9.29378 9.37178C9.17594 9.67589 9.3267 10.019 9.63168 10.1386C9.93492
-                    10.2564 10.2789 10.1048 10.3976 9.79978L11.316 7.43882L12.6312 7.80444C12.5991 7.85643 12.5645
-                     7.90495 12.5385 7.9604L10.8524 11.6149C10.8282 11.6686 10.8152 11.7232 10.7979 11.7787L8.7488
-                      15.214L5.31955 16.3611C4.9314 16.6514 4.84909 17.1981 5.13587 17.5862C5.42439 17.9752 5.97282
-                       18.0575 6.36011 17.7708L9.86907 16.5621C9.97651 16.4841 10.0545 16.3819 10.1134 16.2719C10.1576
-                        16.2251 10.2078 16.1878 10.2416 16.1298L11.4633 14.0816L13.6319 15.9296L11.3116 18.5445C10.9919
-                         18.9049 11.024 19.4603 11.3862 19.7791C11.7474 20.1005 12.3011 20.0667 12.6225 19.7046L15.5181
-                          16.4426C15.6082 16.342 15.6619 16.2259 15.6983 16.1047C15.7199 16.0388 15.7199 15.9704 15.7251
-                           15.9019C15.7251 15.8673 15.7381 15.8361 15.7355 15.804C15.7277 15.5649 15.6307 15.3327 15.4349
-                            15.1672L13.4395 13.4656C13.5834 13.3287 13.7055 13.1658 13.7939 12.9743L15.0866 10.1749L15.5007
-                             11.2779C15.5181 11.3758 15.551 11.472 15.6203 11.5525C15.6827 11.627 15.7624 11.6764 15.8473
-                              11.7111C15.856 11.7154 15.8664 11.7163 15.8768 11.7189C15.9305 11.7379 15.9851 11.7561 16.0414
-                               11.7587C16.1081 11.7648 16.1757 11.7561 16.2441 11.7371C16.2459 11.7362 16.2467 11.7362 16.2467
-                                11.7362C16.2649 11.7319 16.2831 11.7353 16.3013 11.7275C16.3975 11.6912 16.4711 11.6296 16.5344
-                                 11.5577L18.8893 9.55892C19.1397 9.34838 19.034 8.97583 18.8234 8.72544Z" fill="#F6F6F6"/>
-               <path d="M15.8448 7.30102C16.7564 7.30102 17.4954 6.56206 17.4954 5.65051C17.4954 4.73896 16.7564 4 15.8448
-                4C14.9333 4 14.1943 4.73896 14.1943 5.65051C14.1943 6.56206 14.9333 7.30102 15.8448 7.30102Z" fill="#F6F6F6"/>
-              </svg>            
-              <span class="card-name-traning">${n}
+            <svg class="card-runing-men-svg" width="24" height="24">
+                 <use href="${x}#icon-running-men"></use>
+            </svg>            
+              <span class="card-name-traning">${o}
             </span></div>
             <p class="card-burned-calories-text">Burned calories:
-            <span class="card-burned-calories-span">${d} / ${C} min</span>
+            <span class="card-burned-calories-span">${l} / ${y} min</span>
             </p>
             
             <p class="card-body-part-text">Body part:
                <span class="card-burned-calories-span">${g}</span>
             </p>
             <p class="card-target-text">Target:
-              <span class="card-burned-calories-span">${l}</span>
+              <span class="card-burned-calories-span">${d}</span>
             </p>
 
           </div>
-        </li>`,"");m.classList.add("card-row-gap-js"),m.innerHTML=i,r()}if(!t[0]._id){let i=t.reduce((s,{filter:o,imgUrl:a,name:n})=>(p.dataset.filter=o,s+=`<li class="exercises-item" data-type="${n}" style="background-image: linear-gradient(
+        </li>`,"");m.classList.add("card-row-gap-js"),m.innerHTML=i,r()}if(!t[0]._id){let i=t.reduce((s,{filter:n,imgUrl:a,name:o})=>(p.dataset.filter=n,s+=`<li class="exercises-item" data-type="${o}" style="background-image: linear-gradient(
       0deg,
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),url(${a}); ">
-          <p class="exercises-item-text" data-type="${n}">${n}</p>
-          <p class="exercises-item-text-second" data-type="${n}">${o}</p>
-        </li>`),"");p.dataset.status="",m.classList.remove("card-row-gap-js"),m.innerHTML=i,r(t.filter)}function r(i){p.dataset.status="",v.innerHTML=A(u,e)}}function q(t){const e=t.target.dataset;if(t.target.dataset.type||e.id){if(u==t.target.dataset.number)return;if(u=t.target.dataset.number,e.id&&(u=S,e.id=="left"&&(u=1)),document.querySelector(".exercises-section").scrollIntoView({behavior:"smooth",block:"start"}),c==""){E(t.target.dataset.type);return}x(t.target.dataset.type,t.target.dataset.card,h)}}function A(t,e){t=Number.parseInt(t);let r=`<svg class="page-choice-svg" width="18" height="18" data-card="${c}" data-id="left" data-type="${f}" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M17.17,24a1,1,0,0,1-.71-.29L8.29,15.54a5,5,0,0,1,0-7.08L16.46.29a1,1,0,1,1,1.42,1.42L9.71,9.88a3,3,0,0,0,0,4.24l8.17,8.17a1,1,0,0,1,0,1.42A1,1,0,0,1,17.17,24Z"/></svg>
-
-  `,i=`<svg class="page-choice-svg" data-id="right" data-type="${f}" data-card="${c}" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M7,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L6.29,1.71A1,1,0,0,1,7.71.29l8.17,8.17a5,5,0,0,1,0,7.08L7.71,23.71A1,1,0,0,1,7,24Z"/></svg>
-`,s=0,o="",a=0;if(e<6)return s=1,a=e+1,n(s,a);if(e>5&&t>0&&t<4)return a=5+1,o=n(s+1,a)+i,o;if(t>3&&t+2<e)return s=t-2,a=t+3,r+n(s,a)+i;if(e<=t+2)return e==t+2?s=t-2:e-t==1?s=t-3:s=t-4,r+n(s,e+1);function n(d,C){let g="";for(let l=d;l<C;l++)t==l&&(g+=`<li>
+          <p class="exercises-item-text" data-type="${o}">${o}</p>
+          <p class="exercises-item-text-second" data-type="${o}">${n}</p>
+        </li>`),"");p.dataset.status="",m.classList.remove("card-row-gap-js"),m.innerHTML=i,r(t.filter)}function r(i){p.dataset.status="",b.innerHTML=I(u,e)}}function A(t){const e=t.target.dataset;if(t.target.dataset.type||e.id){if(u==t.target.dataset.number)return;if(u=t.target.dataset.number,e.id&&(u=E,e.id=="left"&&(u=1)),document.querySelector(".exercises-section").scrollIntoView({behavior:"smooth",block:"start"}),c==""){B(t.target.dataset.type);return}L(t.target.dataset.type,t.target.dataset.card,h)}}function I(t,e){t=Number.parseInt(t);let r=`<svg  class="page-choice-svg"  width="18"  height="18"  data-card="${c}"  data-id="left"  data-type="${f}"
+                      xmlns="http://www.w3.org/2000/svg"  id="Outline"  viewBox="0 0 24 24"  width="512"  height="512">  <path    d="M17.17,24a1,1,0,0,1-.71-.29L8.29,15.54a5,5,0,0,1,0-7.08L16.46.29a1,1,0,1,1,1.42,1.42L9.71,9.88a3,3,0,0,0,0,4.24l8.17,8.17a1,1,0,0,1,0,1.42A1,1,0,0,1,17.17,24Z"
+                      />
+                    </svg> `,i=`<svg class="page-choice-svg" data-id="right" data-type="${f}" data-card="${c}" xmlns="http://www.w3.org/2000/svg" id="Outline"
+                        viewBox="0 0 24 24" width="512" height="512"><path d="M7,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L6.29,1.71A1,1,0,0,1,7.71.29l8.17,8.17a5,5,0,0,1,0,7.08L7.71,23.71A1,1,0,0,1,7,24Z" /></svg> `,s=0,n="",a=0;if(e<6)return s=1,a=e+1,o(s,a);if(e>5&&t>0&&t<4)return a=5+1,n=o(s+1,a)+i,n;if(t>3&&t+2<e)return s=t-2,a=t+3,r+o(s,a)+i;if(e<=t+2)return e==t+2?s=t-2:e-t==1?s=t-3:s=t-4,r+o(s,e+1);function o(l,y){let g="";for(let d=l;d<y;d++)t==d&&(g+=`<li>
           <button class="exercises-pages-button select-pages-ative" data-card="${c}"
-           data-number="${l}" data-type="${f}">${l}</button>
-        </li>`),t!=l&&(g+=`<li>
+           data-number="${d}" data-type="${f}">${d}</button>
+        </li>`),t!=d&&(g+=`<li>
           <button class="exercises-pages-button" data-card="${c}"
-           data-number="${l}" data-type="${f}">${l}</button>
-        </li>`);return g}}function N(t){if(t.target.dataset.type){m.innerHTML='<div class="loader"></div>';let e=document.querySelector(".exercises-button-active").dataset.name;e==="Body parts"&&(e="Body part"),c=t.target.dataset.type,u=1,p.classList.remove("form-is-hiden"),v.innerHTML="",w.classList.add("form-is-open"),y.innerHTML=`<span class="exer-title-slash">/</span> ${c.slice(0,1).toUpperCase()}${c.slice(1)}`,x(e,c)}t.target.dataset.id&&k(t.target.dataset.id)}async function x(t,e,r=""){try{const i=await T("exercises",t,u,$,e,r);i&&M(i.results,i.totalPages)}catch(i){console.log(i)}}function Z(t){if(t.preventDefault(),h=t.target.elements.usertext.value.trim(),h.length!==0){const e=t.target.dataset.filter;t.target.dataset.status="ok",p.reset(),x(e,c,h)}}function D(t){t.target.value.length>2?L.classList.remove("reset-button-close"):L.classList.add("reset-button-close"),console.log(t.target.value)}document.addEventListener("DOMContentLoaded",function(){document.querySelector(".scroll-up-btn").addEventListener("click",e);function e(){window.scrollTo({top:0,behavior:"smooth"})}});document.querySelector(".footer-form").addEventListener("submit",function(t){t.preventDefault();const r=this.elements.email.value.trim();if(!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(r)){b.success("Field must be filled in");return}fetch("https://energyflow.b.goit.study/api/subscription",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:r})}).then(s=>{s.status>=200&&s.status<300&&(b.success({position:"topRight",message:"Subscription successful!"}),this.reset())}).catch(s=>{console.error(s),b.error("Sorry! Failed to subscribe."),this.reset()})});
+           data-number="${d}" data-type="${f}">${d}</button>
+        </li>`);return g}}function N(t){if(t.target.dataset.type){m.innerHTML='<div class="loader"></div>';let e=document.querySelector(".exercises-button-active").dataset.name;e==="Body parts"&&(e="Body part"),c=t.target.dataset.type,u=1,p.classList.remove("form-is-hiden"),b.innerHTML="",S.classList.add("form-is-open"),$.innerHTML=`<span class="exer-title-slash">/</span> ${c.slice(0,1).toUpperCase()}${c.slice(1)}`,L(e,c)}t.target.dataset.id&&q(t.target.dataset.id)}async function L(t,e,r=""){try{const i=await O("exercises",t,u,T,e,r);i&&C(i.results,i.totalPages)}catch(i){console.log(i)}}function D(t){if(t.preventDefault(),h=t.target.elements.usertext.value.trim(),h.length!==0){const e=t.target.dataset.filter;t.target.dataset.status="ok",p.reset(),L(e,c,h)}}function U(t){t.target.value.length>2?v.classList.remove("reset-button-close"):v.classList.add("reset-button-close"),console.log(t.target.value)}document.addEventListener("DOMContentLoaded",function(){document.querySelector(".scroll-up-btn").addEventListener("click",e);function e(){window.scrollTo({top:0,behavior:"smooth"})}});document.querySelector(".footer-form").addEventListener("submit",function(t){t.preventDefault();const r=this.elements.email.value.trim();if(!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(r)){w.success("Field must be filled in");return}fetch("https://energyflow.b.goit.study/api/subscription",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:r})}).then(s=>{s.status>=200&&s.status<300&&(w.success({position:"topRight",message:"Subscription successful!"}),this.reset())}).catch(s=>{console.error(s),w.error("Sorry! Failed to subscribe."),this.reset()})});
 //# sourceMappingURL=commonHelpers3.js.map
