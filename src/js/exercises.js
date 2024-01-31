@@ -2,7 +2,11 @@
 import axios from 'axios';
 import { openOnClick } from './modal-window';
 import { scrollingTop } from './scroll-top';
+<<<<<<< Updated upstream
 // === 
+=======
+// ===
+>>>>>>> Stashed changes
 const exercisesTitle = document.querySelector(`.exercises-title-span`);
 const exercisesList = document.querySelector(`.exercises-list`);
 const exercisesListPages = document.querySelector(`.exercises-list-pages`);
@@ -368,4 +372,9 @@ function validatorForUserSearchText(e) {
   }
   console.log(e.target.value);
 }
+<<<<<<< Updated upstream
 scrollingTop();
+=======
+
+scrollingTop();
+>>>>>>> Stashed changes
