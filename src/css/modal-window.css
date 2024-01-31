@@ -17,11 +17,12 @@
     /* display: none; */
     position: relative;
     display: flex;
+    padding: 40px;
+    gap: 40px;
     background-color: #F6F6F6;
     opacity: 1;
     border-radius: 15px;
     max-width: 732px;
-    max-height: 470px;
     z-index: 999;
     overflow: hidden;
 }
@@ -30,7 +31,6 @@
 
 .modal-photo {
     flex: 1;
-    margin: 40px 0 40px 40px;
     max-width: 270px;
     max-height: 259px;
 }
@@ -44,7 +44,6 @@
 
 .modal-info {
     flex: 1;
-    margin: 40px;
 }
 
 /* modal - phone-orientation */
@@ -53,12 +52,11 @@
     .modal-window {
         flex-direction: column;
         max-width: 335px;
-        height: auto;
+        height: 80%;
         overflow-y: auto;
     }
 
     .modal-photo {
-        margin: 40px 20px 20px 20px;
         max-width: 295px;
         max-height: 258px;
     }
@@ -213,7 +211,6 @@
     right: 16px;
     width: 20px;
     height: 20px;
-    font-size: 20px;
     color: #1B1B1B;
     line-height: 20px;
     cursor: pointer;

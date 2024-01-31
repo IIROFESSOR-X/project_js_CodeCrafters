@@ -1,4 +1,7 @@
 import axios from "axios";
+import iziToast from 'izitoast';
+import "izitoast/dist/css/iziToast.min.css";
+
 import { renderFavorites } from './favorites';
 import { startRatingModal } from './rating-modal-window';
 
@@ -34,7 +37,7 @@ function renderModalMarkup(exercise = {}) {
     const markup = `
         <div class="overlay">
             <div class="modal-window">
-                <span class="modal-close-button">x</span>
+                <span class="modal-close-button">&#x2715;</span>
                 <div class="modal-photo">
                     <!-- Photo -->
                     <img src="${exercise.gifUrl}" alt="${exercise.name}">
@@ -136,6 +139,7 @@ function checkObjectInLocalStorage(data) {
 
         localStorage.setItem('favorites', JSON.stringify(filteredObjects));
         favoritesBtnName.textContent = "Add to favorites";
+        iziToast.error({ message: 'Exercise has been removed from Favourites' });
 
         forRenderFavoriteItems();
 
@@ -154,6 +158,7 @@ function checkObjectInLocalStorage(data) {
 
                 localStorage.setItem('favorites', JSON.stringify(objects));
                 favoritesBtnName.textContent = 'Remove from';
+                iziToast.success({ title: 'Success', message: 'Exercise has been added to Favourites' });
                 
                 forRenderFavoriteItems();
 
@@ -164,6 +169,7 @@ function checkObjectInLocalStorage(data) {
             } else {
                 localStorage.setItem('favorites', JSON.stringify(objects));
                 favoritesBtnName.textContent = 'Remove from';
+                iziToast.success({ title: 'Success', message: 'Exercise has been added to Favourites' });
                 
                 forRenderFavoriteItems();
                 
