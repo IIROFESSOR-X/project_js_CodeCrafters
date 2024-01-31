@@ -133,7 +133,14 @@
 .card-btn-delete-svg {
   fill: #fff;
   stroke: #1b1b1b;
+  transition: stroke 250ms linear;
 }
+
+.card-btn-delete:hover .card-btn-delete-svg,
+.card-btn-delete:focus .card-btn-delete-svg {
+  stroke: #7e847f;
+}
+
 .exercises-container {
   width: 335px;
   height: 1644px;
