@@ -1,4 +1,4 @@
-import{e as w,o as O}from"./assets/quote-section-e52f79f7.js";import{a as q,i as x}from"./assets/vendor-8cce9181.js";const B="/project_js_CodeCrafters/assets/icons-8682fa2e.svg";function A(){document.body.insertAdjacentHTML("beforeend",`<button class="scroll-top-btn">
+import{e as w,o as O}from"./assets/quote-section-cf0ef4f2.js";import{a as q,i as x}from"./assets/vendor-8cce9181.js";const B="/project_js_CodeCrafters/assets/icons-8682fa2e.svg";function A(){document.body.insertAdjacentHTML("beforeend",`<button class="scroll-top-btn">
       <svg class="scroll-top-icon" width="15" height="15">
 
         <use href="${B}#icon-arrow-top"></use>
