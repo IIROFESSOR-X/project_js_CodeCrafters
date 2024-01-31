@@ -1,6 +1,6 @@
 .quote-section {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .quote-wrapper {
   background-color: var(--main-color);
@@ -67,8 +67,8 @@
 
 @media screen and (min-width: 768px) {
   .quote-section {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
   .quote-wrapper {
     border-radius: 50px;
