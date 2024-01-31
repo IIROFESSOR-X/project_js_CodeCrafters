@@ -214,6 +214,7 @@ function showsExercisesPages(e) {
       .querySelector(`.exercises-section`)
       .scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (filterTypeCads == ``) {
+      exercisesList.innerHTML = `<div class="loder-container" ><div class="loader"></div></div>`;
       getExercisesFromServer(e.target.dataset.type);
       return;
     }
@@ -340,5 +341,4 @@ function validatorForUserSearchText(e) {
   } else {
     resetFormTextButton.classList.add(`reset-button-close`);
   }
-  console.log(e.target.value);
 }

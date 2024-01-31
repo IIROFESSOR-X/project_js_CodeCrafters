@@ -257,7 +257,7 @@
   font-size: 12px;
   line-height: 1.5;
   display: inline-block;
-  margin-right: 16px;
+  margin-right: 4px;
 }
 .card-body-part-text {
   color: rgba(27, 27, 27, 0.4);
@@ -341,10 +341,32 @@
 .reset-button-close .form-reset-text-icon {
   stroke: transparent;
 }
+.loder-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 350px;
+  padding-bottom: 430px;
+}
+.loder-container-card {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 250px;
+  padding-bottom: 278px;
+}
 @media screen and (min-width: 768px) {
-  .card-target-text {
-    display: block;
+  .loder-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 350px;
+    padding-bottom: 630px;
   }
+  .loder-container-card {
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 350px;
+    padding-bottom: 384px;
+  }
+
   .exer-title-slash {
     font-size: 44px;
     font-style: normal;
@@ -430,7 +452,7 @@
     margin-bottom: 8px;
   }
   .card-body-part-text {
-    margin-right: 16px;
+    margin-right: 0;
   }
   .no-results-wrapper {
     padding: 222px 100px 584px;
@@ -441,6 +463,9 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .card-target-text {
+    display: block;
+  }
   .exercises-list {
     gap: 40px 20px;
   }
