@@ -23,4 +23,17 @@
 .scroll-top-btn.show {
   opacity: 1;
   visibility: visible;
-  transition: 500ms;}
+  transition: 500ms;
+}
+
+@media (min-width: 768px) {
+  .scroll-top-btn {
+    width: 100px;
+    height: 100px;
+  }
+
+  .scroll-top-icon {
+    width: 33px;
+    height: 33px;
+  }
+}
