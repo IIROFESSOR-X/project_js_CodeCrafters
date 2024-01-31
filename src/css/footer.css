@@ -14,12 +14,8 @@
 }
 @media screen and (min-resolution: 192dpi) {
   .footer-wrap {
-    background: linear-gradient(
-        0deg,
-        rgba(27, 27, 27, 0.7) 0%,
-        rgba(27, 27, 27, 0.7) 100%
-      ),
-      url('../img/footer/footer-img-mobile.jpg') center/cover no-repeat;
+    background: 
+      url('../img/footer/footer-img-mobile-x2.jpg') center/cover no-repeat;
     border-radius: 30px;
   }
 }
@@ -85,6 +81,7 @@
   border: 1px solid #f6f6f6;
   background-color: transparent;
   color: var(--soft-white-color);
+  outline: transparent;
 }
 
 .footer-form-btn {
@@ -207,22 +204,14 @@
     flex-direction: row;
     column-gap: 139px;
     row-gap: 120px;
-    background: linear-gradient(
-        0deg,
-        rgba(27, 27, 27, 0.7) 0%,
-        rgba(27, 27, 27, 0.7) 100%
-      ),
-      url(../img/footer/footer-img-mobile.jpg) center/cover no-repeat;
+    background: 
+      url(../img/footer/footer-img-tablet.jpg) center/cover no-repeat;
     border-radius: 50px;
   }
   @media screen and (min-resolution: 192dpi) {
     .footer-container {
-      background: linear-gradient(
-          0deg,
-          rgba(27, 27, 27, 0.7) 0%,
-          rgba(27, 27, 27, 0.7) 100%
-        ),
-        url() center/cover no-repeat;
+      background: 
+        url(../img/footer/footer-img-tablet@2x.jpg) center/cover no-repeat;
     }
   }
 
@@ -321,12 +310,8 @@
     padding-left: 48px;
     padding-right: 48px;
     padding-bottom: 26px;
-    background: linear-gradient(
-        0deg,
-        rgba(27, 27, 27, 0.7) 0%,
-        rgba(27, 27, 27, 0.7) 100%
-      ),
-      url(../img/footer/footer-img-mobile.jpg) center/cover no-repeat;
+    background: 
+      url(../img/footer/footer-img-tablet.jpg) center/cover no-repeat;
   }
   .footer-heading-form {
     display: flex;
@@ -369,12 +354,8 @@
   }
   @media screen and (min-resolution: 192dpi) {
     .footer-wrap {
-      background: linear-gradient(
-          0deg,
-          rgba(27, 27, 27, 0.7) 0%,
-          rgba(27, 27, 27, 0.7) 100%
-        ),
-        url(../img/footer/footer-img-mobile.jpg) center/cover no-repeat;
+      background: 
+        url(../img/footer/footer-img-tablet@2x.jpg) center/cover no-repeat;
     }
   }
 }
