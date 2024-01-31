@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { openOnClick } from './modal-window';
 // ===
-import exerIcons from './img/symbol-defs.svg';
+import exerIcons from '../img/symbol-defs.svg';
 const exercisesTitle = document.querySelector(`.exercises-title-span`);
 const exercisesList = document.querySelector(`.exercises-list`);
 const exercisesListPages = document.querySelector(`.exercises-list-pages`);
