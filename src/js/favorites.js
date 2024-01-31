@@ -1,5 +1,6 @@
 import { openOnClick } from './modal-window';
-import  icons  from '../img/symbol-defs.svg';
+import icons from '../img/symbol-defs.svg';
+import { scrollingTop } from "./scroll-up-btn";
 let savedCards;
 let parsedCards;
 const ref = {
@@ -123,5 +124,5 @@ function windowLoad() {
     ref.favoritesList.removeEventListener('click', onStartBtnClick);
   }
 }
-
+scrollingTop();
 

@@ -1,6 +1,7 @@
 // ===================exercises
 import axios from 'axios';
 import { openOnClick } from './modal-window';
+import { scrollingTop } from './scroll-up-btn';
 // ===
 import exerIcons from '../img/symbol-defs.svg';
 const exercisesTitle = document.querySelector(`.exercises-title-span`);
@@ -342,3 +343,4 @@ function validatorForUserSearchText(e) {
     resetFormTextButton.classList.add(`reset-button-close`);
   }
 }
+scrollingTop();
