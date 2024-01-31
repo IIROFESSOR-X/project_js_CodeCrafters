@@ -1,3 +1,4 @@
+import { scrollingTop } from "./scroll-top";
 let savedCards = localStorage.getItem('favorites');
 let parsedCards;
 
@@ -106,9 +107,7 @@ function renderFavorites() {
 ref.favoritesList.innerHTML = favoritesCardString;
 }
 
-
-
-
+scrollingTop();
 
 
 
