@@ -1,187 +1,276 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EnergyFlow</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMHSURBVHgBpVY7TFNRGP7ObQ2dtAzCog2JQkyQWAwkGo20ookuYjAOmPhodIAJV0Kg54JERzddjEw+YjRqxEhCoDU1MGA0IovViIUFXGgnmth7/P9Tbm3p45b4Jb333PP4/v/8zwpUgJTSa+2w+oUSASXQAEW/LNYF8NmCeOVy4aUckEvlOERJ4tuyQWXUQwUEUAWEwLgwhFlKkGvrhDlm9luWekLDA6gefqVw7cTJYPr9dGSurIDhMTOslHWHhh5sHx4yx5mOzg5Ep6PRIgGs+SZ5VWjc34irPVfQesiP+Pc40un05ooI0E2S9k0MfrDNM8qS2AbaW9tQU1ODXTt3oYmE5UNAhZmTx25+KEuF6eWtRHj86DH49vgQ/xHHr5UEEvTz7fXpNf7eAi8HCb2DgiVZGfUTDui70YvEcgJ1u+tQX1ePZCqJ+Y/zWtDq77WSZ4w/otZABuedyFuaD9I1gYnJt0ilUnqOTcN+YHI2ld6zBZbLuummc11OApr2NeEbmcYmtcEmqqcbdXd1awUWFr8WnBNCdJAPlN9JwJvJCf0+FejMzSWTSW2m0OWQNt3z1y+KznH28w28TgI4BFn7luaW3Fxs7oN+J1aWEZuNlT5IpcWNKsFRlK89a803cIJBQbvktIntnK89E1dDTlg3qFIuOe3STiQ8evZYa8/O7czzRzlwxTWoSEVLLdqhd+lij7b/wuKCNgsLWV1bRfvhNlw4111RAJdzt5HBXcuNcP4Ck3IysRB2MBPHZrNO3UhvwOPJ1sJyCWaDe4XuB+FbckZBBeyFvuu92sZcFr6Q5v8KGXRYsk9YYNnogc6BcXNQhnQUCRdClNGf7JC99+B+yUNsdybnhKpIzh3PgMnjbDWlTiQgTDiAydlcU5GpivvI9rnuVtAyh0elhFBh/A+UMkeGRqT9WdDRojORSJCaBQ2PYJtdjc2iIAZGh8yCplXUkyPUiYKng0+VErX06VinsuQiIlzi7MigfFe8VgG6K1E5z1Zc5c/VLcp+TlDOIQ5z+nuzXo7jLyIPRWxyL3BrAAAAAElFTkSuQmCC" />
+    <link rel="icon" type="image/x-icon" href="/project_js_CodeCrafters/assets/favicon-ee64f28b.ico" />
+    
+    
+    <script type="module" crossorigin src="/project_js_CodeCrafters/assets/vendor-8cce9181.js"></script>
+    <script type="module" crossorigin src="/project_js_CodeCrafters/assets/toggle-btn-theme-b2bb691f.js"></script>
+    <link rel="stylesheet" href="/project_js_CodeCrafters/assets/vendor-e5212ee8.css">
+    <link rel="stylesheet" href="/project_js_CodeCrafters/assets/toggle-btn-theme-6ac2187e.css">
+    <link rel="stylesheet" href="/project_js_CodeCrafters/assets/favorites-79277175.css">
+  </head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EnergyFlow</title>
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMHSURBVHgBpVY7TFNRGP7ObQ2dtAzCog2JQkyQWAwkGo20ookuYjAOmPhodIAJV0Kg54JERzddjEw+YjRqxEhCoDU1MGA0IovViIUFXGgnmth7/P9Tbm3p45b4Jb333PP4/v/8zwpUgJTSa+2w+oUSASXQAEW/LNYF8NmCeOVy4aUckEvlOERJ4tuyQWXUQwUEUAWEwLgwhFlKkGvrhDlm9luWekLDA6gefqVw7cTJYPr9dGSurIDhMTOslHWHhh5sHx4yx5mOzg5Ep6PRIgGs+SZ5VWjc34irPVfQesiP+Pc40un05ooI0E2S9k0MfrDNM8qS2AbaW9tQU1ODXTt3oYmE5UNAhZmTx25+KEuF6eWtRHj86DH49vgQ/xHHr5UEEvTz7fXpNf7eAi8HCb2DgiVZGfUTDui70YvEcgJ1u+tQX1ePZCqJ+Y/zWtDq77WSZ4w/otZABuedyFuaD9I1gYnJt0ilUnqOTcN+YHI2ld6zBZbLuummc11OApr2NeEbmcYmtcEmqqcbdXd1awUWFr8WnBNCdJAPlN9JwJvJCf0+FejMzSWTSW2m0OWQNt3z1y+KznH28w28TgI4BFn7luaW3Fxs7oN+J1aWEZuNlT5IpcWNKsFRlK89a803cIJBQbvktIntnK89E1dDTlg3qFIuOe3STiQ8evZYa8/O7czzRzlwxTWoSEVLLdqhd+lij7b/wuKCNgsLWV1bRfvhNlw4111RAJdzt5HBXcuNcP4Ck3IysRB2MBPHZrNO3UhvwOPJ1sJyCWaDe4XuB+FbckZBBeyFvuu92sZcFr6Q5v8KGXRYsk9YYNnogc6BcXNQhnQUCRdClNGf7JC99+B+yUNsdybnhKpIzh3PgMnjbDWlTiQgTDiAydlcU5GpivvI9rnuVtAyh0elhFBh/A+UMkeGRqT9WdDRojORSJCaBQ2PYJtdjc2iIAZGh8yCplXUkyPUiYKng0+VErX06VinsuQiIlzi7MigfFe8VgG6K1E5z1Zc5c/VLcp+TlDOIQ5z+nuzXo7jLyIPRWxyL3BrAAAAAElFTkSuQmCC">
-  <link rel="icon" type="image/x-icon" href="/project_js_CodeCrafters/assets/favicon-ee64f28b.ico">
-  
-  
+  <body>
+    <header class="header-all">
+      <div class="header-container container">
+        <div class="header-logo-wrap">
+          <a class="header-logo-fv" href="./index.html" title="Home page">
+            <svg class="logo-icon" width="86" height="18">
+              <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#logo-icon"></use>
+            </svg>
+          </a>
+        </div>
+        <nav class="header-nav">
+          <button
+            class="header-btn-home-fv"
+            onclick="window.location.href = './index.html'"
+          >
+            Home
+          </button>
+          <button
+            class="header-btn-favorites-fv"
+            onclick="window.location.href = './favorites.html'"
+          >
+            Favorites
+          </button>
+        </nav>
 
-  <script type="module" crossorigin src="/project_js_CodeCrafters/assets/vendor-8cce9181.js"></script>
-  <script type="module" crossorigin src="/project_js_CodeCrafters/assets/toggle-btn-theme-d396d544.js"></script>
-  <link rel="stylesheet" href="/project_js_CodeCrafters/assets/vendor-e5212ee8.css">
-  <link rel="stylesheet" href="/project_js_CodeCrafters/assets/toggle-btn-theme-16d4967b.css">
-  <link rel="stylesheet" href="/project_js_CodeCrafters/assets/favorites-a5b385d4.css">
-</head>
+        <ul class="header-social-list">
+          <li class="header-social-item visible">
+            <div class="toggle-container">
+              <input
+                type="checkbox"
+                class="toggle-btn-theme visible"
+                id="toggle-btn-theme"
+              />
+              <label for="toggle-btn-theme"></label>
+            </div>
+          </li>
+          <li class="header-social-item hiden">
+            <a
+              href="https://www.facebook.com/goITclub/"
+              rel="noopener noreferrer nofollow"
+              class="header-social-link"
+              title="Facebook"
+              target="_blank"
+            >
+              <svg
+                class="header-nav-icon"
+                width="28"
+                height="28"
+                aria-label="facebook icon"
+              >
+                <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#facebook-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="header-social-item hiden">
+            <a
+              href="https://www.instagram.com/goitclub/"
+              rel="noopener noreferrer nofollow"
+              class="header-social-link"
+              target="_blank"
+              title="Instagram"
+            >
+              <svg
+                class="header-nav-icon"
+                width="28"
+                height="28"
+                aria-label="instagram icon"
+              >
+                <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#instagram-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="header-social-item hiden">
+            <a
+              href="https://www.youtube.com/c/GoIT"
+              rel="noopener noreferrer nofollow"
+              class="header-social-link"
+              target="_blank"
+              title="Youtube"
+            >
+              <svg
+                class="header-nav-icon"
+                width="28"
+                height="28"
+                aria-label="youtube icon"
+              >
+                <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#youtube-icon"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
 
-<body>
-  <header class="header-all">
-    <div class="header-container container">
-      <div class="header-logo-wrap">
-        <a class="header-logo-fv" href="./index.html" title="Home page">
-          <svg class="logo-icon" width="86" height="18">
-            <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#logo-icon"></use>
+        <!---------- burger menu button ------------->
+
+        <button class="open-mobile-menu-btn" type="button" data-modal-open>
+          <svg
+            class="open-mobile-menu-icon-fv"
+            width="32"
+            height="16"
+            aria-label="mobile-menu-icon"
+          >
+            <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#burger-menu-icon"></use>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <section class="quote-sections-fv">
+      <div class="container">
+        <div class="quote-all">
+          <div class="quote-inform">
+            <div class="quote-wrapper-fv">
+              <svg class="run-person-icon" width="34" height="32">
+                <use
+                  href="/project_js_CodeCrafters/assets/svg-quote-section-530e2c1b.svg#icon-run-person-icon"
+                ></use>
+              </svg>
+
+              <h3 class="quote-title">Quote of the day</h3>
+              <svg class="commas-icon" width="28" height="28">
+                <use href="/project_js_CodeCrafters/assets/svg-quote-section-530e2c1b.svg#icon-commas"></use>
+              </svg>
+              <p class="quote-text"></p>
+              <p class="quote-author"></p>
+            </div>
+          </div>
+          <div class="info-sport">
+            <div class="fit-girl"></div>
+            <div class="time-sport">
+              <svg class="fluent" width="24" height="22">
+                <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#fluent-icon"></use>
+              </svg>
+              <h3 class="quote-titles">110 min</h3>
+              <p class="quote-texts">Daily norm of sports</p>
+              <p class="quote-author"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="exercises-section-fv">
+      <div class="container">
+        <div class="exercises-container">
+          <h2 class="exercises-title">
+            Favorites <span class="exercises-title-span-fv"></span>
+          </h2>
+          <ul class="favorites-list list"></ul>
+          <div class="gym-info is-hidden">
+            <img
+              alt="dumbbell"
+              src="data:image/png;base64,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"
+              class="dumbbell"
+            />
+            <span class="info-gym-text"
+              >It appears that you haven't added any exercises to your favorites
+              yet. To get started, you can add exercises that you like to your
+              favorites for easier access in the future.</span
+            >
+          </div>
+          <ul class="container-for-pagination"></ul>
+        </div>
+      </div>
+    </section>
+    <div class="mobile-menu is-hidden" data-mobile-menu>
+      <div class="mobile-menu__box">
+        <a class="mobile-menu__logo" href="./index.html" title="Home page">
+          <svg class="mobile-menu__logo-icon" width="86" height="18">
+            <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#logo-menu-icon"></use>
           </svg>
         </a>
+        <button
+          class="mobile-menu__close-btn"
+          type="button"
+          aria-label="Close mobile menu"
+          data-mobile-menu-close
+        >
+          <svg class="mobile-menu__close-btn-icon" width="20" height="20">
+            <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#close-burger-menu-icon"></use>
+          </svg>
+        </button>
       </div>
-      <nav class="header-nav">
-        <button class="header-btn-home-fv" onclick="window.location.href = './index.html'">Home</button>
-        <button class="header-btn-favorites-fv" onclick="window.location.href = './favorites.html'">Favorites</button>
-      </nav>
-
-      <ul class="header-social-list">
-        <li class="header-social-item visible">
-          <div class="toggle-container">
-            <input type="checkbox" class="toggle-btn-theme visible" id="toggle-btn-theme">
-            <label for="toggle-btn-theme"></label>
-          </div>
+      <ul class="mobile-menu__list list">
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link link" href="./index.html">Home</a>
         </li>
-        <li class="header-social-item hiden">
-          <a href="https://www.facebook.com/goITclub/" rel="noopener noreferrer nofollow" class="header-social-link"
-            title="Facebook" target="_blank">
-            <svg class="header-nav-icon" width="28" height="28" aria-label="facebook icon">
+        <li class="mobile-menu__item">
+          <a
+            class="mobile-menu__link mobile-menu__link--current link"
+            href="./favorites.html"
+            >Favorites</a
+          >
+        </li>
+      </ul>
+      <ul class="mobile-menu__social-list">
+        <li class="mobile-menu__social-item">
+          <a
+            href="https://www.facebook.com/goITclub/"
+            rel="noopener noreferrer nofollow"
+            class="mobile-menu__social-link"
+            target="_blank"
+            title="Facebook"
+          >
+            <svg
+              class="mobile-menu__social-icon"
+              width="25"
+              height="25"
+              aria-label="facebook icon"
+            >
               <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#facebook-icon"></use>
             </svg>
           </a>
         </li>
-        <li class="header-social-item hiden">
-          <a href="https://www.instagram.com/goitclub/" rel="noopener noreferrer nofollow" class="header-social-link"
-            target="_blank" title="Instagram">
-            <svg class="header-nav-icon" width="28" height="28" aria-label="instagram icon">
-              <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#instagram-icon"></use>
+        <li class="mobile-menu__social-item">
+          <a
+            href="https://www.instagram.com/goitclub/"
+            rel="noopener noreferrer nofollow"
+            class="mobile-menu__social-link"
+            target="_blank"
+            title="Instagram"
+          >
+            <svg
+              class="mobile-menu__social-icon"
+              width="25"
+              height="25"
+              aria-label="instagram icon"
+            >
+              <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#instagram-menu-icon"></use>
             </svg>
           </a>
         </li>
-        <li class="header-social-item hiden">
-          <a href="https://www.youtube.com/c/GoIT" rel="noopener noreferrer nofollow" class="header-social-link"
-            target="_blank" title="Youtube">
-            <svg class="header-nav-icon" width="28" height="28" aria-label="youtube icon">
+        <li class="mobile-menu__social-item">
+          <a
+            href="https://www.youtube.com/c/GoIT"
+            rel="noopener noreferrer nofollow"
+            class="mobile-menu__social-link"
+            target="_blank"
+            title="Youtube"
+          >
+            <svg
+              class="mobile-menu__social-icon"
+              width="25"
+              height="25"
+              aria-label="youtube icon"
+            >
               <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#youtube-icon"></use>
             </svg>
           </a>
         </li>
       </ul>
-
-      <!---------- burger menu button ------------->
-
-      <button class="open-mobile-menu-btn" type="button" data-modal-open>
-        <svg class="open-mobile-menu-icon-fv" width="32" height="16" aria-label="mobile-menu-icon">
-          <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#burger-menu-icon"></use>
-        </svg>
-      </button>
-
     </div>
-  </header>
-  <section class="quote-sections-fv">
-    <div class="container">
-      <div class="quote-all">
-        <div class="quote-inform">
-          <div class="quote-wrapper-fv">
-            <svg class="run-person-icon" width="34" height="32">
-              <use href="/project_js_CodeCrafters/assets/svg-quote-section-530e2c1b.svg#icon-run-person-icon"></use>
-            </svg>
-
-            <h3 class="quote-title">Quote of the day</h3>
-            <svg class="commas-icon" width="28" height="28">
-              <use href="/project_js_CodeCrafters/assets/svg-quote-section-530e2c1b.svg#icon-commas"></use>
-            </svg>
-            <p class="quote-text"></p>
-            <p class="quote-author"></p>
-          </div>
-        </div>
-        <div class="info-sport">
-          <div class="fit-girl"></div>
-          <div class="time-sport">
-            <svg class="fluent" width="24" height="22">
-              <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#fluent-icon"></use>
-            </svg>
-            <h3 class="quote-titles">110 min</h3>
-            <p class="quote-texts">Daily norm of sports</p>
-            <p class="quote-author"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="exercises-section-fv">
-    <div class="container">
-      <div class="exercises-container">
-        <h2 class="exercises-title">
-          Favorites <span class="exercises-title-span-fv"></span>
-        </h2>
-        <ul class="favorites-list list"></ul>
-        <div class="gym-info is-hidden">
-          <img alt="dumbbell" src="data:image/png;base64,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" class='dumbbell'>
-          <span class="info-gym-text">It appears that you haven't added any exercises to your favorites yet. To get
-            started, you can add exercises that you like to your favorites for easier access in the future.</span>
-        </div>
-        <ul class="container-for-pagination"></ul>
-      </div>
-
-    
-
-    </div>
-  </section>
-  <div class="mobile-menu is-hidden" data-mobile-menu>
-    <div class="mobile-menu__box">
-      <a class="mobile-menu__logo" href="./index.html" title="Home page">
-        <svg  class="mobile-menu__logo-icon" width="86" height="18">
-          <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#logo-menu-icon"></use>
-        </svg>
-      </a>
-      <button class="mobile-menu__close-btn" type="button" aria-label="Close mobile menu" data-mobile-menu-close>
-        <svg class="mobile-menu__close-btn-icon" width="20" height="20">
-          <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#close-burger-menu-icon"></use>
-        </svg>
-      </button>
-    </div>
-    <ul class="mobile-menu__list list">
-      <li class="mobile-menu__item">
-        <a class="mobile-menu__link  link" href="./index.html">Home</a>
-      </li>
-      <li class="mobile-menu__item">
-        <a class="mobile-menu__link mobile-menu__link--current link" href="./favorites.html">Favorites</a>
-      </li>
-    </ul>
-    <ul class="mobile-menu__social-list">
-      <li class="mobile-menu__social-item">
-        <a href="https://www.facebook.com/goITclub/" rel="noopener noreferrer nofollow" class="mobile-menu__social-link"
-          target="_blank" title="Facebook">
-          <svg class="mobile-menu__social-icon" width="25" height="25" aria-label="facebook icon">
-            <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#facebook-icon"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="mobile-menu__social-item">
-        <a href="https://www.instagram.com/goitclub/" rel="noopener noreferrer nofollow"
-          class="mobile-menu__social-link" target="_blank" title="Instagram">
-          <svg class="mobile-menu__social-icon" width="25" height="25" aria-label="instagram icon">
-            <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#instagram-menu-icon"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="mobile-menu__social-item">
-        <a href="https://www.youtube.com/c/GoIT" rel="noopener noreferrer nofollow" class="mobile-menu__social-link"
-          target="_blank" title="Youtube">
-          <svg class="mobile-menu__social-icon" width="25" height="25" aria-label="youtube icon">
-            <use href="/project_js_CodeCrafters/assets/icons-58ead758.svg#youtube-icon"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <!-- <button type="button" data-exersiseid="64f389465ae26083f39b17a6" id="modalExersises">open modal</button> -->
+    <!-- <button type="button" data-exersiseid="64f389465ae26083f39b17a6" id="modalExersises">open modal</button> -->
 <div class="container-for-modal"></div>
-  
-  
-  
-  
-  
-
-</body>
-
+    
+    
+    
+    
+    
+  </body>
 </html>
