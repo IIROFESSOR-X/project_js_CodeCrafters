@@ -84,6 +84,7 @@
   background-color: transparent;
   color: var(--soft-white-color);
   outline: transparent;
+  transition: border-color 250ms linear;
 }
 
 .footer-form-btn {
@@ -225,18 +226,9 @@
     line-height: 0.92;
   }
 
-  .footer-logo:hover,
-  .footer-logo:active {
-    color: var(--hover-color);
-  }
-
   .footer-social-link {
     width: 44px;
     height: 44px;
-  }
-  .footer-social-link:hover,
-  .footer-social-link:active {
-    fill: var(--hover-color);
   }
 
   .footer-nav-icon {
@@ -268,10 +260,6 @@
     width: 352px;
   }
 
-  .footer-form-btn:hover,
-  .footer-form-btn:active {
-    background: var(--hover-color);
-  }
   .footer-bottom {
     display: flex;
     align-items: baseline;
@@ -299,16 +287,35 @@
     font-size: 14px;
     transition: color 250ms ease-in-out;
   }
+}
 
+@media (min-width: 1440px) {
+  #footer-input:hover,
+  #footer-input:focus {
+    border-color: #585858;
+  }
+  .footer-social-link:hover,
+  .footer-social-link:active {
+    fill: var(--hover-color);
+  }
+  .footer-social-link:hover,
+  .footer-social-link:active {
+    fill: var(--hover-color);
+  }
+  .footer-form-btn:hover,
+  .footer-form-btn:active {
+    background: var(--hover-color);
+  }
   .foter-privacy-policy:hover,
   .foter-privacy-policy:active,
   .footer-terms-of-service:hover,
   .footer-terms-of-service:active {
     color: var(--hover-color);
   }
-}
-
-@media (min-width: 1440px) {
+  .footer-logo:hover,
+  .footer-logo:active {
+    color: var(--hover-color);
+  }
   .footer-wrap {
     width: 1408px;
     padding-left: 48px;
