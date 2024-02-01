@@ -138,10 +138,12 @@
     display: none;
   }
 
-  .favorites-list {
-    width: calc(100% + 20px);
+  .favorites-list-wrap {
     height: 770px;
     overflow: auto;
+  }
+  .favorites-list {
+    width: calc(100% + 20px);
     flex-direction: row;
     gap: 14px;
     flex-wrap: wrap;
@@ -181,6 +183,21 @@
 
   .open-mobile-menu-btn {
     display: none;
+  }
+
+  .header-social-link {
+    transition: border 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      stroke 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 44px;
+    height: 44px;
+  }
+
+  .header-social-link:hover,
+  .header-social-link:focus {
+    border: 1px solid rgba(95, 101, 96, 0.2);
+    stroke: grey;
+    fill: grey;
   }
 
   .logo-icon {
@@ -390,9 +407,13 @@
     height: 774px;
     width: 100%;
 
-    .favorites-list {
+
+  .favorites-list-wrap {
       height: 554px;
       overflow: auto;
+    }
+
+    .favorites-list {
       flex-direction: row;
       gap: 14px;
       flex-wrap: wrap;
