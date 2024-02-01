@@ -145,6 +145,11 @@
   background-color: #7e847f;
   border: none;
 }
+.footer-form-btn:focus,
+.footer-form-btn:hover {
+    background-color: var(--hover-color);
+    color: var(--main-color);
+}
 .footer-form-email,
 .footer-form-btn {
   border-radius: 30px;
