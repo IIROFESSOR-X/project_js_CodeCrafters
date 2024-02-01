@@ -1,5 +1,5 @@
 .header-all {
-  margin-top: 40px;
+  padding-top: 40px;
 }
 .header-container {
   display: flex;
@@ -65,6 +65,10 @@
   padding-right: 20px;
   position: relative;
 }
+.exercises-section-fv {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
 /* .exercises-container-fv {
   background: #e8e8e8;
@@ -119,6 +123,9 @@
   justify-content: center;
 }
 @media screen and (min-width: 768px) {
+  .header-all {
+    padding-top: 48px;
+  }
   .exercises-container {
     margin-bottom: 0;
   }
@@ -232,7 +239,7 @@
     background-color: var(--main-bg-color);
   }
   .quote-all {
-    padding-top: 80px;
+    padding-top: 64px;
   }
   .quote-wrapper-fv {
     border-radius: 50px;
@@ -242,9 +249,7 @@
     padding-right: 80px;
     min-height: 302px;
   }
-  .quote-inform {
-    padding-bottom: 16px;
-  }
+
   .quate-day {
     background-image: url('../img/favorites/quote-tablet.png');
   }
@@ -302,13 +307,18 @@
     height: 928px;
     overflow: auto;
   }
+  .exercises-section-fv {
+    padding-bottom: 16px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .quote-inform-fv {
     width: 1440px;
   }
-
+  .header-all {
+    padding-top: 40px;
+  }
   .quote-wrapper-fv {
     padding-left: 114px;
     padding-right: 64px;

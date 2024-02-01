@@ -21,7 +21,9 @@
     background-image: url('../img/header/header-img-mobile@2x.jpg');
   }
 }
-
+.hero {
+  padding-top: 20px;
+}
 .hero-heading-wrapper {
   padding: 60px 20px 81px 20px;
   background-color: #ffffff;
@@ -68,6 +70,9 @@
 /* ========================== */
 
 @media (min-width: 768px) {
+  .hero {
+    padding-top: 16px;
+  }
   .hero-container {
     display: flex;
   }

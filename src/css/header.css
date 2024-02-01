@@ -39,7 +39,9 @@ div.header-container {
   .open-mobile-menu-btn {
     display: none;
   }
-
+  .header {
+    padding-top: 48px;
+  }
   .header-social-list {
     display: flex;
     justify-content: center;
@@ -117,5 +119,8 @@ div.header-container {
 @media screen and (min-width: 1440px) {
   div.header-container {
     padding: 0 64px;
+  }
+  .header {
+    padding-top: 40px;
   }
 }
