@@ -1,173 +1,260 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EnergyFlow</title>
+    <link rel="icon" type="image/png" href="/public/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/favorites.css" />
+  </head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EnergyFlow</title>
-  <link rel="icon" type="image/png" href="/public/favicon.png">
-  <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
-  <link rel="stylesheet" href="./css/styles.css" />
-  <link rel="stylesheet" href="./css/favorites.css" />
+  <body>
+    <header class="header-all">
+      <div class="header-container container">
+        <div class="header-logo-wrap">
+          <a class="header-logo" href="./index.html" title="Home page">
+            <svg class="logo-icon" width="86" height="18">
+              <use href="./img/icons.svg#logo-icon"></use>
+            </svg>
+          </a>
+        </div>
+        <nav class="header-nav">
+          <button
+            class="header-btn-home-fv"
+            onclick="window.location.href = './index.html'"
+          >
+            Home
+          </button>
+          <button
+            class="header-btn-favorites-fv"
+            onclick="window.location.href = './favorites.html'"
+          >
+            Favorites
+          </button>
+        </nav>
 
-</head>
+        <ul class="header-social-list">
+          <li class="header-social-item">
+            <a
+              href="https://www.facebook.com/goITclub/"
+              rel="noopener noreferrer nofollow"
+              class="header-social-link"
+              title="Facebook"
+              target="_blank"
+            >
+              <svg
+                class="header-nav-icon"
+                width="28"
+                height="28"
+                aria-label="facebook icon"
+              >
+                <use href="./img/icons.svg#facebook-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="header-social-item">
+            <a
+              href="https://www.instagram.com/goitclub/"
+              rel="noopener noreferrer nofollow"
+              class="header-social-link"
+              target="_blank"
+              title="Instagram"
+            >
+              <svg
+                class="header-nav-icon"
+                width="28"
+                height="28"
+                aria-label="instagram icon"
+              >
+                <use href="./img/icons.svg#instagram-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="header-social-item">
+            <a
+              href="https://www.youtube.com/c/GoIT"
+              rel="noopener noreferrer nofollow"
+              class="header-social-link"
+              target="_blank"
+              title="Youtube"
+            >
+              <svg
+                class="header-nav-icon"
+                width="28"
+                height="28"
+                aria-label="youtube icon"
+              >
+                <use href="./img/icons.svg#youtube-icon"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
 
-<body>
-<header class="header-all">
-  <div class="header-container container">
-    <div class="header-logo-wrap">
-      <a class="header-logo" href="./index.html" title="Home page">
-        <svg class="logo-icon" width="86" height="18">
-          <use href="./img/icons.svg#logo-icon"></use>
-        </svg>
-      </a>
-    </div>
-    <nav class="header-nav">
-      <button class="header-btn-home-fv" onclick="window.location.href = './index.html'">Home</button>
-      <button class="header-btn-favorites-fv" onclick="window.location.href = './favorites.html'">Favorites</button>
-    </nav>
+        <!---------- burger menu button ------------->
 
-    <ul class="header-social-list">
-      <li class="header-social-item">
-        <a href="https://www.facebook.com/goITclub/" rel="noopener noreferrer nofollow" class="header-social-link"
-           title="Facebook" target="_blank">
-          <svg class="header-nav-icon" width="28" height="28" aria-label="facebook icon">
-            <use href="./img/icons.svg#facebook-icon"></use>
+        <button class="open-mobile-menu-btn" type="button" data-modal-open>
+          <svg
+            class="open-mobile-menu-icon"
+            width="32"
+            height="16"
+            aria-label="mobile-menu-icon"
+          >
+            <use href="./img/icons.svg#burger-menu-icon"></use>
           </svg>
-        </a>
-      </li>
-      <li class="header-social-item">
-        <a href="https://www.instagram.com/goitclub/" rel="noopener noreferrer nofollow" class="header-social-link"
-           target="_blank" title="Instagram">
-          <svg class="header-nav-icon" width="28" height="28" aria-label="instagram icon">
-            <use href="./img/icons.svg#instagram-icon"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="header-social-item">
-        <a href="https://www.youtube.com/c/GoIT" rel="noopener noreferrer nofollow" class="header-social-link"
-           target="_blank" title="Youtube">
-          <svg class="header-nav-icon" width="28" height="28" aria-label="youtube icon">
-            <use href="./img/icons.svg#youtube-icon"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
+        </button>
+      </div>
+    </header>
+    <section class="quote-sections-fv">
+      <div class="container">
+        <div class="quote-all">
+          <div class="quote-inform">
+            <div class="quote-wrapper-fv">
+              <svg class="run-person-icon" width="34" height="32">
+                <use
+                  href="/img/quote/svg-quote-section.svg#icon-run-person-icon"
+                ></use>
+              </svg>
 
-    <!---------- burger menu button ------------->
-
-    <button class="open-mobile-menu-btn" type="button" data-modal-open>
-      <svg class="open-mobile-menu-icon" width="32" height="16" aria-label="mobile-menu-icon">
-        <use href="./img/icons.svg#burger-menu-icon"></use>
-      </svg>
-    </button>
-
-  </div>
-</header>
-<section class="quote-sections-fv">
-  <div class="container">
-    <div class="quote-all">
-      <div class="quote-inform">
-        <div class="quote-wrapper-fv">
-          <svg class="run-person-icon" width="34" height="32">
-            <use href="/img/quote/svg-quote-section.svg#icon-run-person-icon"></use>
-          </svg>
-
-          <h3 class="quote-title">Quote of the day</h3>
-          <svg class="commas-icon" width="28" height="28">
-            <use href="/img/quote/svg-quote-section.svg#icon-commas"></use>
-          </svg>
-          <p class="quote-text"></p>
-          <p class="quote-author"></p>
+              <h3 class="quote-title">Quote of the day</h3>
+              <svg class="commas-icon" width="28" height="28">
+                <use href="/img/quote/svg-quote-section.svg#icon-commas"></use>
+              </svg>
+              <p class="quote-text"></p>
+              <p class="quote-author"></p>
+            </div>
+          </div>
+          <div class="info-sport">
+            <div class="fit-girl"></div>
+            <div class="time-sport">
+              <svg class="fluent" width="24" height="22">
+                <use href="./img/icons.svg#fluent-icon"></use>
+              </svg>
+              <h3 class="quote-titles">110 min</h3>
+              <p class="quote-texts">Daily norm of sports</p>
+              <p class="quote-author"></p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="info-sport">
-        <div class="fit-girl"></div>
-        <div class="time-sport">
-          <svg class="fluent" width="24" height="22">
-            <use href="./img/icons.svg#fluent-icon"></use>
-          </svg>
-          <h3 class="quote-titles">110 min</h3>
-          <p class="quote-texts">Daily norm of sports</p>
-          <p class="quote-author"></p>
+    </section>
+    <section class="exercises-section-fv">
+      <div class="container">
+        <div class="exercises-container">
+          <h2 class="exercises-title">
+            Favorites <span class="exercises-title-span-fv"></span>
+          </h2>
+          <ul class="favorites-list list"></ul>
+          <div class="gym-info is-hidden">
+            <img
+              src="./img/favorites/dumbbell-mob.png"
+              class="dumbbell"
+              alt="icon image"
+            />
+            <span class="info-gym-text"
+              >It appears that you haven't added any exercises to your favorites
+              yet. To get started, you can add exercises that you like to your
+              favorites for easier access in the future.</span
+            >
+          </div>
+          <ul class="container-for-pagination"></ul>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<section class="exercises-section-fv">
-  <div class="container">
-    <div class="exercises-container">
-      <h2 class="exercises-title">
-        Favorites <span class="exercises-title-span-fv"></span>
-      </h2>
-      <ul class="favorites-list list"></ul>
-      <div class="gym-info is-hidden">
-        <img src="./img/favorites/dumbbell-mob.png" class='dumbbell'>
-        <span class="info-gym-text">It appears that you haven't added any exercises to your favorites yet. To get
-            started, you can add exercises that you like to your favorites for easier access in the future.</span>
+    </section>
+
+    <div class="mobile-menu is-hidden" data-mobile-menu>
+      <div class="mobile-menu__box">
+        <a class="mobile-menu__logo" href="./index.html" title="Home page">
+          <svg class="mobile-menu__logo-icon" width="86" height="18">
+            <use href="./img/icons.svg#logo-menu-icon"></use>
+          </svg>
+        </a>
+        <button
+          class="mobile-menu__close-btn"
+          type="button"
+          aria-label="Close mobile menu"
+          data-mobile-menu-close
+        >
+          <svg class="mobile-menu__close-btn-icon" width="20" height="20">
+            <use href="./img/icons.svg#close-burger-menu-icon"></use>
+          </svg>
+        </button>
       </div>
-      <ul class="container-for-pagination"></ul>
+      <ul class="mobile-menu__list list">
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link link" href="./index.html">Home</a>
+        </li>
+        <li class="mobile-menu__item">
+          <a
+            class="mobile-menu__link mobile-menu__link--current link"
+            href="./favorites.html"
+            >Favorites</a
+          >
+        </li>
+      </ul>
+      <ul class="mobile-menu__social-list">
+        <li class="mobile-menu__social-item">
+          <a
+            href="https://www.facebook.com/goITclub/"
+            rel="noopener noreferrer nofollow"
+            class="mobile-menu__social-link"
+            target="_blank"
+            title="Facebook"
+          >
+            <svg
+              class="mobile-menu__social-icon"
+              width="25"
+              height="25"
+              aria-label="facebook icon"
+            >
+              <use href="./img/icons.svg#facebook-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__social-item">
+          <a
+            href="https://www.instagram.com/goitclub/"
+            rel="noopener noreferrer nofollow"
+            class="mobile-menu__social-link"
+            target="_blank"
+            title="Instagram"
+          >
+            <svg
+              class="mobile-menu__social-icon"
+              width="25"
+              height="25"
+              aria-label="instagram icon"
+            >
+              <use href="./img/icons.svg#instagram-menu-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__social-item">
+          <a
+            href="https://www.youtube.com/c/GoIT"
+            rel="noopener noreferrer nofollow"
+            class="mobile-menu__social-link"
+            target="_blank"
+            title="Youtube"
+          >
+            <svg
+              class="mobile-menu__social-icon"
+              width="25"
+              height="25"
+              aria-label="youtube icon"
+            >
+              <use href="./img/icons.svg#youtube-icon"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
-    
-  </div>
-
-  </div>
-</section>
-<div class="mobile-menu is-hidden" data-mobile-menu>
-  <div class="mobile-menu__box">
-    <a class="mobile-menu__logo" href="./index.html" title="Home page">
-      <svg class="mobile-menu__logo-icon" width="86" height="18">
-        <use href="./img/icons.svg#logo-menu-icon"></use>
-      </svg>
-    </a>
-    <button class="mobile-menu__close-btn" type="button" aria-label="Close mobile menu" data-mobile-menu-close>
-      <svg class="mobile-menu__close-btn-icon" width="20" height="20">
-        <use href="./img/icons.svg#close-burger-menu-icon"></use>
-      </svg>
-    </button>
-  </div>
-  <ul class="mobile-menu__list list">
-    <li class="mobile-menu__item">
-      <a class="mobile-menu__link  link" href="./index.html">Home</a>
-    </li>
-    <li class="mobile-menu__item">
-      <a class="mobile-menu__link mobile-menu__link--current link" href="./favorites.html">Favorites</a>
-    </li>
-  </ul>
-  <ul class="mobile-menu__social-list">
-    <li class="mobile-menu__social-item">
-      <a href="https://www.facebook.com/goITclub/" rel="noopener noreferrer nofollow" class="mobile-menu__social-link"
-         target="_blank" title="Facebook">
-        <svg class="mobile-menu__social-icon" width="25" height="25" aria-label="facebook icon">
-          <use href="./img/icons.svg#facebook-icon"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="mobile-menu__social-item">
-      <a href="https://www.instagram.com/goitclub/" rel="noopener noreferrer nofollow" class="mobile-menu__social-link"
-         target="_blank" title="Instagram">
-        <svg class="mobile-menu__social-icon" width="25" height="25" aria-label="instagram icon">
-          <use href="./img/icons.svg#instagram-menu-icon"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="mobile-menu__social-item">
-      <a href="https://www.youtube.com/c/GoIT" rel="noopener noreferrer nofollow" class="mobile-menu__social-link"
-         target="_blank" title="Youtube">
-        <svg class="mobile-menu__social-icon" width="25" height="25" aria-label="youtube icon">
-          <use href="./img/icons.svg#youtube-icon"></use>
-        </svg>
-      </a>
-    </li>
-  </ul>
-</div>
-<load src="./partials/for_modal_window.html" />
-<script type="module" src="./js/mobile-menu.js"></script>
-<script type="module" src="./js/modal-window.js"></script>
-<script type="module" src="./js/favorites.js"></script>
-<script type="module" src='./js/quote-section.js'></script>
-</body>
-
+    <load src="./partials/for_modal_window.html" />
+    <script type="module" src="./js/mobile-menu.js"></script>
+    <script type="module" src="./js/modal-window.js"></script>
+    <script type="module" src="./js/favorites.js"></script>
+    <script type="module" src="./js/quote-section.js"></script>
+  </body>
 </html>
