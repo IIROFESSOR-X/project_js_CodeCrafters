@@ -132,6 +132,10 @@
   align-items: center;
   justify-content: center;
 }
+.exercises-list-pages li {
+  display: flex;
+  align-items: center;
+}
 .exercises-pages-button {
   border: none;
   line-height: 0;
