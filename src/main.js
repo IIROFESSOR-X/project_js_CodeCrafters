@@ -11,3 +11,5 @@ import './js/quote-section';
 import './js/scroll-up-btn';
 
 import './js/footer-form';
+
+import './js/toggle-btn-theme';

@@ -1,0 +1,86 @@
+.toggle-btn-theme {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.toggle-container {
+  display: flex;
+}
+.toggle-btn-theme {
+  position: absolute;
+  top: 24px;
+  right: 28%;
+  display: inline-block;
+  width: 42px;
+  height: 25px;
+  margin: 0;
+  vertical-align: top;
+  background: #ffffff;
+  border: 1px solid var(--main-color);
+  border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+.toggle-btn-theme::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 2px;
+  top: 1.5px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--hover-color);
+  border-radius: 50%;
+  transform: translateX(0);
+  transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+.toggle-btn-theme:checked::after {
+  transform: translateX(calc(100% + 2px));
+  background-color: #ffffff;
+}
+.toggle-btn-theme:checked {
+  background-color: var(--hover-color);
+}
+.light-theme {
+  background-color: var(--main-bg-color);
+  color: #000;
+}
+
+.dark-theme {
+  background-color: #222;
+  color: #fff;
+}
+.dark-theme .hero-heading-wrapper,
+.dark-theme .exercises-container {
+  background-color: rgba(189, 197, 189, 0.933);
+}
+.dark-theme .header-social-link {
+  border-color: var(--main-bg-color);
+  stroke: var(--main-bg-color);
+  fill: var(--main-bg-color);
+}
+.dark-theme .header-social-link:hover,
+.dark-theme .header-social-link:focus {
+  border-color: var(--main-color);
+  stroke: var(--main-color);
+  fill: var(--main-color);
+}
+.dark-theme .heading-span {
+  color: var(--main-bg-color);
+}
+.dark-theme .time-sport {
+  color: #000000;
+}
+.dark-theme .header-logo-fv {
+  fill: var(--main-bg-color);
+}
+.dark-theme .info-gym-text {
+  color: #000000;
+}
+.dark-theme .open-mobile-menu-icon-fv {
+  fill: var(--main-bg-color);
+}

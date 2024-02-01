@@ -19,6 +19,7 @@
 @import url('./modal-window.css');
 @import url('./rating-modal-window.css');
 @import url('./scrollUp-btn.css');
+@import url('./toggle-btn-theme.css');
 
 :root {
   font-family: DM Sans, Inter, Avenir, Helvetica, Arial, sans-serif;
