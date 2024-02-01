@@ -95,6 +95,7 @@ function onDeleteBtnClick(event) {
   if (!parsedCards.length) {
     ref.gymInfo.classList.remove('is-hidden');
   }
+  containerForPages.innerHTML = ``;
   renderFavorites(parsedCards);
 }
 
@@ -127,15 +128,27 @@ function windowLoad() {
 // containerForPages.addEventListener(`click`, userChangePage);
 const scroltoSection = document.querySelector(`.exercises-section-fv`);
 function userChangePage(e) {
-  let numberPage = e.target.dataset.number;
-  if (numberPage === currentPageFavorite) return;
-  currentPageFavorite = numberPage;
+  if (e.target.dataset.number) {
+    let numberPage = e.target.dataset.number;
+
+    if (numberPage === currentPageFavorite) return;
+    currentPageFavorite = numberPage;
+  }
+
+  if (e.target.dataset) {
+    if (e.target.dataset.id == `left`) {
+      currentPageFavorite = 1;
+    } else {
+      currentPageFavorite = Math.ceil(parsedCards.length / 8);
+    }
+  }
   parsingCards();
   renderFavorites(parsedCards);
 }
 
 const makePaginationOfCards = () => {
   let totalPages = parsedCards.length;
+  if (totalPages < 1) return;
   let index = currentPageFavorite * 8;
 
   containerForPages.innerHTML = formatNumericOfPages(
@@ -150,11 +163,11 @@ const makePaginationOfCards = () => {
 function formatNumericOfPages(cPage, tPage) {
   cPage = Number.parseInt(cPage);
 
-  let leftErrow = `<li><svg  class="page-choice-svg"  width="18"  height="18"    data-id="left"  
+  let leftErrow = `<li data-id="left"><svg  class="page-choice-svg"  width="18"  height="18"    data-id="left"  
                       xmlns="http://www.w3.org/2000/svg"  id="Outline"  viewBox="0 0 24 24"  width="512"  height="512">  <path    d="M17.17,24a1,1,0,0,1-.71-.29L8.29,15.54a5,5,0,0,1,0-7.08L16.46.29a1,1,0,1,1,1.42,1.42L9.71,9.88a3,3,0,0,0,0,4.24l8.17,8.17a1,1,0,0,1,0,1.42A1,1,0,0,1,17.17,24Z"
                       />
                     </svg> </li>`;
-  let rightErrow = `<li><svg class="page-choice-svg" data-id="right"   xmlns="http://www.w3.org/2000/svg" id="Outline"
+  let rightErrow = `<li data-id="right"><svg class="page-choice-svg" data-id="right"   xmlns="http://www.w3.org/2000/svg" id="Outline"
                         viewBox="0 0 24 24" width="512" height="512"><path d="M7,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L6.29,1.71A1,1,0,0,1,7.71.29l8.17,8.17a5,5,0,0,1,0,7.08L7.71,23.71A1,1,0,0,1,7,24Z" /></svg></li> `;
   let start = 0,
     resultHtml = ``,
