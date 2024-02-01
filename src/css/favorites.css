@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.header-social-list {
+.header-social-item.hiden {
   display: none;
 }
 
@@ -131,7 +131,9 @@
   .header-all {
     padding-top: 48px;
   }
-
+  .header-social-item.hiden {
+    display: block;
+  }
   .exercises-container {
     margin-bottom: 0;
   }
@@ -210,6 +212,7 @@
   .header-social-list {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 12px;
   }
 
@@ -408,8 +411,7 @@
     height: 774px;
     width: 100%;
 
-
-  .favorites-list-wrap {
+    .favorites-list-wrap {
       height: 554px;
       overflow-y: auto;
       overflow-x: hidden;
