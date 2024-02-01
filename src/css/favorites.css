@@ -142,7 +142,7 @@
 
   .favorites-list-wrap {
     height: 770px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
   }
   .favorites-list {
@@ -411,7 +411,7 @@
 
   .favorites-list-wrap {
       height: 554px;
-      overflow-y: scroll;
+      overflow-y: auto;
       overflow-x: hidden;
     }
 
