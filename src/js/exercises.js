@@ -230,12 +230,12 @@ function showsExercisesPages(e) {
 
 function formatNumericOfPages(cPage, tPage) {
   cPage = Number.parseInt(cPage);
-  let leftErrow = `<svg  class="page-choice-svg"  width="18"  height="18"  data-card="${filterTypeCads}"  data-id="left"  data-type="${typeOfFilter}"
+  let leftErrow = `<li><svg  class="page-choice-svg"  width="18"  height="18"  data-card="${filterTypeCads}"  data-id="left"  data-type="${typeOfFilter}"
                       xmlns="http://www.w3.org/2000/svg"  id="Outline"  viewBox="0 0 24 24"  width="512"  height="512">  <path    d="M17.17,24a1,1,0,0,1-.71-.29L8.29,15.54a5,5,0,0,1,0-7.08L16.46.29a1,1,0,1,1,1.42,1.42L9.71,9.88a3,3,0,0,0,0,4.24l8.17,8.17a1,1,0,0,1,0,1.42A1,1,0,0,1,17.17,24Z"
                       />
-                    </svg> `;
-  let rightErrow = `<svg class="page-choice-svg" data-id="right" data-type="${typeOfFilter}" data-card="${filterTypeCads}" xmlns="http://www.w3.org/2000/svg" id="Outline"
-                        viewBox="0 0 24 24" width="512" height="512"><path d="M7,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L6.29,1.71A1,1,0,0,1,7.71.29l8.17,8.17a5,5,0,0,1,0,7.08L7.71,23.71A1,1,0,0,1,7,24Z" /></svg> `;
+                    </svg></li> `;
+  let rightErrow = `<li><svg class="page-choice-svg" data-id="right" data-type="${typeOfFilter}" data-card="${filterTypeCads}" xmlns="http://www.w3.org/2000/svg" id="Outline"
+                        viewBox="0 0 24 24" width="512" height="512"><path d="M7,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L6.29,1.71A1,1,0,0,1,7.71.29l8.17,8.17a5,5,0,0,1,0,7.08L7.71,23.71A1,1,0,0,1,7,24Z" /></svg></li> `;
   let start = 0,
     resultHtml = ``,
     end = 0;
