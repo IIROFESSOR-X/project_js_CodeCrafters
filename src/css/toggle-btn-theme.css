@@ -5,7 +5,7 @@
 }
 .toggle-container {
   display: flex;
-  position: relative;
+ 
 }
 .toggle-btn-theme {
   position: absolute;
