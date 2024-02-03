@@ -5,11 +5,10 @@
 }
 .toggle-container {
   display: flex;
- 
 }
 .toggle-btn-theme {
   position: absolute;
-  top: 24px;
+  top: -20px;
   right: 28%;
   display: inline-block;
   width: 42px;
