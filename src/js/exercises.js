@@ -269,13 +269,13 @@ function formatNumericOfPages(cPage, tPage) {
     let r = ``;
     for (let i = s; i < e; i++) {
       if (cPage == i) {
-        r += `<li data-type="${typeOfFilter} data-number="${i}">
+        r += `<li data-type="${typeOfFilter} data-number="${i}" data-card="${filterTypeCads}">
           <button class="exercises-pages-button select-pages-ative" data-card="${filterTypeCads}"
            data-number="${i}" data-type="${typeOfFilter}">${i}</button>
         </li>`;
       }
       if (cPage != i) {
-        r += `<li data-type="${typeOfFilter}" data-number="${i}">
+        r += `<li data-type="${typeOfFilter}" data-number="${i}" data-number="${i}" >
           <button class="exercises-pages-button" data-card="${filterTypeCads}"
            data-number="${i}" data-type="${typeOfFilter}">${i}</button>
         </li>`;
