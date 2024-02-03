@@ -10,7 +10,10 @@ document
     const emailValue = emailInput.value.trim();
 
     if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(emailValue)) {
-      iziToast.success('Field must be filled in');
+      iziToast.error({
+        position: 'topRight',
+        message: 'please enter a valid email!',
+      });
       return;
     }
 
@@ -31,10 +34,12 @@ document
         }
       })
 
-     
       .catch(error => {
         console.error(error);
-        iziToast.error('Sorry! Failed to subscribe.');
+        iziToast.error({
+          position: 'topRight',
+          message: 'Sorry! You are already subscribed',
+        });
         this.reset();
       });
   });
