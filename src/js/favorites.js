@@ -202,13 +202,13 @@ function formatNumericOfPages(cPage, tPage) {
     let r = ``;
     for (let i = s; i < e; i++) {
       if (cPage == i) {
-        r += `<li>
+        r += `<li data-number="${i}">
           <button class="exercises-pages-button select-pages-ative" 
            data-number="${i}" >${i}</button>
         </li>`;
       }
       if (cPage != i) {
-        r += `<li>
+        r += `<li data-number="${i}">
           <button class="exercises-pages-button" 
            data-number="${i}" >${i}</button>
         </li>`;

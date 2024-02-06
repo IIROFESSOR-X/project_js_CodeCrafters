@@ -332,6 +332,7 @@ function searchCardsByKeyWord(e) {
     const filter = e.target.dataset.filter;
     e.target.dataset.status = `ok`;
     formCard.reset();
+    resetFormTextButton.classList.add(`reset-button-close`);
     getCardsFromServer(filter, filterTypeCads, userTextSearch);
   }
 }
